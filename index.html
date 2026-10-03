@@ -38,23 +38,23 @@
       object-position: center;
       z-index: 1;
     }
-    /* ಇಮೇಜ್‌ನಲ್ಲಿರುವ ಬಟನ್ ಮೇಲೆ ಕರಾರುವಾಕ್ಕಾಗಿ ಕೂರುವ ಪಾರದರ್ಶಕ ಬಟನ್ */
+    /* ಇಮೇಜ್‌ನಲ್ಲಿರುವ ಬಟನ್ ಮೇಲೆಯೇ ಸರಿಯಾಗಿ ಕೂರುವ ನಿಖರವಾದ ಟಚ್ ಜಾಗ */
     .touch-btn {
       position: absolute;
-      bottom: 8.5%;
-      left: 7%;
-      width: 86%;
-      height: 58px;
-      border-radius: 35px;
+      bottom: 8.8%;
+      left: 14%;
+      width: 72%;
+      height: 60px;
+      border-radius: 30px;
       border: none;
       background: transparent;
       cursor: pointer;
       outline: none;
       z-index: 10;
     }
-    /* ಟಚ್ ಮಾಡಿದಾಗ ಸಣ್ಣ ಗೋಲ್ಡನ್ ಗ್ಲೋ ಎಫೆಕ್ಟ್ */
+    /* ಮುಟ್ಟಿದಾಗ ಮಾತ್ರ ಲಘುವಾದ ಗೋಲ್ಡನ್ ಸ್ಪರ್ಶ */
     .touch-btn:active {
-      background: rgba(223, 178, 106, 0.2);
+      background: rgba(223, 178, 106, 0.15);
     }
   </style>
 </head>
@@ -62,9 +62,10 @@
 
   <div class="app-screen">
     <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
-    <button class="touch-btn" onclick="alert('✨ Welcome to VISTAROQ Experience!')" aria-label="Choose Experience">
+    <button class="touch-btn" onclick="alert('✨ VISTAROQ: Welcome Screen Verified!')" aria-label="Choose Experience">
     </button>
   </div>
 
 </body>
 </html>
+
