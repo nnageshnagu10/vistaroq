@@ -27,9 +27,6 @@
       position: relative;
       background-color: #090b0e;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
     }
     .bg-img {
       position: absolute;
@@ -41,42 +38,33 @@
       object-position: center;
       z-index: 1;
     }
-    .action-zone {
-      position: relative;
-      z-index: 5;
-      width: 100%;
-      padding: 0 28px 110px 28px;
-      display: flex;
-      justify-content: center;
-    }
+    /* ಇಮೇಜ್‌ನಲ್ಲಿರುವ ಬಟನ್ ಮೇಲೆ ಕರಾರುವಾಕ್ಕಾಗಿ ಕೂರುವ ಪಾರದರ್ಶಕ ಬಟನ್ */
     .touch-btn {
-      width: 100%;
+      position: absolute;
+      bottom: 8.5%;
+      left: 7%;
+      width: 86%;
       height: 58px;
       border-radius: 35px;
-      border: 1.5px solid rgba(223, 178, 106, 0.5);
-      background: rgba(223, 178, 106, 0.05);
+      border: none;
+      background: transparent;
       cursor: pointer;
       outline: none;
-      transition: all 0.2s ease;
+      z-index: 10;
     }
+    /* ಟಚ್ ಮಾಡಿದಾಗ ಸಣ್ಣ ಗೋಲ್ಡನ್ ಗ್ಲೋ ಎಫೆಕ್ಟ್ */
     .touch-btn:active {
-      background: rgba(223, 178, 106, 0.35);
-      transform: scale(0.98);
-      box-shadow: 0 0 25px rgba(223, 178, 106, 0.8);
+      background: rgba(223, 178, 106, 0.2);
     }
   </style>
 </head>
 <body>
 
   <div class="app-screen">
-    <!-- ನಿಮ್ಮದೇ ಸ್ವಂತ GitHub ಇಮೇಜ್ -->
     <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
-    <div class="action-zone">
-      <button class="touch-btn" onclick="alert('✨ VISTAROQ: Welcome Screen Verified!')">
-      </button>
-    </div>
+    <button class="touch-btn" onclick="alert('✨ Welcome to VISTAROQ Experience!')" aria-label="Choose Experience">
+    </button>
   </div>
 
 </body>
 </html>
-
