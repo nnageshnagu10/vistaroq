@@ -19,6 +19,7 @@
   <link rel="preload" as="image" href="img3a.png" />
   <link rel="preload" as="image" href="img4.png" />
   <link rel="preload" as="image" href="img5.png" />
+  <link rel="preload" as="image" href="img6.png" />
 
   <style>
     * {
@@ -833,7 +834,7 @@
     }
 
     /* ========================================================
-       SCREEN 6: CREATE YOUR SPACE PORTALS (img5.png)
+       SCREEN 6 & SCREEN 7 SHARED STYLES
        ======================================================== */
     .screen-back-btn {
       position: absolute;
@@ -842,10 +843,10 @@
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 215, 0, 0.35);
+      border: 1px solid rgba(255, 215, 0, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -864,7 +865,7 @@
       stroke-width: 2.2;
     }
 
-    /* 4 Interactive Portal Click Areas */
+    /* SCREEN 6: Portals Container */
     .portals-container {
       position: absolute;
       top: 42%;
@@ -887,6 +888,33 @@
     .portal-hotspot:active {
       transform: scale(0.96);
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    /* ========================================================
+       SCREEN 7: MEASURE YOUR SPACE (img6.png)
+       ======================================================== */
+    .measure-methods-container {
+      position: absolute;
+      top: 59.5%;
+      left: 3.5%;
+      width: 93%;
+      height: 27%;
+      display: flex;
+      justify-content: space-between;
+      gap: 2.5%;
+      z-index: 50;
+    }
+    .measure-card-hotspot {
+      flex: 1;
+      height: 100%;
+      border-radius: 20px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.01);
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
+    }
+    .measure-card-hotspot:active {
+      transform: scale(0.96);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
     }
   </style>
 </head>
@@ -1130,7 +1158,7 @@
         </div>
       </div>
 
-      <!-- Action Hotspots (Matching Reference UI Cards) -->
+      <!-- Action Hotspots -->
       <div class="hotspot-actions-container">
         <div class="hotspot-box" onclick="handleCreateNewSpace()" title="Create New Space"></div>
         <div class="hotspot-box" onclick="handleOpenMySpace()" title="Open My Space"></div>
@@ -1284,6 +1312,28 @@
       </div>
     </div>
 
+    <!-- SCREEN 7: MEASURE YOUR SPACE (img6.png) -->
+    <div id="screen-7" class="screen">
+      <img class="bg-img" src="img6.png" alt="Measure Your Space" />
+
+      <!-- Back Arrow to Screen 6 (Portals) -->
+      <button class="screen-back-btn" onclick="goToScreen(6)" title="Back to Portals">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- 3 Measurement Method Hotspot Cards -->
+      <div class="measure-methods-container">
+        <!-- 1. SCAN WITH CAMERA -->
+        <div class="measure-card-hotspot" onclick="handleMeasureMethod('SCAN WITH CAMERA')" title="Scan With Camera"></div>
+        <!-- 2. ENTER MANUALLY -->
+        <div class="measure-card-hotspot" onclick="handleMeasureMethod('ENTER MANUALLY')" title="Enter Manually"></div>
+        <!-- 3. UPLOAD FLOOR PLAN -->
+        <div class="measure-card-hotspot" onclick="handleMeasureMethod('UPLOAD FLOOR PLAN')" title="Upload Floor Plan"></div>
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -1293,7 +1343,7 @@
     const assetsToPreload = [
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
       'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
-      'img4.png', 'img5.png'
+      'img4.png', 'img5.png', 'img6.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
@@ -1305,6 +1355,7 @@
 
     let currentScreen = 1;
     let currentCard = 0;
+    let selectedCategory = 'HOME SPACE';
     const cards = document.querySelectorAll('.card-item');
     const dots = document.querySelectorAll('.dot');
     const totalCards = cards.length;
@@ -1399,7 +1450,6 @@
       goToScreen(5);
     }
 
-    // Navigate to Screen 6 on "CREATE NEW SPACE"
     function handleCreateNewSpace() {
       goToScreen(6);
     }
@@ -1408,13 +1458,15 @@
       alert('📂 OPEN MY SPACE: Loading your existing projects...');
     }
 
-    // Portal Category Selection
+    // Portal Category Selection -> Navigates to Screen 7 (Measure Your Space)
     function selectSpaceCategory(category) {
-      if (category === 'HOME SPACE') {
-        alert('🏡 HOME SPACE SELECTED: Initializing Space Scanning & Architecture Workflow...');
-      } else {
-        alert('✨ Selected: ' + category + ' (Launching Workflow Engine)');
-      }
+      selectedCategory = category;
+      goToScreen(7);
+    }
+
+    // Measurement Method Handler
+    function handleMeasureMethod(method) {
+      alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
     }
 
     function switchNavTab(tabElement, tabName) {
@@ -1433,7 +1485,7 @@
       { group: 'Indian Languages', list: [
         { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'हिन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
         { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
-        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓଡ଼ିଆ', code: 'OR' }
+        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿଆ', code: 'OR' }
       ]},
       { group: 'International Languages', list: [
         { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
