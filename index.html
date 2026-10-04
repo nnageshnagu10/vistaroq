@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
-      user-select: none;
+      outline: none;
     }
     body {
       background-color: #000;
@@ -40,6 +40,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.4s ease-in-out;
+      overflow: hidden;
     }
     .screen.active {
       opacity: 1;
@@ -94,7 +95,7 @@
       color: #b8860b;
     }
 
-    /* --- SCREEN 2: HUB BUTTON (ಇನ್ನೂ ಸ್ಮಾಲ್ ಮಾಡಿ ಮೇಲಿನ ಕಾರ್ನರ್‌ಗೆ ಇರಿಸಲಾಗಿದೆ) --- */
+    /* --- SCREEN 2: HUB BUTTON --- */
     .hub-btn {
       position: absolute;
       top: 1.6%;
@@ -171,9 +172,6 @@
       z-index: 5;
       pointer-events: auto;
     }
-    .card-item:active img {
-      transform: scale(0.96);
-    }
 
     /* --- SCREEN 2: DOT INDICATORS --- */
     .dots-container {
@@ -200,6 +198,219 @@
       box-shadow: 0 0 8px #ffd700;
       transform: scale(1.25);
     }
+
+    /* =========================================
+       SCREEN 3: NEST LOGIN UI
+       ========================================= */
+    .nest-nav {
+      position: absolute;
+      top: 3.5%;
+      left: 0;
+      width: 100%;
+      padding: 0 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 20;
+    }
+    .back-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      transition: transform 0.15s ease;
+    }
+    .back-btn:active {
+      transform: scale(0.92);
+    }
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 6px 14px;
+      border-radius: 20px;
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .lang-globe {
+      font-size: 13px;
+    }
+
+    /* Floating Marble/Frosted Login Card */
+    .login-card-container {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88%;
+      max-width: 360px;
+      z-index: 20;
+    }
+    .login-card {
+      background: rgba(255, 250, 240, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 225, 175, 0.7);
+      border-radius: 36px;
+      padding: 24px 22px 20px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .card-subtitle {
+      font-size: 11px;
+      color: #555;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      padding: 0 10px;
+    }
+
+    /* Inputs */
+    .input-field {
+      position: relative;
+      margin-bottom: 11px;
+      width: 100%;
+    }
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #777;
+    }
+    .text-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 38px 0 38px;
+      border-radius: 22px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.95);
+      font-size: 12px;
+      color: #1a1a1a;
+      transition: all 0.2s ease;
+    }
+    .text-input:focus {
+      border-color: #d4af37;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+    }
+    .toggle-pass {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #777;
+      cursor: pointer;
+    }
+
+    /* Options Row */
+    .options-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      margin: 9px 4px 14px;
+    }
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #444;
+      cursor: pointer;
+    }
+    .remember-me input {
+      accent-color: #b8860b;
+    }
+    .forgot-link {
+      color: #8c6a21;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Buttons */
+    .signin-btn {
+      width: 100%;
+      height: 44px;
+      border-radius: 22px;
+      border: none;
+      background: linear-gradient(135deg, #f7e2a9 0%, #d8b056 50%, #b8860b 100%);
+      color: #1a1a1a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.35);
+      transition: transform 0.15s ease;
+    }
+    .signin-btn:active {
+      transform: scale(0.97);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 11px 0;
+      color: #777;
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    }
+    .divider span {
+      padding: 0 8px;
+    }
+
+    .create-btn {
+      width: 100%;
+      height: 42px;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a1a1a;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: transform 0.15s ease;
+    }
+    .create-btn:active {
+      transform: scale(0.97);
+    }
   </style>
 </head>
 <body>
@@ -219,12 +430,10 @@
     <div id="screen-2" class="screen">
       <img class="bg-img" src="img2.png" alt="VISTAROQ Experience" />
 
-      <!-- Top Small Corner HUB Button -->
       <div class="hub-btn" onclick="alert('⚡ VISTAROQ HUB: Employee Access Only')">
         <img src="hub.png" alt="VISTAROQ HUB" />
       </div>
 
-      <!-- Compact Swipable Cards -->
       <div class="cards-wrapper" id="swipeArea">
         <div class="cards-track">
           <div class="card-item" onclick="onCardClick('NEST')">
@@ -242,12 +451,68 @@
         </div>
       </div>
 
-      <!-- 4 Dynamic Dots -->
       <div class="dots-container">
         <div class="dot active"></div>
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: NEST LOGIN -->
+    <div id="screen-3" class="screen">
+      <img class="bg-img" src="img3.png" alt="NEST Login Experience" />
+
+      <!-- Top Navigation -->
+      <div class="nest-nav">
+        <button class="back-btn" onclick="goToScreen(2)">‹</button>
+        <button class="lang-btn" onclick="toggleLang()">
+          <span class="lang-globe">🌐</span>
+          <span id="langLabel">English</span>
+          <span style="font-size: 10px; margin-left: 2px;">▼</span>
+        </button>
+      </div>
+
+      <!-- Floating Marble Login Card -->
+      <div class="login-card-container">
+        <div class="login-card">
+          <div class="card-title">VISTAROQ IDENTITY</div>
+          <div class="card-subtitle">Sign in to access your spaces, projects and everything you love.</div>
+
+          <div class="input-field">
+            <span class="input-icon">✉</span>
+            <input type="text" class="text-input" placeholder="Email or Mobile Number" id="userIdentifier" />
+          </div>
+
+          <div class="input-field">
+            <span class="input-icon">🔒</span>
+            <input type="password" class="text-input" placeholder="Password" id="userPassword" />
+            <span class="toggle-pass" onclick="togglePasswordVisibility()">👁</span>
+          </div>
+
+          <div class="options-row">
+            <label class="remember-me">
+              <input type="checkbox" id="rememberMe" checked />
+              <span>Keep me signed in</span>
+            </label>
+            <a href="javascript:void(0)" class="forgot-link" onclick="alert('Password reset link will be sent.')">Forgot Password?</a>
+          </div>
+
+          <button class="signin-btn" onclick="handleSignIn()">
+            <span>Sign In</span>
+            <span>→</span>
+          </button>
+
+          <div class="divider">
+            <span>OR</span>
+          </div>
+
+          <button class="create-btn" onclick="alert('Creating new VISTAROQ account...')">
+            <span>👤</span>
+            <span>Create an Account</span>
+            <span>→</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -295,7 +560,11 @@
     }
 
     function onCardClick(name) {
-      alert('✨ Selected Experience: VISTAROQ ' + name);
+      if (name === 'NEST') {
+        goToScreen(3); // Screen 2 ರಿಂದ Screen 3 (NEST Login) ಗೆ ಹೋಗುತ್ತದೆ
+      } else {
+        alert('✨ Selected Experience: VISTAROQ ' + name);
+      }
     }
 
     // Touch Swipe Detection
@@ -318,6 +587,39 @@
         }
       }
     }, { passive: true });
+
+    // Login Screen Logic
+    function togglePasswordVisibility() {
+      const passInput = document.getElementById('userPassword');
+      if (passInput.type === 'password') {
+        passInput.type = 'text';
+      } else {
+        passInput.type = 'password';
+      }
+    }
+
+    function handleSignIn() {
+      const user = document.getElementById('userIdentifier').value.trim();
+      const pass = document.getElementById('userPassword').value.trim();
+      if (!user) {
+        alert('ದಯವಿಟ್ಟು Email ಅಥವಾ Mobile Number ನಮೂದಿಸಿ.');
+        return;
+      }
+      if (!pass) {
+        alert('ದಯವಿಟ್ಟು Password ನಮೂದಿಸಿ.');
+        return;
+      }
+      alert('✨ Welcome to VISTAROQ NEST Dashboard!\nUser: ' + user);
+    }
+
+    function toggleLang() {
+      const label = document.getElementById('langLabel');
+      if (label.innerText === 'English') {
+        label.innerText = 'ಕನ್ನಡ';
+      } else {
+        label.innerText = 'English';
+      }
+    }
 
     updateCards();
   </script>
