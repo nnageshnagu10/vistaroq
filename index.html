@@ -835,7 +835,7 @@
     }
 
     /* ========================================================
-       SCREEN 6, 7 & 8 SHARED STYLES
+       SCREEN 6 & SCREEN 7 SHARED NAVIGATION
        ======================================================== */
     .screen-back-btn {
       position: absolute;
@@ -917,8 +917,22 @@
     }
 
     /* ========================================================
-       SCREEN 8: LIVE SMART SPACE SCAN (img7.png)
+       SCREEN 8: LIVE SMART SPACE SCAN (img7.png) HOTSPOTS
        ======================================================== */
+    /* Invisible Tap Hotspot exactly over the image's own back arrow (No overlap button) */
+    .scan-back-hotspot {
+      position: absolute;
+      top: env(safe-area-inset-top, 2%);
+      left: 3%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: transparent;
+      z-index: 60;
+      cursor: pointer;
+    }
+
+    /* Finish & Process Action Hotspot */
     .finish-process-hotspot {
       position: absolute;
       bottom: 4.2%;
@@ -1350,12 +1364,8 @@
     <div id="screen-8" class="screen">
       <img class="bg-img" src="img7.png" alt="Live Smart Space Scan" />
 
-      <!-- Back Arrow to Screen 7 (Measure Your Space) -->
-      <button class="screen-back-btn" onclick="goToScreen(7)" title="Back to Measure Screen">
-        <svg viewBox="0 0 24 24" fill="none">
-          <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      <!-- Seamless Invisible Hotspot (No overlap with arrow in image) -->
+      <div class="scan-back-hotspot" onclick="goToScreen(7)" title="Back to Measure Screen"></div>
 
       <!-- Finish & Process Action Hotspot -->
       <div class="finish-process-hotspot" onclick="handleFinishScan()" title="Finish & Process 3D Model"></div>
@@ -1417,12 +1427,161 @@
     }
 
     function prevCard() {
-      currentCardಕ್ಷಮಿಸಿ ನಾಗು ಅವರೇ, ಹಿಂದಿನ ಸಂದೇಶದಲ್ಲಿ ಸಿಸ್ಟಮ್ ತಾಂತ್ರಿಕ ಕಾರಣದಿಂದ ಕೋಡ್ ತೋರಿಸಿರಲಿಲ್ಲ. 
+      currentCard = (currentCard - 1 + totalCards) % totalCards;
+      updateCards();
+    }
 
-ನೀವು ಸಿದ್ಧಪಡಿಸಿದ **Live Smart Space Scan (`img7.png`)** ಅನ್ನು ನಮ್ಮ ಕೋಡ್‌ಗೆ ಸೇರಿಸಿ, **`SCAN WITH CAMERA`** ಬಟನ್‌ಗೆ ಕನೆಕ್ಟ್ ಮಾಡಿರುವ ಸಂಪೂರ್ಣ **`index.html`** ಇಲ್ಲಿದೆ:
+    function onCardClick(name) {
+      if (name === 'NEST') {
+        goToScreen(3);
+      } else {
+        alert('✨ Selected Experience: VISTAROQ ' + name);
+      }
+    }
 
----
+    // Touch Swipe Detection for Carousel (Screen 2)
+    const swipeArea = document.getElementById('swipeArea');
+    let startX = 0;
+    let endX = 0;
 
-### GitHub Edit Link:
-```text
-[https://github.com/nnageshnagu10/vistaroq/edit/main/index.html](https://github.com/nnageshnagu10/vistaroq/edit/main/index.html)
+    swipeArea.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    swipeArea.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      if (Math.abs(diffX) > 35) {
+        if (diffX > 0) nextCard();
+        else prevCard();
+      }
+    }, { passive: true });
+
+    function togglePasswordVisibility(fieldId) {
+      const field = document.getElementById(fieldId);
+      field.type = (field.type === 'password') ? 'text' : 'password';
+    }
+
+    function handleSignIn() {
+      const user = document.getElementById('userIdentifier').value.trim();
+      const pass = document.getElementById('userPassword').value.trim();
+      if (!user) { alert('Please enter your Email or Mobile Number.'); return; }
+      if (!pass) { alert('Please enter your Password.'); return; }
+      goToScreen(5);
+    }
+
+    function handleSignUp() {
+      const name = document.getElementById('regFullName').value.trim();
+      const identifier = document.getElementById('regIdentifier').value.trim();
+      const pass = document.getElementById('regPassword').value.trim();
+      const confirmPass = document.getElementById('regConfirmPassword').value.trim();
+      const terms = document.getElementById('regTerms').checked;
+
+      if (!name) { alert('Please enter your Full Name.'); return; }
+      if (!identifier) { alert('Please enter your Email or Mobile Number.'); return; }
+      if (!pass) { alert('Please create a Password.'); return; }
+      if (pass !== confirmPass) { alert('Passwords do not match!'); return; }
+      if (!terms) { alert('Please agree to the Terms of Service & Privacy Policy.'); return; }
+
+      alert('🎉 Welcome to VISTAROQ NEST, ' + name + '!');
+      goToScreen(5);
+    }
+
+    function handleCreateNewSpace() {
+      goToScreen(6);
+    }
+
+    function handleOpenMySpace() {
+      alert('📂 OPEN MY SPACE: Loading your existing projects...');
+    }
+
+    // Portal Category Selection -> Navigates to Screen 7 (Measure Your Space)
+    function selectSpaceCategory(category) {
+      selectedCategory = category;
+      goToScreen(7);
+    }
+
+    // Measurement Method Handler -> SCAN WITH CAMERA opens Screen 8 (img7.png)
+    function handleMeasureMethod(method) {
+      if (method === 'SCAN WITH CAMERA') {
+        goToScreen(8);
+      } else {
+        alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
+      }
+    }
+
+    // Screen 8 Finish & Process Action Handler
+    function handleFinishScan() {
+      alert('✨ 3D Space Scan Complete! Initializing Next Step in Master Architecture...');
+    }
+
+    function switchNavTab(tabElement, tabName) {
+      document.querySelectorAll('.nav-tab-item').forEach(tab => {
+        tab.classList.remove('active');
+        const pill = tab.querySelector('.tab-active-pill');
+        if (pill) pill.remove();
+      });
+      tabElement.classList.add('active');
+      const pill = document.createElement('div');
+      pill.className = 'tab-active-pill';
+      tabElement.appendChild(pill);
+    }
+
+    const languages = [
+      { group: 'Indian Languages', list: [
+        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
+        { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
+        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ିଆ', code: 'OR' }
+      ]},
+      { group: 'International Languages', list: [
+        { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
+        { name: 'Deutsch', code: 'DE' }, { name: 'العربية', code: 'AR' }, { name: '日本語', code: 'JA' },
+        { name: '한국어', code: 'KO' }, { name: '中文 (简体)', code: 'ZH' }, { name: 'Русский', code: 'RU' },
+        { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' },
+        { name: 'Bahasa Indo', code: 'ID' }, { name: 'Nederlands', code: 'NL' }, { name: 'Svenska', code: 'SV' },
+        { name: 'Polski', code: 'PL' }, { name: 'Tiếng Việt', code: 'VI' }, { name: 'ภาษาไทย', code: 'TH' },
+        { name: 'Ελληνικά', code: 'EL' }, { name: 'עברית', code: 'HE' }
+      ]}
+    ];
+
+    function initLanguageMenus() {
+      ['langMenuLogin', 'langMenuSignup'].forEach(menuId => {
+        const menu = document.getElementById(menuId);
+        if (!menu) return;
+        let html = '';
+        languages.forEach(cat => {
+          html += `<div class="lang-group-header">${cat.group}</div>`;
+          cat.list.forEach(l => {
+            const activeClass = l.name === 'English' ? 'active' : '';
+            html += `<div class="lang-item ${activeClass}" onclick="selectLanguage('${l.name}')">${l.name} <span>${l.code}</span></div>`;
+          });
+        });
+        menu.innerHTML = html;
+      });
+    }
+
+    function toggleLangMenu(e, menuId) {
+      e.stopPropagation();
+      const targetMenu = document.getElementById(menuId);
+      document.querySelectorAll('.lang-menu').forEach(m => {
+        if (m !== targetMenu) m.classList.remove('show');
+      });
+      targetMenu.classList.toggle('show');
+    }
+
+    function selectLanguage(lang) {
+      document.querySelectorAll('.selectedLangText').forEach(el => el.innerText = lang);
+      document.querySelectorAll('.lang-item').forEach(item => {
+        item.classList.toggle('active', item.innerText.includes(lang));
+      });
+      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
+    }
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
+    });
+
+    updateCards();
+  </script>
+</body>
+</html>
