@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
+      user-select: none;
     }
     body {
       background-color: #000;
@@ -21,7 +22,7 @@
       overflow: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
-    .app-screen {
+    .app-viewport {
       width: 100vw;
       max-width: 430px;
       height: 100vh;
@@ -29,8 +30,20 @@
       position: relative;
       background-color: #090b0e;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
+    }
+    .screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .screen.active {
+      opacity: 1;
+      pointer-events: auto;
     }
     .bg-img {
       width: 100%;
@@ -41,10 +54,13 @@
       left: 0;
       z-index: 1;
     }
-    /* ಬಟನ್ ಅಗಲವನ್ನು ಕಡಿಮೆ ಮಾಡಿ, ಸೆಂಟರ್‌ನಲ್ಲಿ ಕಾಂಪ್ಯಾಕ್ಟ್ & ಪ್ರೀಮಿಯಂ ಆಗಿ ಕೂರಿಸಲಾಗಿದೆ */
+
+    /* --- SCREEN 1: WELCOME BUTTON --- */
     .cta-btn {
       position: absolute;
       bottom: 82px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 72%;
       max-width: 310px;
       height: 44px;
@@ -53,15 +69,16 @@
       border: 1.5px solid #d4af37;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      outline: none;
       z-index: 10;
-      transition: all 0.2s ease;
+      transition: transform 0.15s ease;
+    }
+    .cta-btn:active {
+      transform: translateX(-50%) scale(0.96);
     }
     .cta-text {
       font-size: 10.5px;
@@ -70,31 +87,241 @@
       color: #1a1a1a;
       text-transform: uppercase;
       margin-right: 8px;
-      white-space: nowrap;
     }
     .cta-arrow {
       font-size: 15px;
       font-weight: 700;
       color: #b8860b;
-      line-height: 1;
     }
-    .cta-btn:active {
-      transform: scale(0.97);
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+
+    /* --- SCREEN 2: HUB BUTTON --- */
+    .hub-btn {
+      position: absolute;
+      top: 4.2%;
+      right: 5%;
+      width: 36%;
+      max-width: 145px;
+      z-index: 15;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .hub-btn img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hub-btn:active {
+      transform: scale(0.94);
+    }
+
+    /* --- SCREEN 2: CARD SLIDER / CAROUSEL --- */
+    .cards-wrapper {
+      position: absolute;
+      top: 44.5%;
+      left: 0;
+      width: 100%;
+      height: 38%;
+      z-index: 12;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: pan-y;
+    }
+    .cards-track {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      perspective: 1000px;
+    }
+    .card-item {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 52%;
+      max-width: 220px;
+      height: 100%;
+      transform: translateX(-50%) scale(0.85);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
+      cursor: pointer;
+    }
+    .card-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 16px;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+    }
+    /* Active & Side Cards */
+    .card-item.active {
+      transform: translateX(-50%) scale(1.05);
+      opacity: 1;
+      z-index: 10;
+      pointer-events: auto;
+    }
+    .card-item.prev {
+      transform: translateX(-125%) scale(0.82);
+      opacity: 0.55;
+      z-index: 5;
+      pointer-events: auto;
+    }
+    .card-item.next {
+      transform: translateX(25%) scale(0.82);
+      opacity: 0.55;
+      z-index: 5;
+      pointer-events: auto;
+    }
+    .card-item:active img {
+      transform: scale(0.98);
+    }
+
+    /* --- SCREEN 2: DOT INDICATORS --- */
+    .dots-container {
+      position: absolute;
+      bottom: 14%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 15;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.7);
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+    .dot.active {
+      background: #d4af37;
+      border-color: #ffd700;
+      box-shadow: 0 0 10px #ffd700;
+      transform: scale(1.25);
     }
   </style>
 </head>
 <body>
 
-  <div class="app-screen">
-    <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
+  <div class="app-viewport">
     
-    <button class="cta-btn" onclick="alert('✨ VISTAROQ: Screen 01 Ready!')">
-      <span class="cta-text">CHOOSE YOUR VISTAROQ EXPERIENCE</span>
-      <span class="cta-arrow">→</span>
-    </button>
+    <!-- SCREEN 1: WELCOME -->
+    <div id="screen-1" class="screen active">
+      <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
+      <button class="cta-btn" onclick="goToScreen(2)">
+        <span class="cta-text">CHOOSE YOUR VISTAROQ EXPERIENCE</span>
+        <span class="cta-arrow">→</span>
+      </button>
+    </div>
+
+    <!-- SCREEN 2: EXPERIENCE CAROUSEL -->
+    <div id="screen-2" class="screen">
+      <img class="bg-img" src="img2.png" alt="VISTAROQ Experience" />
+
+      <!-- Top HUB Button -->
+      <div class="hub-btn" onclick="alert('⚡ VISTAROQ HUB Opened!')">
+        <img src="hub.png" alt="VISTAROQ HUB" />
+      </div>
+
+      <!-- Touch Swipable Cards -->
+      <div class="cards-wrapper" id="swipeArea">
+        <div class="cards-track">
+          <div class="card-item" onclick="onCardClick('NEST')">
+            <img src="nest.png" alt="NEST" />
+          </div>
+          <div class="card-item" onclick="onCardClick('CRAFT')">
+            <img src="craft.png" alt="CRAFT" />
+          </div>
+          <div class="card-item" onclick="onCardClick('LINK')">
+            <img src="link.png" alt="LINK" />
+          </div>
+          <div class="card-item" onclick="onCardClick('FORCE')">
+            <img src="force.png" alt="FORCE" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Dynamic Dots -->
+      <div class="dots-container">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
   </div>
 
+  <script>
+    let currentScreen = 1;
+    let currentCard = 0;
+    const cards = document.querySelectorAll('.card-item');
+    const dots = document.querySelectorAll('.dot');
+    const totalCards = cards.length;
+
+    function goToScreen(screenNumber) {
+      document.getElementById('screen-' + currentScreen).classList.remove('active');
+      document.getElementById('screen-' + screenNumber).classList.add('active');
+      currentScreen = screenNumber;
+      if (screenNumber === 2) updateCards();
+    }
+
+    function updateCards() {
+      cards.forEach((card, index) => {
+        card.className = 'card-item';
+        if (index === currentCard) {
+          card.classList.add('active');
+        } else if (index === (currentCard - 1 + totalCards) % totalCards) {
+          card.classList.add('prev');
+        } else if (index === (currentCard + 1) % totalCards) {
+          card.classList.add('next');
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentCard);
+      });
+    }
+
+    function nextCard() {
+      currentCard = (currentCard + 1) % totalCards;
+      updateCards();
+    }
+
+    function prevCard() {
+      currentCard = (currentCard - 1 + totalCards) % totalCards;
+      updateCards();
+    }
+
+    function onCardClick(name) {
+      alert('✨ Selected Experience: VISTAROQ ' + name);
+    }
+
+    // Touch Swipe Detection
+    const swipeArea = document.getElementById('swipeArea');
+    let startX = 0;
+    let endX = 0;
+
+    swipeArea.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    swipeArea.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) {
+          nextCard(); // Swiped Left
+        } else {
+          prevCard(); // Swiped Right
+        }
+      }
+    }, { passive: true });
+
+    // Initialize Cards
+    updateCards();
+  </script>
 </body>
 </html>
