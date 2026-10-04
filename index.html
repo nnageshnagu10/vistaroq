@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>VISTAROQ</title>
+
+  <!-- ========================================================
+       ULTRA-FAST PRELOAD ENGINE (ZERO QUALITY LOSS)
+       ======================================================== -->
+  <link rel="preload" as="image" href="welcome.png" />
+  <link rel="preload" as="image" href="img2.png" />
+  <link rel="preload" as="image" href="nest.png" />
+  <link rel="preload" as="image" href="craft.png" />
+  <link rel="preload" as="image" href="link.png" />
+  <link rel="preload" as="image" href="force.png" />
+  <link rel="preload" as="image" href="hub.png" />
+  <link rel="preload" as="image" href="img3.png" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -39,8 +52,9 @@
       height: 100%;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.35s ease-in-out;
       overflow: hidden;
+      will-change: opacity;
     }
     .screen.active {
       opacity: 1;
@@ -54,6 +68,8 @@
       top: 0;
       left: 0;
       z-index: 1;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
 
     /* --- SCREEN 1: WELCOME BUTTON --- */
@@ -146,6 +162,7 @@
       pointer-events: none;
       transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease;
       cursor: pointer;
+      will-change: transform, opacity;
     }
     .card-item img {
       width: 100%;
@@ -309,10 +326,10 @@
       font-weight: 600;
     }
 
-    /* REAL REFERENCE ARCH CARD: MOVED UPWARD CLOSER TO SOFA */
+    /* REAL REFERENCE ARCH CARD: Near Sofa & Floating Look */
     .login-card-container {
       position: absolute;
-      bottom: 50px; /* ಸೋಫಾಗೆ ಹತ್ತಿರವಾಗಿ ಮೇಲಕ್ಕೆ ಹೊಂದಿಸಲಾಗಿದೆ */
+      bottom: 50px;
       right: 3.5%;
       width: 71%;
       max-width: 300px;
@@ -320,11 +337,10 @@
       transition: bottom 0.2s ease;
     }
     .login-card {
-      /* Real Marble Glow & High Transparency */
       background: linear-gradient(175deg, rgba(255, 245, 230, 0.42) 0%, rgba(240, 222, 190, 0.32) 100%);
       backdrop-filter: blur(12px) saturate(140%);
       -webkit-backdrop-filter: blur(12px) saturate(140%);
-      border: 1.5px solid rgba(255, 255, 245, 0.65);
+      border: 1.5px solid rgba(255, 245, 220, 0.65);
       border-radius: 95px 95px 24px 24px;
       padding: 24px 16px 15px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.7);
@@ -652,6 +668,20 @@
   </div>
 
   <script>
+    // ========================================================
+    // INSTANT BACKGROUND MEMORY CACHE (Pre-warms GPU & RAM)
+    // ========================================================
+    const assetsToPreload = [
+      'welcome.png', 'img2.png', 'nest.png', 'craft.png',
+      'link.png', 'force.png', 'hub.png', 'img3.png'
+    ];
+    window.addEventListener('DOMContentLoaded', () => {
+      assetsToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    });
+
     let currentScreen = 1;
     let currentCard = 0;
     const cards = document.querySelectorAll('.card-item');
