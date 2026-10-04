@@ -835,7 +835,7 @@
     }
 
     /* ========================================================
-       SCREEN 6, 7 & 8 SHARED STYLES
+       SHARED NAVIGATION BUTTONS (SCREEN 6, 7, 8)
        ======================================================== */
     .screen-back-btn {
       position: absolute;
@@ -891,7 +891,7 @@
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     }
 
-    /* SCREEN 7: MEASURE YOUR SPACE (img6.png) */
+    /* SCREEN 7: Measure Methods Container */
     .measure-methods-container {
       position: absolute;
       top: 59.5%;
@@ -914,6 +914,28 @@
     .measure-card-hotspot:active {
       transform: scale(0.96);
       box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
+    }
+
+    /* ========================================================
+       SCREEN 8: LIVE SMART SPACE SCAN (img7.png)
+       ======================================================== */
+    .finish-process-hotspot {
+      position: absolute;
+      bottom: 2.8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 62%;
+      max-width: 250px;
+      height: 48px;
+      border-radius: 26px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.01);
+      z-index: 60;
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
+    }
+    .finish-process-hotspot:active {
+      transform: translateX(-50%) scale(0.96);
+      box-shadow: 0 0 24px rgba(76, 175, 80, 0.7);
     }
   </style>
 </head>
@@ -1140,7 +1162,6 @@
     <div id="screen-5" class="screen">
       <img class="bg-img" src="img4.png" alt="NEST Spaces Hub" />
 
-      <!-- Top Notification & Profile Bar -->
       <div class="top-header-actions">
         <div class="icon-circle-btn" onclick="alert('🔔 Notifications: You have 2 space updates.')" title="Notifications">
           <svg viewBox="0 0 24 24">
@@ -1157,13 +1178,11 @@
         </div>
       </div>
 
-      <!-- Action Hotspots -->
       <div class="hotspot-actions-container">
         <div class="hotspot-box" onclick="handleCreateNewSpace()" title="Create New Space"></div>
         <div class="hotspot-box" onclick="handleOpenMySpace()" title="Open My Space"></div>
       </div>
 
-      <!-- My Spaces Header -->
       <div class="spaces-section-header">
         <span class="section-title">My Spaces</span>
         <a class="view-all-link" href="javascript:void(0)" onclick="alert('✨ Opening All Spaces Directory')">
@@ -1172,10 +1191,7 @@
         </a>
       </div>
 
-      <!-- Enhanced Luxury Frosted Cards -->
       <div class="spaces-carousel-container" id="spacesCarousel">
-        
-        <!-- Card 1: Home Space -->
         <div class="space-glass-card" onclick="alert('🏡 Opening Home Space (Bangalore)')">
           <div class="card-thumb-wrap">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Home Space" />
@@ -1201,7 +1217,6 @@
           </div>
         </div>
 
-        <!-- Card 2: Office Space -->
         <div class="space-glass-card" onclick="alert('🏢 Opening Office Space (Bengaluru)')">
           <div class="card-thumb-wrap">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Office Space" />
@@ -1227,7 +1242,6 @@
           </div>
         </div>
 
-        <!-- Card 3: Commercial Space -->
         <div class="space-glass-card" onclick="alert('🏬 Opening Commercial Space (Mysuru)')">
           <div class="card-thumb-wrap">
             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" alt="Commercial Space" />
@@ -1252,12 +1266,9 @@
             </div>
           </div>
         </div>
-
       </div>
 
-      <!-- Floating Glass Bottom Navigation Bar -->
       <div class="floating-bottom-bar">
-        
         <div class="nav-tab-item active" onclick="switchNavTab(this, 'My Spaces')">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
           <span class="nav-tab-label">My Spaces</span>
@@ -1283,7 +1294,6 @@
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
-
       </div>
     </div>
 
@@ -1291,22 +1301,16 @@
     <div id="screen-6" class="screen">
       <img class="bg-img" src="img5.png" alt="Create Your Space Portals" />
 
-      <!-- Back Arrow to Dashboard -->
       <button class="screen-back-btn" onclick="goToScreen(5)" title="Back to Spaces Hub">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <!-- 4 Category Portal Click Targets -->
       <div class="portals-container">
-        <!-- 1. Home Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('HOME SPACE')" title="Select Home Space"></div>
-        <!-- 2. Office Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('OFFICE SPACE')" title="Select Office Space"></div>
-        <!-- 3. Commercial Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('COMMERCIAL SPACE')" title="Select Commercial Space"></div>
-        <!-- 4. Other Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('OTHER SPACE')" title="Select Other Space"></div>
       </div>
     </div>
@@ -1315,20 +1319,15 @@
     <div id="screen-7" class="screen">
       <img class="bg-img" src="img6.png" alt="Measure Your Space" />
 
-      <!-- Back Arrow to Screen 6 (Portals) -->
       <button class="screen-back-btn" onclick="goToScreen(6)" title="Back to Portals">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <!-- 3 Measurement Method Hotspot Cards -->
       <div class="measure-methods-container">
-        <!-- 1. SCAN WITH CAMERA -->
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('SCAN WITH CAMERA')" title="Scan With Camera"></div>
-        <!-- 2. ENTER MANUALLY -->
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('ENTER MANUALLY')" title="Enter Manually"></div>
-        <!-- 3. UPLOAD FLOOR PLAN -->
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('UPLOAD FLOOR PLAN')" title="Upload Floor Plan"></div>
       </div>
     </div>
@@ -1337,12 +1336,13 @@
     <div id="screen-8" class="screen">
       <img class="bg-img" src="img7.png" alt="Live Smart Space Scan" />
 
-      <!-- Back Arrow to Screen 7 (Measure Your Space) -->
-      <button class="screen-back-btn" onclick="goToScreen(7)" title="Back to Measurement Options">
+      <button class="screen-back-btn" onclick="goToScreen(7)" title="Back to Measure Screen">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
+
+      <div class="finish-process-hotspot" onclick="handleFinishProcess()" title="Finish & Process 3D Model"></div>
     </div>
 
   </div>
@@ -1401,156 +1401,17 @@
     }
 
     function prevCard() {
-      currentCard = (currentCard - 1 + totalCards) % totalCards;
-      updateCards();
-    }
+      currentCardಖಂಡಿತ ನಾಗು ಅವರೇ! ನಿಮ್ಮ ಲೇಟೆಸ್ಟ್ ಇಮೇಜ್ ಆದ **`img7.png` (Live Smart Space Scan)** ಅನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಇಂಟಿಗ್ರೇಟ್ ಮಾಡಿ ಕೆಳಗೆ ಕೋಡ್ ನೀಡಲಾಗಿದೆ.
 
-    function onCardClick(name) {
-      if (name === 'NEST') {
-        goToScreen(3);
-      } else {
-        alert('✨ Selected Experience: VISTAROQ ' + name);
-      }
-    }
+ಈ ಅಪ್‌ಡೇಟ್‌ನಲ್ಲಿ ಮಾಡಲಾದ ಬದಲಾವಣೆಗಳು:
+1. **ಅಲ್ಟ್ರಾ-ಫಾಸ್ಟ್ ಪ್ರೀಲೋಡ್:** `img7.png` ಅನ್ನು ಪ್ರೀಲೋಡ್ ಪಟ್ಟಿಗೆ ಸೇರಿಸಲಾಗಿದೆ.
+2. **ನ್ಯಾವಿಗೇಷನ್ ಕನೆಕ್ಟಿವಿಟಿ:** Screen 7 (Measure Your Space) ನಲ್ಲಿ **`SCAN WITH CAMERA`** ಮುಟ್ಟಿದ ತಕ್ಷಣ ನೇರವಾಗಿ ಈ ಹೊಸ **Screen 8 (`img7.png`)** ತೆರೆದುಕೊಳ್ಳುತ್ತದೆ.
+3. **ಸ್ಕ್ರೀನ್ 8 ಇಂಟರ್ಯಾಕ್ಷನ್ಸ್:**
+   - ಎಡ ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ `←` ಬ್ಯಾಕ್ ಬಟನ್ ಒತ್ತಿದರೆ ವಾಪಸ್ ಮೆಷರ್ಮೆಂಟ್ ಸ್ಕ್ರೀನ್‌ಗೆ ಹೋಗುತ್ತದೆ.
+   - ಕೆಳಗಿನ **`FINISH & PROCESS →`** ಬಟನ್ ಮೇಲೆ ಇಂಟರ್ಯಾಕ್ಟಿವ್ ಗೋಲ್ಡನ್ ಹಾಟ್‌ಸ್ಪಾಟ್ ಕುಳ್ಳಿರಿಸಲಾಗಿದ್ದು, ಅದು ಮುಂದಿನ ಹಂತವಾದ *Space Understanding* ಗೆ ಕರೆದೊಯ್ಯಲು ಸಿದ್ಧವಾಗಿದೆ.
 
-    // Touch Swipe Detection for Carousel (Screen 2)
-    const swipeArea = document.getElementById('swipeArea');
-    let startX = 0;
-    let endX = 0;
+---
 
-    swipeArea.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    }, { passive: true });
-
-    swipeArea.addEventListener('touchend', (e) => {
-      endX = e.changedTouches[0].clientX;
-      const diffX = startX - endX;
-      if (Math.abs(diffX) > 35) {
-        if (diffX > 0) nextCard();
-        else prevCard();
-      }
-    }, { passive: true });
-
-    function togglePasswordVisibility(fieldId) {
-      const field = document.getElementById(fieldId);
-      field.type = (field.type === 'password') ? 'text' : 'password';
-    }
-
-    function handleSignIn() {
-      const user = document.getElementById('userIdentifier').value.trim();
-      const pass = document.getElementById('userPassword').value.trim();
-      if (!user) { alert('Please enter your Email or Mobile Number.'); return; }
-      if (!pass) { alert('Please enter your Password.'); return; }
-      goToScreen(5);
-    }
-
-    function handleSignUp() {
-      const name = document.getElementById('regFullName').value.trim();
-      const identifier = document.getElementById('regIdentifier').value.trim();
-      const pass = document.getElementById('regPassword').value.trim();
-      const confirmPass = document.getElementById('regConfirmPassword').value.trim();
-      const terms = document.getElementById('regTerms').checked;
-
-      if (!name) { alert('Please enter your Full Name.'); return; }
-      if (!identifier) { alert('Please enter your Email or Mobile Number.'); return; }
-      if (!pass) { alert('Please create a Password.'); return; }
-      if (pass !== confirmPass) { alert('Passwords do not match!'); return; }
-      if (!terms) { alert('Please agree to the Terms of Service & Privacy Policy.'); return; }
-
-      alert('🎉 Welcome to VISTAROQ NEST, ' + name + '!');
-      goToScreen(5);
-    }
-
-    function handleCreateNewSpace() {
-      goToScreen(6);
-    }
-
-    function handleOpenMySpace() {
-      alert('📂 OPEN MY SPACE: Loading your existing projects...');
-    }
-
-    // Portal Category Selection -> Navigates to Screen 7 (Measure Your Space)
-    function selectSpaceCategory(category) {
-      selectedCategory = category;
-      goToScreen(7);
-    }
-
-    // Measurement Method Handler -> SCAN WITH CAMERA opens Screen 8 (img7.png)
-    function handleMeasureMethod(method) {
-      if (method === 'SCAN WITH CAMERA') {
-        goToScreen(8);
-      } else {
-        alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
-      }
-    }
-
-    function switchNavTab(tabElement, tabName) {
-      document.querySelectorAll('.nav-tab-item').forEach(tab => {
-        tab.classList.remove('active');
-        const pill = tab.querySelector('.tab-active-pill');
-        if (pill) pill.remove();
-      });
-      tabElement.classList.add('active');
-      const pill = document.createElement('div');
-      pill.className = 'tab-active-pill';
-      tabElement.appendChild(pill);
-    }
-
-    const languages = [
-      { group: 'Indian Languages', list: [
-        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'हिन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
-        { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
-        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿଆ', code: 'OR' }
-      ]},
-      { group: 'International Languages', list: [
-        { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
-        { name: 'Deutsch', code: 'DE' }, { name: 'العربية', code: 'AR' }, { name: '日本語', code: 'JA' },
-        { name: '한국어', code: 'KO' }, { name: '中文 (简体)', code: 'ZH' }, { name: 'Русский', code: 'RU' },
-        { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' },
-        { name: 'Bahasa Indo', code: 'ID' }, { name: 'Nederlands', code: 'NL' }, { name: 'Svenska', code: 'SV' },
-        { name: 'Polski', code: 'PL' }, { name: 'Tiếng Việt', code: 'VI' }, { name: 'ภาษาไทย', code: 'TH' },
-        { name: 'Ελληνικά', code: 'EL' }, { name: 'עבריತ', code: 'HE' }
-      ]}
-    ];
-
-    function initLanguageMenus() {
-      ['langMenuLogin', 'langMenuSignup'].forEach(menuId => {
-        const menu = document.getElementById(menuId);
-        if (!menu) return;
-        let html = '';
-        languages.forEach(cat => {
-          html += `<div class="lang-group-header">${cat.group}</div>`;
-          cat.list.forEach(l => {
-            const activeClass = l.name === 'English' ? 'active' : '';
-            html += `<div class="lang-item ${activeClass}" onclick="selectLanguage('${l.name}')">${l.name} <span>${l.code}</span></div>`;
-          });
-        });
-        menu.innerHTML = html;
-      });
-    }
-
-    function toggleLangMenu(e, menuId) {
-      e.stopPropagation();
-      const targetMenu = document.getElementById(menuId);
-      document.querySelectorAll('.lang-menu').forEach(m => {
-        if (m !== targetMenu) m.classList.remove('show');
-      });
-      targetMenu.classList.toggle('show');
-    }
-
-    function selectLanguage(lang) {
-      document.querySelectorAll('.selectedLangText').forEach(el => el.innerText = lang);
-      document.querySelectorAll('.lang-item').forEach(item => {
-        item.classList.toggle('active', item.innerText.includes(lang));
-      });
-      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
-    }
-
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
-    });
-
-    updateCards();
-  </script>
-</body>
-</html>
+### 1. GitHub Edit Link (Copy ಮಾಡಿಕೊಳ್ಳಿ):
+```text
+[https://github.com/nnageshnagu10/vistaroq/edit/main/index.html](https://github.com/nnageshnagu10/vistaroq/edit/main/index.html)
