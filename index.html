@@ -200,129 +200,186 @@
     }
 
     /* =========================================
-       SCREEN 3: NEST LOGIN UI
+       SCREEN 3: REFINED LUXURY NEST LOGIN UI
        ========================================= */
     .nest-nav {
       position: absolute;
-      top: 3.5%;
+      top: 2%;
       left: 0;
       width: 100%;
-      padding: 0 18px;
+      padding: 0 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 20;
+      z-index: 30;
     }
-    .back-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    /* Clean Minimalist Luxury Back Arrow */
+    .clean-back-arrow {
+      background: transparent;
+      border: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 600;
+      padding: 6px;
+      color: #ffffff;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8));
       transition: transform 0.15s ease;
     }
-    .back-btn:active {
-      transform: scale(0.92);
+    .clean-back-arrow svg {
+      width: 24px;
+      height: 24px;
+      stroke: #ffffff;
+      stroke-width: 2.2;
     }
-    .lang-btn {
+    .clean-back-arrow:active {
+      transform: scale(0.9);
+    }
+
+    /* Global Language Dropdown Container */
+    .lang-dropdown-wrapper {
+      position: relative;
+    }
+    .lang-pill-btn {
       display: flex;
       align-items: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
       padding: 6px 14px;
-      border-radius: 20px;
+      border-radius: 22px;
       color: #1a1a1a;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     }
-    .lang-globe {
-      font-size: 13px;
+    .lang-pill-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #333;
+      stroke-width: 1.8;
+    }
+    .lang-menu {
+      position: absolute;
+      top: 38px;
+      right: 0;
+      width: 160px;
+      max-height: 220px;
+      overflow-y: auto;
+      background: rgba(20, 24, 30, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      display: none;
+      z-index: 100;
+    }
+    .lang-menu.show {
+      display: block;
+    }
+    .lang-item {
+      padding: 9px 14px;
+      font-size: 12px;
+      color: #e5e5e5;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: background 0.15s ease;
+    }
+    .lang-item:hover, .lang-item.active {
+      background: rgba(212, 175, 55, 0.25);
+      color: #ffd700;
     }
 
-    /* Floating Marble/Frosted Login Card */
+    /* Authentic Frosted Marble Floating Card */
     .login-card-container {
       position: absolute;
-      bottom: 24px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 88%;
-      max-width: 360px;
-      z-index: 20;
+      width: 90%;
+      max-width: 375px;
+      z-index: 25;
     }
     .login-card {
-      background: rgba(255, 250, 240, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1.5px solid rgba(255, 225, 175, 0.7);
-      border-radius: 36px;
-      padding: 24px 22px 20px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+      /* Realistic Ultra-Glassmorphism Matching img2 reference */
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(245, 238, 220, 0.35) 100%);
+      backdrop-filter: blur(28px) saturate(160%);
+      -webkit-backdrop-filter: blur(28px) saturate(160%);
+      border: 1.2px solid rgba(255, 245, 225, 0.65);
+      border-radius: 34px;
+      padding: 20px 22px 18px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.8);
       text-align: center;
     }
     .card-title {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: #1a1a1a;
+      color: #111;
       text-transform: uppercase;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .card-subtitle {
-      font-size: 11px;
-      color: #555;
+      font-size: 10.5px;
+      color: #333;
+      font-weight: 500;
       line-height: 1.35;
-      margin-bottom: 16px;
-      padding: 0 10px;
+      margin-bottom: 15px;
+      padding: 0 6px;
     }
 
-    /* Inputs */
+    /* Clean Frosted Inputs */
     .input-field {
       position: relative;
-      margin-bottom: 11px;
+      margin-bottom: 10px;
       width: 100%;
     }
-    .input-icon {
+    .input-icon-svg {
       position: absolute;
       left: 14px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 14px;
-      color: #777;
+      width: 15px;
+      height: 15px;
+      stroke: #555;
+      fill: none;
+      stroke-width: 1.8;
     }
     .text-input {
       width: 100%;
-      height: 42px;
+      height: 40px;
       padding: 0 38px 0 38px;
-      border-radius: 22px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.8);
       font-size: 12px;
-      color: #1a1a1a;
+      color: #111;
       transition: all 0.2s ease;
     }
-    .text-input:focus {
-      border-color: #d4af37;
-      box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+    .text-input::placeholder {
+      color: #666;
     }
-    .toggle-pass {
+    .text-input:focus {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: #d4af37;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    }
+    .toggle-pass-btn {
       position: absolute;
-      right: 14px;
+      right: 13px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 14px;
-      color: #777;
+      width: 16px;
+      height: 16px;
+      stroke: #555;
+      fill: none;
+      stroke-width: 1.8;
       cursor: pointer;
     }
 
@@ -331,14 +388,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
-      margin: 9px 4px 14px;
+      font-size: 10.5px;
+      margin: 8px 4px 13px;
     }
     .remember-me {
       display: flex;
       align-items: center;
-      gap: 6px;
-      color: #444;
+      gap: 5px;
+      color: #222;
+      font-weight: 500;
       cursor: pointer;
     }
     .remember-me input {
@@ -347,26 +405,26 @@
     .forgot-link {
       color: #8c6a21;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* Buttons */
+    /* Sign In Button */
     .signin-btn {
       width: 100%;
-      height: 44px;
-      border-radius: 22px;
-      border: none;
-      background: linear-gradient(135deg, #f7e2a9 0%, #d8b056 50%, #b8860b 100%);
+      height: 42px;
+      border-radius: 21px;
+      border: 1px solid rgba(255, 235, 175, 0.6);
+      background: linear-gradient(135deg, #f7e09e 0%, #dbaf4f 50%, #b8840b 100%);
       color: #1a1a1a;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(184, 134, 11, 0.35);
+      gap: 6px;
+      box-shadow: 0 5px 18px rgba(184, 134, 11, 0.38);
       transition: transform 0.15s ease;
     }
     .signin-btn:active {
@@ -377,10 +435,10 @@
       display: flex;
       align-items: center;
       text-align: center;
-      margin: 11px 0;
-      color: #777;
-      font-size: 10px;
-      font-weight: 600;
+      margin: 9px 0;
+      color: #555;
+      font-size: 9.5px;
+      font-weight: 700;
     }
     .divider::before, .divider::after {
       content: '';
@@ -391,21 +449,22 @@
       padding: 0 8px;
     }
 
+    /* Create Account Button */
     .create-btn {
       width: 100%;
-      height: 42px;
-      border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      background: rgba(255, 255, 255, 0.95);
+      height: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       color: #1a1a1a;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      gap: 6px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
       transition: transform 0.15s ease;
     }
     .create-btn:active {
@@ -459,58 +518,99 @@
       </div>
     </div>
 
-    <!-- SCREEN 3: NEST LOGIN -->
+    <!-- SCREEN 3: REFINED NEST LOGIN -->
     <div id="screen-3" class="screen">
       <img class="bg-img" src="img3.png" alt="NEST Login Experience" />
 
-      <!-- Top Navigation -->
+      <!-- Top Minimal Navigation -->
       <div class="nest-nav">
-        <button class="back-btn" onclick="goToScreen(2)">‹</button>
-        <button class="lang-btn" onclick="toggleLang()">
-          <span class="lang-globe">🌐</span>
-          <span id="langLabel">English</span>
-          <span style="font-size: 10px; margin-left: 2px;">▼</span>
+        <!-- Clean Luxury Back Arrow -->
+        <button class="clean-back-arrow" onclick="goToScreen(2)" title="Back">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
+
+        <!-- Global Multi-Language Selector -->
+        <div class="lang-dropdown-wrapper">
+          <button class="lang-pill-btn" onclick="toggleLangMenu(event)">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span id="selectedLangText">English</span>
+            <span style="font-size: 8px; color: #555; margin-left: 2px;">▼</span>
+          </button>
+          
+          <div class="lang-menu" id="langMenu">
+            <div class="lang-item active" onclick="selectLanguage('English')">English</div>
+            <div class="lang-item" onclick="selectLanguage('ಕನ್ನಡ')">ಕನ್ನಡ (Kannada)</div>
+            <div class="lang-item" onclick="selectLanguage('हिन्दी')">हिन्दी (Hindi)</div>
+            <div class="lang-item" onclick="selectLanguage('Español')">Español (Spanish)</div>
+            <div class="lang-item" onclick="selectLanguage('Français')">Français (French)</div>
+            <div class="lang-item" onclick="selectLanguage('Deutsch')">Deutsch (German)</div>
+            <div class="lang-item" onclick="selectLanguage('العربية')">العربية (Arabic)</div>
+            <div class="lang-item" onclick="selectLanguage('日本語')">日本語 (Japanese)</div>
+          </div>
+        </div>
       </div>
 
-      <!-- Floating Marble Login Card -->
+      <!-- Luxury Frosted Marble Floating Card -->
       <div class="login-card-container">
         <div class="login-card">
           <div class="card-title">VISTAROQ IDENTITY</div>
           <div class="card-subtitle">Sign in to access your spaces, projects and everything you love.</div>
 
+          <!-- Email / Phone Input -->
           <div class="input-field">
-            <span class="input-icon">✉</span>
+            <svg class="input-icon-svg" viewBox="0 0 24 24">
+              <rect x="3" y="5" width="18" height="14" rx="3"/>
+              <path d="M3 7l9 6 9-6"/>
+            </svg>
             <input type="text" class="text-input" placeholder="Email or Mobile Number" id="userIdentifier" />
           </div>
 
+          <!-- Password Input -->
           <div class="input-field">
-            <span class="input-icon">🔒</span>
+            <svg class="input-icon-svg" viewBox="0 0 24 24">
+              <rect x="5" y="11" width="14" height="10" rx="2"/>
+              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+            </svg>
             <input type="password" class="text-input" placeholder="Password" id="userPassword" />
-            <span class="toggle-pass" onclick="togglePasswordVisibility()">👁</span>
+            
+            <svg class="toggle-pass-btn" id="eyeIcon" viewBox="0 0 24 24" onclick="togglePasswordVisibility()">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
           </div>
 
+          <!-- Keep me signed in & Forgot Password -->
           <div class="options-row">
             <label class="remember-me">
               <input type="checkbox" id="rememberMe" checked />
               <span>Keep me signed in</span>
             </label>
-            <a href="javascript:void(0)" class="forgot-link" onclick="alert('Password reset link will be sent.')">Forgot Password?</a>
+            <a href="javascript:void(0)" class="forgot-link" onclick="alert('Password reset link will be sent to your email/phone.')">Forgot Password?</a>
           </div>
 
+          <!-- Sign In Button -->
           <button class="signin-btn" onclick="handleSignIn()">
             <span>Sign In</span>
-            <span>→</span>
+            <span style="font-size: 15px;">→</span>
           </button>
 
           <div class="divider">
             <span>OR</span>
           </div>
 
+          <!-- Create Account Button -->
           <button class="create-btn" onclick="alert('Creating new VISTAROQ account...')">
-            <span>👤</span>
+            <svg style="width: 14px; height: 14px; stroke: #333; fill: none; stroke-width: 1.8;" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
             <span>Create an Account</span>
-            <span>→</span>
+            <span style="font-size: 14px; margin-left: 2px;">→</span>
           </button>
         </div>
       </div>
@@ -561,7 +661,7 @@
 
     function onCardClick(name) {
       if (name === 'NEST') {
-        goToScreen(3); // Screen 2 ರಿಂದ Screen 3 (NEST Login) ಗೆ ಹೋಗುತ್ತದೆ
+        goToScreen(3);
       } else {
         alert('✨ Selected Experience: VISTAROQ ' + name);
       }
@@ -602,24 +702,36 @@
       const user = document.getElementById('userIdentifier').value.trim();
       const pass = document.getElementById('userPassword').value.trim();
       if (!user) {
-        alert('ದಯವಿಟ್ಟು Email ಅಥವಾ Mobile Number ನಮೂದಿಸಿ.');
+        alert('Please enter your Email or Mobile Number.');
         return;
       }
       if (!pass) {
-        alert('ದಯವಿಟ್ಟು Password ನಮೂದಿಸಿ.');
+        alert('Please enter your Password.');
         return;
       }
-      alert('✨ Welcome to VISTAROQ NEST Dashboard!\nUser: ' + user);
+      alert('✨ Welcome to VISTAROQ NEST!\nUser: ' + user);
     }
 
-    function toggleLang() {
-      const label = document.getElementById('langLabel');
-      if (label.innerText === 'English') {
-        label.innerText = 'ಕನ್ನಡ';
-      } else {
-        label.innerText = 'English';
-      }
+    // Multi-Language Dropdown
+    function toggleLangMenu(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('langMenu');
+      menu.classList.toggle('show');
     }
+
+    function selectLanguage(lang) {
+      document.getElementById('selectedLangText').innerText = lang;
+      document.querySelectorAll('.lang-item').forEach(item => {
+        item.classList.toggle('active', item.innerText.includes(lang));
+      });
+      document.getElementById('langMenu').classList.remove('show');
+    }
+
+    // Close menu when clicked outside
+    document.addEventListener('click', () => {
+      const menu = document.getElementById('langMenu');
+      if (menu) menu.classList.remove('show');
+    });
 
     updateCards();
   </script>
