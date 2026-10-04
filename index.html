@@ -17,38 +17,39 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      min-height: 100dvh;
       overflow: hidden;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     .app-screen {
       width: 100vw;
-      max-width: 450px;
+      max-width: 430px;
       height: 100vh;
+      height: 100dvh;
       position: relative;
       background-color: #090b0e;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
     .bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      /* object-fit ಅನ್ನು contain ಮಾಡಿರುವುದರಿಂದ ಇಮೇಜ್ ಕಟ್ ಆಗದೆ ಪೂರ್ತಿ ಸ್ಕ್ರೀನ್‌ಗೆ ಫಿಟ್ ಆಗುತ್ತದೆ */
-      object-fit: contain;
-      object-position: center;
       z-index: 1;
     }
-    /* ಬಟನ್ ಅನ್ನು ಈಗ ಸರಿಯಾದ ಜಾಗದಲ್ಲಿ (ಐಕಾನ್‌ಗಳಿಗಿಂತ ಸ್ವಲ್ಪ ಮೇಲೆ) ಕೂರಿಸಲಾಗಿದೆ */
+    /* Button annu icons gintha mele neetagi koodiside */
     .cta-btn {
       position: absolute;
-      bottom: 8.5%;
-      left: 8%;
-      width: 84%;
+      bottom: 82px;
+      width: 86%;
       height: 48px;
-      border-radius: 28px;
+      border-radius: 26px;
       border: 1.5px solid #d4af37;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
@@ -61,27 +62,23 @@
       transition: all 0.2s ease;
     }
     .cta-text {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       letter-spacing: 1.2px;
       color: #1a1a1a;
       text-transform: uppercase;
-      margin-right: 12px;
+      margin-right: 10px;
       white-space: nowrap;
     }
     .cta-arrow {
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       color: #b8860b;
       line-height: 1;
-      transition: transform 0.2s ease;
     }
     .cta-btn:active {
       transform: scale(0.97);
-      background: rgba(255, 255, 255, 1);
-    }
-    .cta-btn:active .cta-arrow {
-      transform: translateX(3px);
+      background: #ffffff;
     }
   </style>
 </head>
@@ -90,7 +87,6 @@
   <div class="app-screen">
     <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
     
-    <!-- ಪ್ರೀಮಿಯಂ ಗೋಲ್ಡನ್ ಬಟನ್ -->
     <button class="cta-btn" onclick="alert('✨ VISTAROQ: Screen 01 Ready!')">
       <span class="cta-text">CHOOSE YOUR VISTAROQ EXPERIENCE</span>
       <span class="cta-arrow">→</span>
