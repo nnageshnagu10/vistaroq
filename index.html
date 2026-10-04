@@ -18,6 +18,7 @@
   <link rel="preload" as="image" href="img3.png" />
   <link rel="preload" as="image" href="img3a.png" />
   <link rel="preload" as="image" href="img4.png" />
+  <link rel="preload" as="image" href="img5.png" />
 
   <style>
     * {
@@ -519,7 +520,7 @@
     }
 
     /* ========================================================
-       SCREEN 5: NEST SPACES HUB - REFINED ARCHITECTURAL LUXURY
+       SCREEN 5: NEST SPACES HUB
        ======================================================== */
     .top-header-actions {
       position: absolute;
@@ -591,7 +592,6 @@
       box-shadow: 0 0 16px rgba(255, 215, 0, 0.5);
     }
 
-    /* REFINED: My Spaces Header Placed Correctly with Gold Accents */
     .spaces-section-header {
       position: absolute;
       top: 68%;
@@ -630,7 +630,6 @@
       transform: scale(0.96);
     }
 
-    /* REFINED: Luxury Frosted Glass Cards with Matching Marble Reflections */
     .spaces-carousel-container {
       position: absolute;
       top: 72%;
@@ -772,7 +771,6 @@
       font-size: 7px;
     }
 
-    /* REFINED: Floating Glass Bottom Navigation Bar */
     .floating-bottom-bar {
       position: absolute;
       bottom: env(safe-area-inset-bottom, 10px);
@@ -832,6 +830,63 @@
       background: #ffd700;
       border-radius: 2px;
       box-shadow: 0 0 6px #ffd700;
+    }
+
+    /* ========================================================
+       SCREEN 6: CREATE YOUR SPACE PORTALS (img5.png)
+       ======================================================== */
+    .screen-back-btn {
+      position: absolute;
+      top: env(safe-area-inset-top, 2%);
+      left: 4%;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 60;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.15s ease;
+    }
+    .screen-back-btn:active {
+      transform: scale(0.9);
+    }
+    .screen-back-btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+      stroke-width: 2.2;
+    }
+
+    /* 4 Interactive Portal Click Areas */
+    .portals-container {
+      position: absolute;
+      top: 42%;
+      left: 2%;
+      width: 96%;
+      height: 34%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5%;
+      z-index: 50;
+    }
+    .portal-hotspot {
+      flex: 1;
+      height: 100%;
+      border-radius: 40px 40px 18px 18px;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.01);
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
+    }
+    .portal-hotspot:active {
+      transform: scale(0.96);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     }
   </style>
 </head>
@@ -927,7 +982,7 @@
             <input type="password" class="text-input" placeholder="Password" id="userPassword" />
             <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('userPassword')">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
+              <circle cx="12" cy="3"/>
             </svg>
           </div>
 
@@ -1014,7 +1069,7 @@
             <input type="password" class="text-input" placeholder="Create Password" id="regPassword" />
             <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regPassword')">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
+              <circle cx="12" cy="3"/>
             </svg>
           </div>
 
@@ -1026,7 +1081,7 @@
             <input type="password" class="text-input" placeholder="Confirm Password" id="regConfirmPassword" />
             <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regConfirmPassword')">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
+              <circle cx="12" cy="3"/>
             </svg>
           </div>
 
@@ -1054,7 +1109,7 @@
       </div>
     </div>
 
-    <!-- SCREEN 5: NEST SPACES HUB / DASHBOARD (img4.png) -->
+    <!-- SCREEN 5: NEST SPACES HUB (img4.png) -->
     <div id="screen-5" class="screen">
       <img class="bg-img" src="img4.png" alt="NEST Spaces Hub" />
 
@@ -1081,7 +1136,7 @@
         <div class="hotspot-box" onclick="handleOpenMySpace()" title="Open My Space"></div>
       </div>
 
-      <!-- My Spaces Header Placed with Enhanced Visibility -->
+      <!-- My Spaces Header -->
       <div class="spaces-section-header">
         <span class="section-title">My Spaces</span>
         <a class="view-all-link" href="javascript:void(0)" onclick="alert('✨ Opening All Spaces Directory')">
@@ -1090,7 +1145,7 @@
         </a>
       </div>
 
-      <!-- Enhanced Luxury Frosted Cards Matching Background Tone -->
+      <!-- Enhanced Luxury Frosted Cards -->
       <div class="spaces-carousel-container" id="spacesCarousel">
         
         <!-- Card 1: Home Space -->
@@ -1205,6 +1260,30 @@
       </div>
     </div>
 
+    <!-- SCREEN 6: CREATE YOUR SPACE PORTALS (img5.png) -->
+    <div id="screen-6" class="screen">
+      <img class="bg-img" src="img5.png" alt="Create Your Space Portals" />
+
+      <!-- Back Arrow to Dashboard -->
+      <button class="screen-back-btn" onclick="goToScreen(5)" title="Back to Spaces Hub">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- 4 Category Portal Click Targets -->
+      <div class="portals-container">
+        <!-- 1. Home Space -->
+        <div class="portal-hotspot" onclick="selectSpaceCategory('HOME SPACE')" title="Select Home Space"></div>
+        <!-- 2. Office Space -->
+        <div class="portal-hotspot" onclick="selectSpaceCategory('OFFICE SPACE')" title="Select Office Space"></div>
+        <!-- 3. Commercial Space -->
+        <div class="portal-hotspot" onclick="selectSpaceCategory('COMMERCIAL SPACE')" title="Select Commercial Space"></div>
+        <!-- 4. Other Space -->
+        <div class="portal-hotspot" onclick="selectSpaceCategory('OTHER SPACE')" title="Select Other Space"></div>
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -1213,7 +1292,8 @@
     // ========================================================
     const assetsToPreload = [
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
-      'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png', 'img4.png'
+      'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
+      'img4.png', 'img5.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
@@ -1319,12 +1399,22 @@
       goToScreen(5);
     }
 
+    // Navigate to Screen 6 on "CREATE NEW SPACE"
     function handleCreateNewSpace() {
-      alert('✨ CREATE NEW SPACE: Start a new space journey and bring your vision to life.');
+      goToScreen(6);
     }
 
     function handleOpenMySpace() {
-      alert('📂 OPEN MY SPACE: Continue working on your existing spaces.');
+      alert('📂 OPEN MY SPACE: Loading your existing projects...');
+    }
+
+    // Portal Category Selection
+    function selectSpaceCategory(category) {
+      if (category === 'HOME SPACE') {
+        alert('🏡 HOME SPACE SELECTED: Initializing Space Scanning & Architecture Workflow...');
+      } else {
+        alert('✨ Selected: ' + category + ' (Launching Workflow Engine)');
+      }
     }
 
     function switchNavTab(tabElement, tabName) {
@@ -1342,7 +1432,7 @@
     const languages = [
       { group: 'Indian Languages', list: [
         { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'हिन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
-        { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'मराठी', code: 'MR' },
+        { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
         { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓଡ଼ିଆ', code: 'OR' }
       ]},
       { group: 'International Languages', list: [
