@@ -20,6 +20,7 @@
   <link rel="preload" as="image" href="img4.png" />
   <link rel="preload" as="image" href="img5.png" />
   <link rel="preload" as="image" href="img6.png" />
+  <link rel="preload" as="image" href="img7.png" />
 
   <style>
     * {
@@ -834,7 +835,7 @@
     }
 
     /* ========================================================
-       SCREEN 6 & SCREEN 7 SHARED STYLES
+       SCREEN 6, 7 & 8 SHARED STYLES
        ======================================================== */
     .screen-back-btn {
       position: absolute;
@@ -890,9 +891,7 @@
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     }
 
-    /* ========================================================
-       SCREEN 7: MEASURE YOUR SPACE (img6.png)
-       ======================================================== */
+    /* SCREEN 7: MEASURE YOUR SPACE (img6.png) */
     .measure-methods-container {
       position: absolute;
       top: 59.5%;
@@ -1334,6 +1333,18 @@
       </div>
     </div>
 
+    <!-- SCREEN 8: LIVE SMART SPACE SCAN (img7.png) -->
+    <div id="screen-8" class="screen">
+      <img class="bg-img" src="img7.png" alt="Live Smart Space Scan" />
+
+      <!-- Back Arrow to Screen 7 (Measure Your Space) -->
+      <button class="screen-back-btn" onclick="goToScreen(7)" title="Back to Measurement Options">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
   </div>
 
   <script>
@@ -1343,7 +1354,7 @@
     const assetsToPreload = [
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
       'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
-      'img4.png', 'img5.png', 'img6.png'
+      'img4.png', 'img5.png', 'img6.png', 'img7.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
@@ -1464,9 +1475,13 @@
       goToScreen(7);
     }
 
-    // Measurement Method Handler
+    // Measurement Method Handler -> SCAN WITH CAMERA opens Screen 8 (img7.png)
     function handleMeasureMethod(method) {
-      alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
+      if (method === 'SCAN WITH CAMERA') {
+        goToScreen(8);
+      } else {
+        alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
+      }
     }
 
     function switchNavTab(tabElement, tabName) {
@@ -1494,7 +1509,7 @@
         { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' },
         { name: 'Bahasa Indo', code: 'ID' }, { name: 'Nederlands', code: 'NL' }, { name: 'Svenska', code: 'SV' },
         { name: 'Polski', code: 'PL' }, { name: 'Tiếng Việt', code: 'VI' }, { name: 'ภาษาไทย', code: 'TH' },
-        { name: 'Ελληνικά', code: 'EL' }, { name: 'עברית', code: 'HE' }
+        { name: 'Ελληνικά', code: 'EL' }, { name: 'עבריತ', code: 'HE' }
       ]}
     ];
 
