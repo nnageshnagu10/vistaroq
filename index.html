@@ -41,18 +41,20 @@
       left: 0;
       z-index: 1;
     }
-    /* Button annu icons gintha mele neetagi koodiside */
+    /* ಬಟನ್ ಅಗಲವನ್ನು ಕಡಿಮೆ ಮಾಡಿ, ಸೆಂಟರ್‌ನಲ್ಲಿ ಕಾಂಪ್ಯಾಕ್ಟ್ & ಪ್ರೀಮಿಯಂ ಆಗಿ ಕೂರಿಸಲಾಗಿದೆ */
     .cta-btn {
       position: absolute;
       bottom: 82px;
-      width: 86%;
-      height: 48px;
-      border-radius: 26px;
+      width: 72%;
+      max-width: 310px;
+      height: 44px;
+      padding: 0 16px;
+      border-radius: 24px;
       border: 1.5px solid #d4af37;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,16 +64,16 @@
       transition: all 0.2s ease;
     }
     .cta-text {
-      font-size: 11.5px;
+      font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       color: #1a1a1a;
       text-transform: uppercase;
-      margin-right: 10px;
+      margin-right: 8px;
       white-space: nowrap;
     }
     .cta-arrow {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #b8860b;
       line-height: 1;
@@ -79,6 +81,7 @@
     .cta-btn:active {
       transform: scale(0.97);
       background: #ffffff;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
     }
   </style>
 </head>
