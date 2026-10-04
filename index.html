@@ -94,13 +94,13 @@
       color: #b8860b;
     }
 
-    /* --- SCREEN 2: HUB BUTTON --- */
+    /* --- SCREEN 2: HUB BUTTON (ಇನ್ನೂ ಸ್ಮಾಲ್ & ಮೇಲೆ ಅಡ್ಜಸ್ಟ್ ಮಾಡಲಾಗಿದೆ) --- */
     .hub-btn {
       position: absolute;
-      top: 4.2%;
-      right: 5%;
-      width: 36%;
-      max-width: 145px;
+      top: 2.8%;
+      right: 4.5%;
+      width: 27%;
+      max-width: 110px;
       z-index: 15;
       cursor: pointer;
       transition: transform 0.15s ease;
@@ -109,18 +109,19 @@
       width: 100%;
       height: auto;
       display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
     }
     .hub-btn:active {
-      transform: scale(0.94);
+      transform: scale(0.92);
     }
 
-    /* --- SCREEN 2: CARD SLIDER / CAROUSEL --- */
+    /* --- SCREEN 2: CARD SLIDER (ಚಿಕ್ಕದಾಗಿಸಿ ಕೆಳಭಾಗಕ್ಕೆ ಇಳಿಸಲಾಗಿದೆ) --- */
     .cards-wrapper {
       position: absolute;
-      top: 44.5%;
+      top: 52%;
       left: 0;
       width: 100%;
-      height: 38%;
+      height: 31%;
       z-index: 12;
       display: flex;
       align-items: center;
@@ -131,14 +132,13 @@
       width: 100%;
       height: 100%;
       position: relative;
-      perspective: 1000px;
     }
     .card-item {
       position: absolute;
       top: 0;
       left: 50%;
-      width: 52%;
-      max-width: 220px;
+      width: 38%;
+      max-width: 155px;
       height: 100%;
       transform: translateX(-50%) scale(0.85);
       opacity: 0;
@@ -150,10 +150,9 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      border-radius: 16px;
-      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+      border-radius: 12px;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.6));
     }
-    /* Active & Side Cards */
     .card-item.active {
       transform: translateX(-50%) scale(1.05);
       opacity: 1;
@@ -161,44 +160,44 @@
       pointer-events: auto;
     }
     .card-item.prev {
-      transform: translateX(-125%) scale(0.82);
-      opacity: 0.55;
+      transform: translateX(-138%) scale(0.8);
+      opacity: 0.5;
       z-index: 5;
       pointer-events: auto;
     }
     .card-item.next {
-      transform: translateX(25%) scale(0.82);
-      opacity: 0.55;
+      transform: translateX(38%) scale(0.8);
+      opacity: 0.5;
       z-index: 5;
       pointer-events: auto;
     }
     .card-item:active img {
-      transform: scale(0.98);
+      transform: scale(0.96);
     }
 
     /* --- SCREEN 2: DOT INDICATORS --- */
     .dots-container {
       position: absolute;
-      bottom: 14%;
+      bottom: 12%;
       left: 0;
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       z-index: 15;
     }
     .dot {
-      width: 9px;
-      height: 9px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      border: 1.5px solid rgba(255, 255, 255, 0.7);
+      border: 1.2px solid rgba(255, 255, 255, 0.6);
       background: transparent;
       transition: all 0.25s ease;
     }
     .dot.active {
       background: #d4af37;
       border-color: #ffd700;
-      box-shadow: 0 0 10px #ffd700;
+      box-shadow: 0 0 8px #ffd700;
       transform: scale(1.25);
     }
   </style>
@@ -220,12 +219,12 @@
     <div id="screen-2" class="screen">
       <img class="bg-img" src="img2.png" alt="VISTAROQ Experience" />
 
-      <!-- Top HUB Button -->
-      <div class="hub-btn" onclick="alert('⚡ VISTAROQ HUB Opened!')">
+      <!-- Top Small HUB Button -->
+      <div class="hub-btn" onclick="alert('⚡ VISTAROQ HUB: Employee Access Only')">
         <img src="hub.png" alt="VISTAROQ HUB" />
       </div>
 
-      <!-- Touch Swipable Cards -->
+      <!-- Compact Swipable Cards -->
       <div class="cards-wrapper" id="swipeArea">
         <div class="cards-track">
           <div class="card-item" onclick="onCardClick('NEST')">
@@ -311,16 +310,15 @@
     swipeArea.addEventListener('touchend', (e) => {
       endX = e.changedTouches[0].clientX;
       const diffX = startX - endX;
-      if (Math.abs(diffX) > 40) {
+      if (Math.abs(diffX) > 35) {
         if (diffX > 0) {
-          nextCard(); // Swiped Left
+          nextCard();
         } else {
-          prevCard(); // Swiped Right
+          prevCard();
         }
       }
     }, { passive: true });
 
-    // Initialize Cards
     updateCards();
   </script>
 </body>
