@@ -1024,7 +1024,7 @@
 
       masterScreens.forEach((scr, idx) => {
         let activeCls = idx === 0 ? 'active' : '';
-        let imgSrc = (idx <= 1) ? scr.file : ''; // Smart performance optimization (Lazy loading)
+        let imgSrc = (idx <= 1) ? scr.file : '';
 
         markup += `<div id="screen-${idx}" class="screen ${activeCls}" data-file="${scr.file}">`;
         markup += `<img class="bg-img" src="${imgSrc}" alt="${scr.title || 'VISTAROQ'}">`;
@@ -1035,10 +1035,10 @@
           markup += `<div class="hub-btn" onclick="alert('VISTAROQ HUB')"><img src="hub.png" alt="HUB"></div>`;
           markup += `<div class="cards-wrapper" id="swipeArea">
                        <div class="cards-track">
-                         <div class="card-item active" onclick="onCardClick('NEST')"><img src="nest.png" alt="NEST" /></div>
-                         <div class="card-item next" onclick="onCardClick('CRAFT')"><img src="craft.png" alt="CRAFT" /></div>
-                         <div class="card-item" onclick="onCardClick('LINK')"><img src="link.png" alt="LINK" /></div>
-                         <div class="card-item prev" onclick="onCardClick('FORCE')"><img src="force.png" alt="FORCE" /></div>
+                         <div class="card-item active" onclick="onCardClick(0)"><img src="nest.png" alt="NEST" /></div>
+                         <div class="card-item next" onclick="onCardClick(1)"><img src="craft.png" alt="CRAFT" /></div>
+                         <div class="card-item" onclick="onCardClick(2)"><img src="link.png" alt="LINK" /></div>
+                         <div class="card-item prev" onclick="onCardClick(3)"><img src="force.png" alt="FORCE" /></div>
                        </div>
                      </div>`;
           markup += `<div class="dots-container">
@@ -1063,7 +1063,6 @@
 
       viewport.innerHTML = markup;
       initSwipeGesture();
-      initLanguageMenus();
     }
 
     function loadScreenImage(index) {
@@ -1097,11 +1096,44 @@
       }
     }
 
-    function onCardClick(name) {
-      if (name === 'NEST') {
-        goToScreen(2); // Goes to Login/Auth or Hub depending on flow
+    function updateCards() {
+      const screen2 = document.getElementById('screen-2');
+      if (!screen2) return;
+      const cards = screen2.querySelectorAll('.card-item');
+      const dots = screen2.querySelectorAll('.dot');
+
+      cards.forEach((card, index) => {
+        card.className = 'card-item';
+        if (index === currentCard) {
+          card.classList.add('active');
+        } else if (index === (currentCard - 1 + totalCards) % totalCards) {
+          card.classList.add('prev');
+        } else if (index === (currentCard + 1) % totalCards) {
+          card.classList.add('next');
+        }
+      });
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentCard);
+      });
+    }
+
+    function nextCard() {
+      currentCard = (currentCard + 1) % totalCards;
+      updateCards();
+    }
+
+    function prevCard() {
+      currentCard = (currentCard - 1 + totalCards) % totalCards;
+      updateCards();
+    }
+
+    function onCardClick(cardIndex) {
+      if (cardIndex === 0) {
+        goToScreen(3);
       } else {
-        alert('✨ Selected Experience: VISTAROQ ' + name);
+        const names = ['NEST', 'CRAFT', 'LINK', 'FORCE'];
+        alert('✨ Selected Experience: VISTAROQ ' + names[cardIndex]);
       }
     }
 
@@ -1115,14 +1147,10 @@
       swipeArea.addEventListener('touchend', (e) => {
         let diffX = startX - e.changedTouches[0].clientX;
         if (Math.abs(diffX) > 30) {
-          if (diffX > 0) goToNext();
-          else goToPrev();
+          if (diffX > 0) nextCard();
+          else prevCard();
         }
       }, { passive: true });
-    }
-
-    function initLanguageMenus() {
-      // Multi-language safety initializer
     }
 
     window.addEventListener('DOMContentLoaded', () => {
