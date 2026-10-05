@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>VISTAROQ</title>
+  <title>VISTAROQ - Master Application Flow</title>
 
   <!-- ========================================================
-       ULTRA-FAST PRELOAD ENGINE (ZERO QUALITY LOSS)
+       ULTRA-FAST PRELOAD ENGINE (ALL 37 ASSETS MAPPED)
        ======================================================== -->
   <link rel="preload" as="image" href="welcome.png" />
   <link rel="preload" as="image" href="img2.png" />
@@ -21,10 +21,43 @@
   <link rel="preload" as="image" href="img5.png" />
   <link rel="preload" as="image" href="img6.png" />
   <link rel="preload" as="image" href="img7.png" />
+  <link rel="preload" as="image" href="7c.png" />
+  <link rel="preload" as="image" href="img20.png" />
+  <link rel="preload" as="image" href="img21.png" />
+  <link rel="preload" as="image" href="7a.png" />
+  <link rel="preload" as="image" href="7b.png" />
+  <link rel="preload" as="image" href="m1.png" />
+  <link rel="preload" as="image" href="m2.png" />
+  <link rel="preload" as="image" href="m3.png" />
+  <link rel="preload" as="image" href="m4.png" />
+  <link rel="preload" as="image" href="m5.png" />
+  <link rel="preload" as="image" href="m6.png" />
+  <link rel="preload" as="image" href="m7.png" />
+  <link rel="preload" as="image" href="7D.png" />
+  <link rel="preload" as="image" href="7e.png" />
   <link rel="preload" as="image" href="img8.png" />
   <link rel="preload" as="image" href="img9.png" />
   <link rel="preload" as="image" href="img10.png" />
   <link rel="preload" as="image" href="img11.png" />
+  <link rel="preload" as="image" href="7f.png" />
+  <link rel="preload" as="image" href="img12.png" />
+  <link rel="preload" as="image" href="7g.png" />
+  <link rel="preload" as="image" href="img13.png" />
+  <link rel="preload" as="image" href="7h.png" />
+  <link rel="preload" as="image" href="img14.png" />
+  <link rel="preload" as="image" href="7i.png" />
+  <link rel="preload" as="image" href="img15.png" />
+  <link rel="preload" as="image" href="7j.png" />
+  <link rel="preload" as="image" href="img16.png" />
+  <link rel="preload" as="image" href="vr1.png" />
+  <link rel="preload" as="image" href="7k.png" />
+  <link rel="preload" as="image" href="img17.png" />
+  <link rel="preload" as="image" href="7l.png" />
+  <link rel="preload" as="image" href="img18.png" />
+  <link rel="preload" as="image" href="7m.png" />
+  <link rel="preload" as="image" href="7n.png" />
+  <link rel="preload" as="image" href="7o.png" />
+  <link rel="preload" as="image" href="img19.png" />
 
   <style>
     * {
@@ -100,7 +133,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10;
+      z-index: 100;
       transition: transform 0.15s ease;
     }
     .cta-btn:active {
@@ -123,11 +156,10 @@
     /* --- SCREEN 2: HUB BUTTON --- */
     .hub-btn {
       position: absolute;
-      top: 1.6%;
-      right: 3.5%;
-      width: 21%;
-      max-width: 88px;
-      z-index: 15;
+      top: 15px;
+      right: 15px;
+      width: 75px;
+      z-index: 100;
       cursor: pointer;
       transition: transform 0.15s ease;
     }
@@ -148,7 +180,7 @@
       left: 0;
       width: 100%;
       height: 31%;
-      z-index: 12;
+      z-index: 50;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -183,19 +215,19 @@
     .card-item.active {
       transform: translateX(-50%) scale(1.05);
       opacity: 1;
-      z-index: 10;
+      z-index: 60;
       pointer-events: auto;
     }
     .card-item.prev {
       transform: translateX(-138%) scale(0.8);
       opacity: 0.5;
-      z-index: 5;
+      z-index: 40;
       pointer-events: auto;
     }
     .card-item.next {
       transform: translateX(38%) scale(0.8);
       opacity: 0.5;
-      z-index: 5;
+      z-index: 40;
       pointer-events: auto;
     }
 
@@ -208,7 +240,7 @@
       display: flex;
       justify-content: center;
       gap: 8px;
-      z-index: 15;
+      z-index: 50;
     }
     .dot {
       width: 7px;
@@ -839,29 +871,24 @@
     }
 
     /* ========================================================
-       SHARED SCREEN 6 & SCREEN 7 NAVIGATION
+       SHARED NAVIGATION & HOTSPOTS
        ======================================================== */
     .screen-back-btn {
       position: absolute;
-      top: env(safe-area-inset-top, 2%);
-      left: 4%;
-      width: 34px;
-      height: 34px;
+      top: 15px;
+      left: 15px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 215, 0, 0.4);
+      border: 1px solid rgba(255, 215, 0, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 60;
+      z-index: 100;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      transition: transform 0.15s ease;
-    }
-    .screen-back-btn:active {
-      transform: scale(0.9);
     }
     .screen-back-btn svg {
       width: 18px;
@@ -870,7 +897,6 @@
       stroke-width: 2.2;
     }
 
-    /* SCREEN 6: Portals Container */
     .portals-container {
       position: absolute;
       top: 42%;
@@ -888,14 +914,8 @@
       border-radius: 40px 40px 18px 18px;
       cursor: pointer;
       background: rgba(255, 255, 255, 0.01);
-      transition: transform 0.15s ease, box-shadow 0.25s ease;
-    }
-    .portal-hotspot:active {
-      transform: scale(0.96);
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
     }
 
-    /* SCREEN 7: Measure Methods Container */
     .measure-methods-container {
       position: absolute;
       top: 59.5%;
@@ -913,538 +933,175 @@
       border-radius: 20px;
       cursor: pointer;
       background: rgba(255, 255, 255, 0.01);
-      transition: transform 0.15s ease, box-shadow 0.25s ease;
-    }
-    .measure-card-hotspot:active {
-      transform: scale(0.96);
-      box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
     }
 
-    /* ========================================================
-       SCREENS 8, 9, 10, 11, 12 INVISIBLE HOTSPOTS
-       ======================================================== */
-    .invisible-back-hotspot {
+    .flow-next-hotspot {
       position: absolute;
-      top: env(safe-area-inset-top, 2%);
-      left: 3%;
-      width: 50px;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      max-width: 340px;
       height: 50px;
-      border-radius: 50%;
-      background: transparent;
-      z-index: 60;
+      border-radius: 25px;
       cursor: pointer;
+      background: transparent;
+      z-index: 90;
     }
 
-    .finish-process-hotspot {
+    .company-interactive-hotspot {
       position: absolute;
-      bottom: 4.2%;
-      left: 19%;
-      width: 62%;
-      height: 6.8%;
-      border-radius: 30px;
-      cursor: pointer;
+      top: 20%;
+      left: 5%;
+      width: 90%;
+      height: 65%;
       background: transparent;
-      z-index: 55;
-    }
-
-    .confirm-continue-hotspot {
-      position: absolute;
-      bottom: 3.8%;
-      right: 4%;
-      width: 51%;
-      height: 7%;
-      border-radius: 30px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
-    }
-
-    .looks-correct-hotspot {
-      position: absolute;
-      bottom: 6.8%;
-      right: 4%;
-      width: 48%;
-      height: 7%;
-      border-radius: 30px;
-      cursor: pointer;
-      background: transparent;
-      z-index: 55;
-    }
-
-    .change-continue-hotspot {
-      position: absolute;
-      bottom: 2.8%;
-      left: 4%;
-      width: 92%;
-      height: 6.2%;
-      border-radius: 30px;
-      cursor: pointer;
-      background: transparent;
-      z-index: 55;
-    }
-
-    .confirm-decisions-hotspot {
-      position: absolute;
-      bottom: 5.5%;
-      left: 4%;
-      width: 92%;
-      height: 6.2%;
-      border-radius: 30px;
-      cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 50;
     }
   </style>
 </head>
 <body>
 
-  <div class="app-viewport">
-    
-    <!-- SCREEN 1: WELCOME -->
-    <div id="screen-1" class="screen active">
-      <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
-      <button class="cta-btn" onclick="goToScreen(2)">
-        <span class="cta-text">CHOOSE YOUR VISTAROQ EXPERIENCE</span>
-        <span class="cta-arrow">→</span>
-      </button>
-    </div>
-
-    <!-- SCREEN 2: EXPERIENCE CAROUSEL -->
-    <div id="screen-2" class="screen">
-      <img class="bg-img" src="img2.png" alt="VISTAROQ Experience" />
-
-      <div class="hub-btn" onclick="alert('⚡ VISTAROQ HUB: Employee Access Only')">
-        <img src="hub.png" alt="VISTAROQ HUB" />
-      </div>
-
-      <div class="cards-wrapper" id="swipeArea">
-        <div class="cards-track">
-          <div class="card-item" onclick="onCardClick('NEST')">
-            <img src="nest.png" alt="NEST" />
-          </div>
-          <div class="card-item" onclick="onCardClick('CRAFT')">
-            <img src="craft.png" alt="CRAFT" />
-          </div>
-          <div class="card-item" onclick="onCardClick('LINK')">
-            <img src="link.png" alt="LINK" />
-          </div>
-          <div class="card-item" onclick="onCardClick('FORCE')">
-            <img src="force.png" alt="FORCE" />
-          </div>
-        </div>
-      </div>
-
-      <div class="dots-container">
-        <div class="dot active"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </div>
-    </div>
-
-    <!-- SCREEN 3: NEST LOGIN -->
-    <div id="screen-3" class="screen">
-      <img class="bg-img" src="img3.png" alt="NEST Login Experience" />
-
-      <div class="nest-nav">
-        <button class="clean-back-arrow" onclick="goToScreen(2)" title="Back">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="lang-dropdown-wrapper">
-          <button class="lang-pill-btn" onclick="toggleLangMenu(event, 'langMenuLogin')">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-            <span class="selectedLangText">English</span>
-            <span style="font-size: 7px; color: #444; margin-left: 2px;">▼</span>
-          </button>
-          
-          <div class="lang-menu" id="langMenuLogin"></div>
-        </div>
-      </div>
-
-      <div class="login-card-container">
-        <div class="glass-arch-card">
-          <div class="card-title">VISTAROQ IDENTITY</div>
-          <div class="card-subtitle">Sign in to access your spaces, projects and everything you love.</div>
-
-          <div class="input-field">
-            <svg class="input-icon-svg" viewBox="0 0 24 24">
-              <rect x="3" y="5" width="18" height="14" rx="3"/>
-              <path d="M3 7l9 6 9-6"/>
-            </svg>
-            <input type="text" class="text-input" placeholder="Email or Mobile Number" id="userIdentifier" />
-          </div>
-
-          <div class="input-field">
-            <svg class="input-icon-svg" viewBox="0 0 24 24">
-              <rect x="5" y="11" width="14" height="10" rx="2"/>
-              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-            </svg>
-            <input type="password" class="text-input" placeholder="Password" id="userPassword" />
-            <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('userPassword')">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="3"/>
-            </svg>
-          </div>
-
-          <div class="options-row">
-            <label class="checkbox-label">
-              <input type="checkbox" id="rememberMe" checked />
-              <span>Keep me signed in</span>
-            </label>
-            <a href="javascript:void(0)" class="forgot-link" onclick="alert('Password reset link will be sent to your email/phone.')">Forgot Password?</a>
-          </div>
-
-          <button class="action-btn" onclick="handleSignIn()">
-            <span>Sign In</span>
-            <span style="font-size: 13px;">→</span>
-          </button>
-
-          <div class="divider">
-            <span>OR</span>
-          </div>
-
-          <button class="secondary-btn" onclick="goToScreen(4)">
-            <svg style="width: 12px; height: 12px; stroke: #333; fill: none; stroke-width: 1.8;" viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-            <span>Create an Account</span>
-            <span style="font-size: 12px; margin-left: 1px;">→</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- SCREEN 4: NEST SIGN UP (img3a.png) -->
-    <div id="screen-4" class="screen">
-      <img class="bg-img" src="img3a.png" alt="NEST Create Account Experience" />
-
-      <div class="nest-nav">
-        <button class="clean-back-arrow" onclick="goToScreen(3)" title="Back to Login">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <div class="lang-dropdown-wrapper">
-          <button class="lang-pill-btn" onclick="toggleLangMenu(event, 'langMenuSignup')">
-            <svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            </svg>
-            <span class="selectedLangText">English</span>
-            <span style="font-size: 7px; color: #444; margin-left: 2px;">▼</span>
-          </button>
-          
-          <div class="lang-menu" id="langMenuSignup"></div>
-        </div>
-      </div>
-
-      <div class="signup-card-container">
-        <div class="glass-arch-card">
-          <div class="card-title">Create Your VISTAROQ Identity</div>
-          <div class="card-subtitle">Join VISTAROQ and start turning your spaces into a better tomorrow.</div>
-
-          <div class="input-field">
-            <svg class="input-icon-svg" viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-            <input type="text" class="text-input" placeholder="Full Name" id="regFullName" />
-          </div>
-
-          <div class="input-field">
-            <svg class="input-icon-svg" viewBox="0 0 24 24">
-              <rect x="3" y="5" width="18" height="14" rx="3"/>
-              <path d="M3 7l9 6 9-6"/>
-            </svg>
-            <input type="text" class="text-input" placeholder="Email or Mobile Number" id="regIdentifier" />
-          </div>
-
-          <div class="input-field">
-            <svg class="input-icon-svg" viewBox="0 0 24 24">
-              <rect x="5" y="11" width="14" height="10" rx="2"/>
-              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-            </svg>
-            <input type="password" class="text-input" placeholder="Create Password" id="regPassword" />
-            <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regPassword')">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="3"/>
-            </svg>
-          </div>
-
-          <div class="input-field">
-            <svg class="input-icon-svg" viewBox="0 0 24 24">
-              <rect x="5" y="11" width="14" height="10" rx="2"/>
-              <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
-            </svg>
-            <input type="password" class="text-input" placeholder="Confirm Password" id="regConfirmPassword" />
-            <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regConfirmPassword')">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="3"/>
-            </svg>
-          </div>
-
-          <div class="options-row" style="margin: 4px 2px 7px;">
-            <label class="checkbox-label">
-              <input type="checkbox" id="regTerms" checked />
-              <span class="terms-text">I agree to the <a href="javascript:void(0)" onclick="alert('VISTAROQ Terms of Service')">Terms of Service</a> and <a href="javascript:void(0)" onclick="alert('VISTAROQ Privacy Policy')">Privacy Policy</a></span>
-            </label>
-          </div>
-
-          <button class="action-btn" onclick="handleSignUp()">
-            <span>Create Account</span>
-            <span style="font-size: 13px;">→</span>
-          </button>
-
-          <div class="divider">
-            <span>OR</span>
-          </div>
-
-          <button class="secondary-btn" onclick="goToScreen(3)">
-            <span style="font-size: 12px; margin-right: 1px;">←</span>
-            <span>Back to Sign In</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- SCREEN 5: NEST SPACES HUB (img4.png) -->
-    <div id="screen-5" class="screen">
-      <img class="bg-img" src="img4.png" alt="NEST Spaces Hub" />
-
-      <div class="top-header-actions">
-        <div class="icon-circle-btn" onclick="alert('🔔 Notifications: You have 2 space updates.')" title="Notifications">
-          <svg viewBox="0 0 24 24">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-          </svg>
-          <div class="badge-dot"></div>
-        </div>
-        <div class="icon-circle-btn" onclick="alert('👤 Profile: Nagesh (Customer / Space Owner)')" title="Profile">
-          <svg viewBox="0 0 24 24">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-      </div>
-
-      <div class="hotspot-actions-container">
-        <div class="hotspot-box" onclick="handleCreateNewSpace()" title="Create New Space"></div>
-        <div class="hotspot-box" onclick="handleOpenMySpace()" title="Open My Space"></div>
-      </div>
-
-      <div class="spaces-section-header">
-        <span class="section-title">My Spaces</span>
-        <a class="view-all-link" href="javascript:void(0)" onclick="alert('✨ Opening All Spaces Directory')">
-          <span>View All</span>
-          <span style="font-size: 10px;">→</span>
-        </a>
-      </div>
-
-      <div class="spaces-carousel-container" id="spacesCarousel">
-        <div class="space-glass-card" onclick="alert('🏡 Opening Home Space (Bangalore)')">
-          <div class="card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Home Space" />
-            <div class="card-menu-btn" onclick="event.stopPropagation(); alert('Home Space Options')">⋮</div>
-          </div>
-          <div class="card-info-wrap">
-            <div>
-              <div class="space-title-row">
-                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                <span class="space-name">Home Space</span>
-              </div>
-              <div class="space-city">Bangalore</div>
-            </div>
-            <div>
-              <div class="progress-bar-wrap">
-                <div class="progress-fill" style="width: 60%;"></div>
-              </div>
-              <div class="space-status-row">
-                <span>Design in Progress</span>
-                <span class="progress-percent-label">60%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-glass-card" onclick="alert('🏢 Opening Office Space (Bengaluru)')">
-          <div class="card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Office Space" />
-            <div class="card-menu-btn" onclick="event.stopPropagation(); alert('Office Space Options')">⋮</div>
-          </div>
-          <div class="card-info-wrap">
-            <div>
-              <div class="space-title-row">
-                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg>
-                <span class="space-name">Office Space</span>
-              </div>
-              <div class="space-city">Bengaluru</div>
-            </div>
-            <div>
-              <div class="progress-bar-wrap">
-                <div class="progress-fill" style="width: 80%;"></div>
-              </div>
-              <div class="space-status-row">
-                <span>Concept Ready</span>
-                <span class="progress-percent-label">80%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-glass-card" onclick="alert('🏬 Opening Commercial Space (Mysuru)')">
-          <div class="card-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" alt="Commercial Space" />
-            <div class="card-menu-btn" onclick="event.stopPropagation(); alert('Commercial Space Options')">⋮</div>
-          </div>
-          <div class="card-info-wrap">
-            <div>
-              <div class="space-title-row">
-                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-                <span class="space-name">Commercial Space</span>
-              </div>
-              <div class="space-city">Mysuru</div>
-            </div>
-            <div>
-              <div class="progress-bar-wrap">
-                <div class="progress-fill" style="width: 30%;"></div>
-              </div>
-              <div class="space-status-row">
-                <span>Planning Stage</span>
-                <span class="progress-percent-label">30%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="floating-bottom-bar">
-        <div class="nav-tab-item active" onclick="switchNavTab(this, 'My Spaces')">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-          <span class="nav-tab-label">My Spaces</span>
-          <div class="tab-active-pill"></div>
-        </div>
-        <div class="nav-tab-item" onclick="switchNavTab(this, 'My Designs')">
-          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          <span class="nav-tab-label">My Designs</span>
-        </div>
-        <div class="nav-tab-item" onclick="switchNavTab(this, 'My Preferences')">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          <span class="nav-tab-label">My Preferences</span>
-        </div>
-        <div class="nav-tab-item" onclick="switchNavTab(this, 'Help & Support')">
-          <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-          <span class="nav-tab-label">Help & Support</span>
-        </div>
-        <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33-1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          <span class="nav-tab-label">Settings</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- SCREEN 6: CREATE YOUR SPACE PORTALS (img5.png) -->
-    <div id="screen-6" class="screen">
-      <img class="bg-img" src="img5.png" alt="Create Your Space Portals" />
-      <button class="screen-back-btn" onclick="goToScreen(5)" title="Back">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="portals-container">
-        <div class="portal-hotspot" onclick="selectSpaceCategory('HOME SPACE')"></div>
-        <div class="portal-hotspot" onclick="selectSpaceCategory('OFFICE SPACE')"></div>
-        <div class="portal-hotspot" onclick="selectSpaceCategory('COMMERCIAL SPACE')"></div>
-        <div class="portal-hotspot" onclick="selectSpaceCategory('OTHER SPACE')"></div>
-      </div>
-    </div>
-
-    <!-- SCREEN 7: MEASURE YOUR SPACE (img6.png) -->
-    <div id="screen-7" class="screen">
-      <img class="bg-img" src="img6.png" alt="Measure Your Space" />
-      <button class="screen-back-btn" onclick="goToScreen(6)" title="Back">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="measure-methods-container">
-        <div class="measure-card-hotspot" onclick="handleMeasureMethod('SCAN WITH CAMERA')"></div>
-        <div class="measure-card-hotspot" onclick="handleMeasureMethod('ENTER MANUALLY')"></div>
-        <div class="measure-card-hotspot" onclick="handleMeasureMethod('UPLOAD FLOOR PLAN')"></div>
-      </div>
-    </div>
-
-    <!-- SCREEN 8: LIVE SMART SPACE SCAN (img7.png) -->
-    <div id="screen-8" class="screen">
-      <img class="bg-img" src="img7.png" alt="Live Smart Space Scan" />
-      <div class="invisible-back-hotspot" onclick="goToScreen(7)"></div>
-      <div class="finish-process-hotspot" onclick="goToScreen(9)"></div>
-    </div>
-
-    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
-    <div id="screen-9" class="screen">
-      <img class="bg-img" src="img8.png" alt="Space Understanding" />
-      <div class="invisible-back-hotspot" onclick="goToScreen(8)"></div>
-      <div class="confirm-continue-hotspot" onclick="goToScreen(10)"></div>
-    </div>
-
-    <!-- SCREEN 10: CONFIRM YOUR SPACE (img9.png) -->
-    <div id="screen-10" class="screen">
-      <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
-      <div class="invisible-back-hotspot" onclick="goToScreen(9)"></div>
-      <div class="looks-correct-hotspot" onclick="goToScreen(11)"></div>
-    </div>
-
-    <!-- SCREEN 11: WHAT DO I WANT TO CHANGE? (img10.png) -->
-    <div id="screen-11" class="screen">
-      <img class="bg-img" src="img10.png" alt="What Do I Want To Change?" />
-      <div class="invisible-back-hotspot" onclick="goToScreen(10)"></div>
-      <div class="change-continue-hotspot" onclick="goToScreen(12)"></div>
-    </div>
-
-    <!-- SCREEN 12: KEEP • CHANGE • REMOVE (img11.png) -->
-    <div id="screen-12" class="screen">
-      <img class="bg-img" src="img11.png" alt="Keep Change Remove" />
-      <div class="invisible-back-hotspot" onclick="goToScreen(11)"></div>
-      <div class="confirm-decisions-hotspot" onclick="handleFinishDecisions()"></div>
-    </div>
-
-  </div>
+  <div class="app-viewport" id="appViewport"></div>
 
   <script>
-    const assetsToPreload = [
-      'welcome.png', 'img2.png', 'nest.png', 'craft.png',
-      'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
-      'img4.png', 'img5.png', 'img6.png', 'img7.png', 'img8.png',
-      'img9.png', 'img10.png', 'img11.png'
+    const masterScreens = [
+      { id: 1, file: "welcome.png", type: "welcome" },
+      { id: 2, file: "img2.png", type: "experience" },
+      { id: 3, file: "img3.png", type: "login" },
+      { id: 4, file: "img3a.png", type: "signup" },
+      { id: 5, file: "img4.png", type: "hub" },
+      { id: 6, file: "img5.png", type: "portals" },
+      { id: 7, file: "img6.png", type: "measure_methods" },
+      { id: 8, file: "img7.png", title: "Mobile Scanning" },
+      { id: 9, file: "7c.png", title: "Company Discovery", interactive: true },
+      { id: 10, file: "img20.png", title: "Company Discovery Alt", interactive: true },
+      { id: 11, file: "img21.png", title: "EliteSpaces Build", interactive: true },
+      { id: 12, file: "7a.png", title: "Existing Space" },
+      { id: 13, file: "7b.png", title: "Space Understanding" },
+      { id: 14, file: "m1.png", title: "Measurement M1" },
+      { id: 15, file: "m2.png", title: "Measurement M2" },
+      { id: 16, file: "m3.png", title: "Measurement M3" },
+      { id: 17, file: "m4.png", title: "Measurement M4" },
+      { id: 18, file: "m5.png", title: "Measurement M5" },
+      { id: 19, file: "m6.png", title: "Measurement M6" },
+      { id: 20, file: "m7.png", title: "Measurement M7" },
+      { id: 21, file: "7D.png", title: "Changes (7D)" },
+      { id: 22, file: "7e.png", title: "Define Changes" },
+      { id: 23, file: "img8.png", title: "Model Data" },
+      { id: 24, file: "img9.png", title: "Confirm Space" },
+      { id: 25, file: "img10.png", title: "Want To Change" },
+      { id: 26, file: "img11.png", title: "Keep Change Remove" },
+      { id: 27, file: "7f.png", title: "Customer References" },
+      { id: 28, file: "img12.png", title: "Inspirations" },
+      { id: 29, file: "7g.png", title: "AI Possibility" },
+      { id: 30, file: "img13.png", title: "AI Engine" },
+      { id: 31, file: "7h.png", title: "Design Concepts" },
+      { id: 32, file: "img14.png", title: "Possibilities" },
+      { id: 33, file: "7i.png", title: "Customize Design" },
+      { id: 34, file: "img15.png", title: "Version Create" },
+      { id: 35, file: "7j.png", title: "Visualization Workspace" },
+      { id: 36, file: "img16.png", title: "3D Live Experience" },
+      { id: 37, file: "vr1.png", title: "Virtual Reality (VR)" },
+      { id: 38, file: "7k.png", title: "Compare Designs" },
+      { id: 39, file: "img17.png", title: "Compare Alt" },
+      { id: 40, file: "7l.png", title: "Approve & Proceed" },
+      { id: 41, file: "img18.png", title: "Make It Real" },
+      { id: 42, file: "7m.png", title: "Shop Individual Items" },
+      { id: 43, file: "7n.png", title: "Product Fit" },
+      { id: 44, file: "7o.png", title: "Retail Sources (Amazon/Flipkart)" },
+      { id: 45, file: "img19.png", title: "Next Actions" }
     ];
-    window.addEventListener('DOMContentLoaded', () => {
-      assetsToPreload.forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
-      initLanguageMenus();
-      updateCards();
-    });
 
-    let currentScreen = 1;
+    let currentIdx = 0;
     let currentCard = 0;
-    let selectedCategory = 'HOME SPACE';
-    const cards = document.querySelectorAll('.card-item');
-    const dots = document.querySelectorAll('.dot');
-    const totalCards = cards.length;
+    const totalCards = 4;
 
-    function goToScreen(screenNumber) {
-      document.getElementById('screen-' + currentScreen).classList.remove('active');
-      document.getElementById('screen-' + screenNumber).classList.add('active');
-      currentScreen = screenNumber;
-      if (screenNumber === 2) updateCards();
+    function buildApp() {
+      const viewport = document.getElementById('appViewport');
+      let markup = '';
+
+      masterScreens.forEach((scr, idx) => {
+        let activeCls = idx === 0 ? 'active' : '';
+        let imgSrc = (idx <= 1) ? scr.file : '';
+
+        markup += `<div id="screen-${idx}" class="screen ${activeCls}" data-file="${scr.file}">`;
+        markup += `<img class="bg-img" src="${imgSrc}" alt="${scr.title || 'VISTAROQ'}">`;
+
+        if (scr.type === 'welcome') {
+          markup += `<button class="cta-btn" onclick="goToNext()"><span class="cta-text">CHOOSE YOUR VISTAROQ EXPERIENCE</span><span class="cta-arrow">→</span></button>`;
+        } else if (scr.type === 'experience') {
+          markup += `<div class="hub-btn" onclick="alert('VISTAROQ HUB')"><img src="hub.png" alt="HUB"></div>`;
+          markup += `<div class="cards-wrapper" id="swipeArea">
+                       <div class="cards-track">
+                         <div class="card-item active" onclick="onCardClick(0)"><img src="nest.png" alt="NEST" /></div>
+                         <div class="card-item next" onclick="onCardClick(1)"><img src="craft.png" alt="CRAFT" /></div>
+                         <div class="card-item" onclick="onCardClick(2)"><img src="link.png" alt="LINK" /></div>
+                         <div class="card-item prev" onclick="onCardClick(3)"><img src="force.png" alt="FORCE" /></div>
+                       </div>
+                     </div>`;
+          markup += `<div class="dots-container">
+                       <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                     </div>`;
+          markup += `<div class="flow-next-hotspot" onclick="goToNext()"></div>`;
+        } else {
+          if (idx > 0) {
+            markup += `<div class="screen-back-btn" onclick="goToPrev()">
+                         <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                       </div>`;
+          }
+          if (scr.interactive) {
+            markup += `<div class="company-interactive-hotspot" onclick="goToNext()" title="Select Company Details"></div>`;
+          }
+          if (idx < masterScreens.length - 1) {
+            markup += `<div class="flow-next-hotspot" onclick="goToNext()"></div>`;
+          }
+        }
+        markup += `</div>`;
+      });
+
+      viewport.innerHTML = markup;
+      initSwipeGesture();
+    }
+
+    function loadScreenImage(index) {
+      const screenEl = document.getElementById(`screen-${index}`);
+      if (!screenEl) return;
+      const imgEl = screenEl.querySelector('.bg-img');
+      if (imgEl && !imgEl.getAttribute('src')) {
+        imgEl.setAttribute('src', screenEl.getAttribute('data-file'));
+      }
+    }
+
+    function switchScreen(targetIndex) {
+      loadScreenImage(targetIndex);
+      if (targetIndex < masterScreens.length - 1) loadScreenImage(targetIndex + 1);
+      if (targetIndex > 0) loadScreenImage(targetIndex - 1);
+
+      document.getElementById(`screen-${currentIdx}`).classList.remove('active');
+      currentIdx = targetIndex;
+      document.getElementById(`screen-${currentIdx}`).classList.add('active');
+    }
+
+    function goToNext() {
+      if (currentIdx < masterScreens.length - 1) {
+        switchScreen(currentIdx + 1);
+      }
+    }
+
+    function goToPrev() {
+      if (currentIdx > 0) {
+        switchScreen(currentIdx - 1);
+      }
     }
 
     function updateCards() {
+      const screen2 = document.getElementById('screen-2');
+      if (!screen2) return;
+      const cards = screen2.querySelectorAll('.card-item');
+      const dots = screen2.querySelectorAll('.dot');
+
       cards.forEach((card, index) => {
         card.className = 'card-item';
         if (index === currentCard) {
@@ -1471,149 +1128,33 @@
       updateCards();
     }
 
-    function onCardClick(name) {
-      if (name === 'NEST') {
-        goToScreen(3);
+    function onCardClick(cardIndex) {
+      if (cardIndex === 0) {
+        goToScreen(2); // Goes to screen index 2 or 3 appropriately
       } else {
-        alert('✨ Selected Experience: VISTAROQ ' + name);
+        const names = ['NEST', 'CRAFT', 'LINK', 'FORCE'];
+        alert('✨ Selected Experience: VISTAROQ ' + names[cardIndex]);
       }
     }
 
-    const swipeArea = document.getElementById('swipeArea');
-    let startX = 0;
-    let endX = 0;
-
-    if (swipeArea) {
+    function initSwipeGesture() {
+      const swipeArea = document.getElementById('swipeArea');
+      if (!swipeArea) return;
+      let startX = 0;
       swipeArea.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
       }, { passive: true });
-
       swipeArea.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        const diffX = startX - endX;
-        if (Math.abs(diffX) > 35) {
+        let diffX = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diffX) > 30) {
           if (diffX > 0) nextCard();
           else prevCard();
         }
       }, { passive: true });
     }
 
-    function togglePasswordVisibility(fieldId) {
-      const field = document.getElementById(fieldId);
-      field.type = (field.type === 'password') ? 'text' : 'password';
-    }
-
-    function handleSignIn() {
-      const user = document.getElementById('userIdentifier').value.trim();
-      const pass = document.getElementById('userPassword').value.trim();
-      if (!user) { alert('Please enter your Email or Mobile Number.'); return; }
-      if (!pass) { alert('Please enter your Password.'); return; }
-      goToScreen(5);
-    }
-
-    function handleSignUp() {
-      const name = document.getElementById('regFullName').value.trim();
-      const identifier = document.getElementById('regIdentifier').value.trim();
-      const pass = document.getElementById('regPassword').value.trim();
-      const confirmPass = document.getElementById('regConfirmPassword').value.trim();
-      const terms = document.getElementById('regTerms').checked;
-
-      if (!name) { alert('Please enter your Full Name.'); return; }
-      if (!identifier) { alert('Please enter your Email or Mobile Number.'); return; }
-      if (!pass) { alert('Please create a Password.'); return; }
-      if (pass !== confirmPass) { alert('Passwords do not match!'); return; }
-      if (!terms) { alert('Please agree to the Terms of Service & Privacy Policy.'); return; }
-
-      alert('🎉 Welcome to VISTAROQ NEST, ' + name + '!');
-      goToScreen(5);
-    }
-
-    function handleCreateNewSpace() {
-      goToScreen(6);
-    }
-
-    function handleOpenMySpace() {
-      alert('📂 OPEN MY SPACE: Loading your existing projects...');
-    }
-
-    function selectSpaceCategory(category) {
-      selectedCategory = category;
-      goToScreen(7);
-    }
-
-    function handleMeasureMethod(method) {
-      if (method === 'SCAN WITH CAMERA') {
-        goToScreen(8);
-      } else {
-        alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
-      }
-    }
-
-    function handleFinishDecisions() {
-      alert('✨ Decisions Confirmed!\nNext Step: Mandatory Customer Reference Stage.');
-    }
-
-    function switchNavTab(tabElement, tabName) {
-      document.querySelectorAll('.nav-tab-item').forEach(tab => {
-        tab.classList.remove('active');
-        const pill = tab.querySelector('.tab-active-pill');
-        if (pill) pill.remove();
-      });
-      tabElement.classList.add('active');
-      const pill = document.createElement('div');
-      pill.className = 'tab-active-pill';
-      tabElement.appendChild(pill);
-    }
-
-    const languages = [
-      { group: 'Indian Languages', list: [
-        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
-        { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
-        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓଡ଼ିଆ', code: 'OR' }
-      ]},
-      { group: 'International Languages', list: [
-        { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
-        { name: 'Deutsch', code: 'DE' }, { name: 'العربية', code: 'AR' }, { name: '日本語', code: 'JA' },
-        { name: '한국어', code: 'KO' }, { name: '中文 (简体)', code: 'ZH' }, { name: 'Русский', code: 'RU' },
-        { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' }
-      ]}
-    ];
-
-    function initLanguageMenus() {
-      ['langMenuLogin', 'langMenuSignup'].forEach(menuId => {
-        const menu = document.getElementById(menuId);
-        if (!menu) return;
-        let html = '';
-        languages.forEach(cat => {
-          html += `<div class="lang-group-header">${cat.group}</div>`;
-          cat.list.forEach(l => {
-            const activeClass = l.name === 'English' ? 'active' : '';
-            html += `<div class="lang-item ${activeClass}" onclick="selectLanguage('${l.name}')">${l.name} <span>${l.code}</span></div>`;
-          });
-        });
-        menu.innerHTML = html;
-      });
-    }
-
-    function toggleLangMenu(e, menuId) {
-      e.stopPropagation();
-      const targetMenu = document.getElementById(menuId);
-      document.querySelectorAll('.lang-menu').forEach(m => {
-        if (m !== targetMenu) m.classList.remove('show');
-      });
-      targetMenu.classList.toggle('show');
-    }
-
-    function selectLanguage(lang) {
-      document.querySelectorAll('.selectedLangText').forEach(el => el.innerText = lang);
-      document.querySelectorAll('.lang-item').forEach(item => {
-        item.classList.toggle('active', item.innerText.includes(lang));
-      });
-      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
-    }
-
-    document.addEventListener('click', () => {
-      document.querySelectorAll('.lang-menu').forEach(m => m.classList.remove('show'));
+    window.addEventListener('DOMContentLoaded', () => {
+      buildApp();
     });
   </script>
 </body>
