@@ -21,6 +21,10 @@
   <link rel="preload" as="image" href="img5.png" />
   <link rel="preload" as="image" href="img6.png" />
   <link rel="preload" as="image" href="img7.png" />
+  <link rel="preload" as="image" href="img8.png" />
+  <link rel="preload" as="image" href="img9.png" />
+  <link rel="preload" as="image" href="img10.png" />
+  <link rel="preload" as="image" href="img11.png" />
 
   <style>
     * {
@@ -835,7 +839,7 @@
     }
 
     /* ========================================================
-       SCREEN 6 & SCREEN 7 SHARED NAVIGATION
+       SHARED SCREEN 6 & SCREEN 7 NAVIGATION
        ======================================================== */
     .screen-back-btn {
       position: absolute;
@@ -917,10 +921,10 @@
     }
 
     /* ========================================================
-       SCREEN 8: LIVE SMART SPACE SCAN (img7.png) HOTSPOTS
+       SCREENS 8, 9, 10, 11, 12 INVISIBLE HOTSPOTS
        ======================================================== */
-    /* Invisible Tap Hotspot exactly over the image's own back arrow (No overlap button) */
-    .scan-back-hotspot {
+    /* Universal invisible back button on top-left of image screens */
+    .invisible-back-hotspot {
       position: absolute;
       top: env(safe-area-inset-top, 2%);
       left: 3%;
@@ -932,7 +936,7 @@
       cursor: pointer;
     }
 
-    /* Finish & Process Action Hotspot */
+    /* Screen 8: FINISH & PROCESS Hotspot */
     .finish-process-hotspot {
       position: absolute;
       bottom: 4.2%;
@@ -941,13 +945,60 @@
       height: 6.8%;
       border-radius: 30px;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.01);
+      background: transparent;
       z-index: 55;
-      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
-    .finish-process-hotspot:active {
-      transform: scale(0.96);
-      box-shadow: 0 0 22px rgba(46, 204, 113, 0.6);
+
+    /* Screen 9: CONFIRM & CONTINUE Hotspot */
+    .confirm-continue-hotspot {
+      position: absolute;
+      bottom: 3.8%;
+      right: 4%;
+      width: 51%;
+      height: 7%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      z-index: 55;
+    }
+
+    /* Screen 10: SPACE LOOKS CORRECT Hotspot */
+    .looks-correct-hotspot {
+      position: absolute;
+      bottom: 6.8%;
+      right: 4%;
+      width: 48%;
+      height: 7%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      z-index: 55;
+    }
+
+    /* Screen 11: CONTINUE Hotspot */
+    .change-continue-hotspot {
+      position: absolute;
+      bottom: 2.8%;
+      left: 4%;
+      width: 92%;
+      height: 6.2%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      z-index: 55;
+    }
+
+    /* Screen 12: CONFIRM MY DECISIONS Hotspot */
+    .confirm-decisions-hotspot {
+      position: absolute;
+      bottom: 5.5%;
+      left: 4%;
+      width: 92%;
+      height: 6.2%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      z-index: 55;
     }
   </style>
 </head>
@@ -1314,7 +1365,7 @@
         </div>
 
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33-1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
 
@@ -1325,14 +1376,12 @@
     <div id="screen-6" class="screen">
       <img class="bg-img" src="img5.png" alt="Create Your Space Portals" />
 
-      <!-- Back Arrow to Dashboard -->
       <button class="screen-back-btn" onclick="goToScreen(5)" title="Back to Spaces Hub">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <!-- 4 Category Portal Click Targets -->
       <div class="portals-container">
         <div class="portal-hotspot" onclick="selectSpaceCategory('HOME SPACE')" title="Select Home Space"></div>
         <div class="portal-hotspot" onclick="selectSpaceCategory('OFFICE SPACE')" title="Select Office Space"></div>
@@ -1345,14 +1394,12 @@
     <div id="screen-7" class="screen">
       <img class="bg-img" src="img6.png" alt="Measure Your Space" />
 
-      <!-- Back Arrow to Screen 6 (Portals) -->
       <button class="screen-back-btn" onclick="goToScreen(6)" title="Back to Portals">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <!-- 3 Measurement Method Hotspot Cards -->
       <div class="measure-methods-container">
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('SCAN WITH CAMERA')" title="Scan With Camera"></div>
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('ENTER MANUALLY')" title="Enter Manually"></div>
@@ -1363,12 +1410,36 @@
     <!-- SCREEN 8: LIVE SMART SPACE SCAN (img7.png) -->
     <div id="screen-8" class="screen">
       <img class="bg-img" src="img7.png" alt="Live Smart Space Scan" />
+      <div class="invisible-back-hotspot" onclick="goToScreen(7)" title="Back to Screen 7"></div>
+      <div class="finish-process-hotspot" onclick="goToScreen(9)" title="Finish & Process 3D Model"></div>
+    </div>
 
-      <!-- Seamless Invisible Hotspot (No overlap with arrow in image) -->
-      <div class="scan-back-hotspot" onclick="goToScreen(7)" title="Back to Measure Screen"></div>
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
+    <div id="screen-9" class="screen">
+      <img class="bg-img" src="img8.png" alt="Space Understanding" />
+      <div class="invisible-back-hotspot" onclick="goToScreen(8)" title="Back to Screen 8"></div>
+      <div class="confirm-continue-hotspot" onclick="goToScreen(10)" title="Confirm & Continue"></div>
+    </div>
 
-      <!-- Finish & Process Action Hotspot -->
-      <div class="finish-process-hotspot" onclick="handleFinishScan()" title="Finish & Process 3D Model"></div>
+    <!-- SCREEN 10: CONFIRM YOUR SPACE (img9.png) -->
+    <div id="screen-10" class="screen">
+      <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
+      <div class="invisible-back-hotspot" onclick="goToScreen(9)" title="Back to Screen 9"></div>
+      <div class="looks-correct-hotspot" onclick="goToScreen(11)" title="Space Looks Correct"></div>
+    </div>
+
+    <!-- SCREEN 11: WHAT DO I WANT TO CHANGE? (img10.png) -->
+    <div id="screen-11" class="screen">
+      <img class="bg-img" src="img10.png" alt="What Do I Want To Change?" />
+      <div class="invisible-back-hotspot" onclick="goToScreen(10)" title="Back to Screen 10"></div>
+      <div class="change-continue-hotspot" onclick="goToScreen(12)" title="Continue to Keep Change Remove"></div>
+    </div>
+
+    <!-- SCREEN 12: KEEP • CHANGE • REMOVE (img11.png) -->
+    <div id="screen-12" class="screen">
+      <img class="bg-img" src="img11.png" alt="Keep Change Remove" />
+      <div class="invisible-back-hotspot" onclick="goToScreen(11)" title="Back to Screen 11"></div>
+      <div class="confirm-decisions-hotspot" onclick="handleFinishDecisions()" title="Confirm My Decisions"></div>
     </div>
 
   </div>
@@ -1380,7 +1451,8 @@
     const assetsToPreload = [
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
       'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
-      'img4.png', 'img5.png', 'img6.png', 'img7.png'
+      'img4.png', 'img5.png', 'img6.png', 'img7.png', 'img8.png',
+      'img9.png', 'img10.png', 'img11.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
@@ -1510,9 +1582,9 @@
       }
     }
 
-    // Screen 8 Finish & Process Action Handler
-    function handleFinishScan() {
-      alert('✨ 3D Space Scan Complete! Initializing Next Step in Master Architecture...');
+    // Screen 12 Final Decisions Handler
+    function handleFinishDecisions() {
+      alert('✨ Decisions Confirmed!\nNext Step: Mandatory 4-5 Customer Reference Images Stage.');
     }
 
     function switchNavTab(tabElement, tabName) {
@@ -1531,7 +1603,7 @@
       { group: 'Indian Languages', list: [
         { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
         { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
-        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ିଆ', code: 'OR' }
+        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓଡ଼ିଆ', code: 'OR' }
       ]},
       { group: 'International Languages', list: [
         { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
