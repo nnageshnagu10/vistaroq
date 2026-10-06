@@ -26,6 +26,7 @@
   <link rel="preload" as="image" href="img10.png" />
   <link rel="preload" as="image" href="img11.png" />
   <link rel="preload" as="image" href="img12.png" />
+  <link rel="preload" as="image" href="img13.png" />
 
   <style>
     * {
@@ -922,7 +923,7 @@
     }
 
     /* ========================================================
-       SCREENS 8 to 13 INVISIBLE HOTSPOTS
+       SCREENS 8 to 14 INVISIBLE HOTSPOTS
        ======================================================== */
     .invisible-back-hotspot {
       position: absolute;
@@ -997,6 +998,18 @@
     }
 
     .references-continue-hotspot {
+      position: absolute;
+      bottom: 3.5%;
+      left: 4%;
+      width: 92%;
+      height: 6.5%;
+      border-radius: 30px;
+      cursor: pointer;
+      background: transparent;
+      z-index: 55;
+    }
+
+    .ai-engine-continue-hotspot {
       position: absolute;
       bottom: 3.5%;
       left: 4%;
@@ -1429,7 +1442,14 @@
     <div id="screen-13" class="screen">
       <img class="bg-img" src="img12.png" alt="Customer References Inspiration" />
       <div class="invisible-back-hotspot" onclick="goToScreen(12)"></div>
-      <div class="references-continue-hotspot" onclick="alert('✨ 4-5 References Confirmed!\nProceeding to AI Design / Possibility Generation Engine...');"></div>
+      <div class="references-continue-hotspot" onclick="goToScreen(14)"></div>
+    </div>
+
+    <!-- SCREEN 14: AI DESIGN / POSSIBILITY GENERATION ENGINE (img13.png) -->
+    <div id="screen-14" class="screen">
+      <img class="bg-img" src="img13.png" alt="AI Design Possibility Generation" />
+      <div class="invisible-back-hotspot" onclick="goToScreen(13)"></div>
+      <div class="ai-engine-continue-hotspot" onclick="alert('✨ AI Design Possibilities Generated Successfully!\nProceeding to Next Design Concepts Stage...');"></div>
     </div>
 
   </div>
@@ -1439,7 +1459,7 @@
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
       'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
       'img4.png', 'img5.png', 'img6.png', 'img7.png', 'img8.png',
-      'img9.png', 'img10.png', 'img11.png', 'img12.png'
+      'img9.png', 'img10.png', 'img11.png', 'img12.png', 'img13.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
