@@ -21,6 +21,7 @@
   <link rel="preload" as="image" href="img5.png" />
   <link rel="preload" as="image" href="img6.png" />
   <link rel="preload" as="image" href="img7.png" />
+  <link rel="preload" as="image" href="img8.png" />
 
   <style>
     * {
@@ -971,6 +972,131 @@
       transform: scale(0.97);
       box-shadow: 0 0 25px rgba(0, 255, 180, 0.6);
     }
+
+    /* ========================================================
+       SCREEN 9: SPACE UNDERSTANDING (img8.png)
+       ======================================================== */
+    /* 1. Top-Left Back Button */
+    .su-top-back-btn {
+      position: absolute;
+      top: 1.8%;
+      left: 3.2%;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+    .su-top-back-btn:active {
+      transform: scale(0.92);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* 2. Top-Right Help (?) Button */
+    .su-top-help-btn {
+      position: absolute;
+      top: 1.8%;
+      right: 3.2%;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+    .su-top-help-btn:active {
+      transform: scale(0.92);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* 3, 4, 5. Right Angle Views Stack */
+    .su-right-views-stack {
+      position: absolute;
+      top: 31%;
+      right: 2.8%;
+      width: 58px;
+      height: 235px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 55;
+    }
+    .su-view-card-btn {
+      width: 100%;
+      height: 72px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .su-view-card-btn:active {
+      transform: scale(0.94);
+      box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
+    }
+
+    /* 6, 7, 8, 9. Four Horizontal Perspective Tabs */
+    .su-perspective-tabs-container {
+      position: absolute;
+      top: 51.5%;
+      left: 3.5%;
+      width: 69%;
+      height: 72px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      z-index: 55;
+    }
+    .su-persp-tab {
+      flex: 1;
+      height: 100%;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .su-persp-tab:active {
+      transform: scale(0.94);
+      box-shadow: 0 0 15px rgba(0, 255, 180, 0.5);
+    }
+
+    /* 10. Bottom Left CTA: CORRECT SPACE */
+    .su-btn-correct-space {
+      position: absolute;
+      bottom: 4.8%;
+      left: 4.5%;
+      width: 43%;
+      height: 56px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .su-btn-correct-space:active {
+      transform: scale(0.96);
+      box-shadow: 0 0 18px rgba(255, 215, 0, 0.5);
+    }
+
+    /* 11. Bottom Right CTA: CONFIRM & CONTINUE -> */
+    .su-btn-confirm-continue {
+      position: absolute;
+      bottom: 4.8%;
+      right: 4.5%;
+      width: 48%;
+      height: 56px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .su-btn-confirm-continue:active {
+      transform: scale(0.96);
+      box-shadow: 0 0 22px rgba(0, 255, 180, 0.6);
+    }
   </style>
 </head>
 <body>
@@ -1403,6 +1529,45 @@
       <div class="scan-finish-process-btn" onclick="handleFinishAndProcess()" title="Finish & Process 3D Model"></div>
     </div>
 
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
+    <div id="screen-9" class="screen">
+      <img class="bg-img" src="img8.png" alt="VISTAROQ Space Understanding" />
+
+      <!-- 1. Top-Left Back Button Hotspot -->
+      <div class="su-top-back-btn" onclick="handleSUBack()" title="Back to Scan"></div>
+
+      <!-- 2. Top-Right Help (?) Button Hotspot -->
+      <div class="su-top-help-btn" onclick="handleSUHelp()" title="Space Intelligence Guide"></div>
+
+      <!-- Right Angle Views Stack (3, 4, 5) -->
+      <div class="su-right-views-stack">
+        <!-- 3. Top View -->
+        <div class="su-view-card-btn" onclick="handleSUAngleView('TOP VIEW')" title="Top View"></div>
+        <!-- 4. Front View -->
+        <div class="su-view-card-btn" onclick="handleSUAngleView('FRONT VIEW')" title="Front View"></div>
+        <!-- 5. 3D View -->
+        <div class="su-view-card-btn" onclick="handleSUAngleView('3D VIEW')" title="3D View"></div>
+      </div>
+
+      <!-- Four Horizontal Perspective Tabs (6, 7, 8, 9) -->
+      <div class="su-perspective-tabs-container">
+        <!-- 6. 3D VIEW Tab -->
+        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('3D VIEW')" title="3D View Perspective"></div>
+        <!-- 7. FLOOR PLAN Tab -->
+        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('FLOOR PLAN')" title="Floor Plan View"></div>
+        <!-- 8. WALLS Tab -->
+        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('WALLS')" title="Walls Detection"></div>
+        <!-- 9. DIMENSIONS Tab -->
+        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('DIMENSIONS')" title="Dimensions & Evidence"></div>
+      </div>
+
+      <!-- 10. Bottom Left CTA: CORRECT SPACE -->
+      <div class="su-btn-correct-space" onclick="handleSUCorrectSpace()" title="Correct Space & Measurements"></div>
+
+      <!-- 11. Bottom Right CTA: CONFIRM & CONTINUE -> -->
+      <div class="su-btn-confirm-continue" onclick="handleSUConfirmContinue()" title="Confirm Space Truth & Continue"></div>
+    </div>
+
   </div>
 
   <script>
@@ -1412,7 +1577,7 @@
     const assetsToPreload = [
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
       'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
-      'img4.png', 'img5.png', 'img6.png', 'img7.png'
+      'img4.png', 'img5.png', 'img6.png', 'img7.png', 'img8.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
@@ -1552,7 +1717,40 @@
     }
 
     function handleFinishAndProcess() {
-      alert('✨ PROCESSING SPACE SCAN:\nCapturing measurements, spatial boundaries, and detected elements.\nProceeding to Space Understanding...');
+      goToScreen(9);
+    }
+
+    // ========================================================
+    // SCREEN 9 (img8.png) HANDLERS FOR 11 MARKED BUTTONS
+    // ========================================================
+    // 1. Top-Left Back
+    function handleSUBack() {
+      goToScreen(8);
+    }
+
+    // 2. Top-Right Help (?)
+    function handleSUHelp() {
+      alert('💡 SPACE UNDERSTANDING INTELLIGENCE:\n• Review captured length, width, height, and area calculations.\n• Verify detected elements (Walls, Floor, Doors/Windows).\n• Choose Correct Space if adjustments are required, or Confirm & Continue to proceed.');
+    }
+
+    // 3, 4, 5. Right Stack Views
+    function handleSUAngleView(viewMode) {
+      alert('🔄 Perspective Switched to: ' + viewMode + '\nRendering accurate spatial viewpoint...');
+    }
+
+    // 6, 7, 8, 9. Perspective Tabs
+    function handleSUPerspectiveTab(tabName) {
+      alert('📐 Display Mode: ' + tabName + '\nFocusing inspection on ' + tabName + ' details.');
+    }
+
+    // 10. Bottom Left CTA: Correct Space
+    function handleSUCorrectSpace() {
+      alert('✏️ CORRECT SPACE:\nOpening manual adjustment editor for dimensions, room boundaries, and openings.');
+    }
+
+    // 11. Bottom Right CTA: Confirm & Continue
+    function handleSUConfirmContinue() {
+      alert('✅ SPACE TRUTH CONFIRMED:\nSpace Model verified and committed into Space Memory.\nProceeding to: What Do I Want To Change? (KEEP / CHANGE / REMOVE)...');
     }
 
     function switchNavTab(tabElement, tabName) {
@@ -1580,7 +1778,7 @@
         { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' },
         { name: 'Bahasa Indo', code: 'ID' }, { name: 'Nederlands', code: 'NL' }, { name: 'Svenska', code: 'SV' },
         { name: 'Polski', code: 'PL' }, { name: 'Tiếng Việt', code: 'VI' }, { name: 'ภาษาไทย', code: 'TH' },
-        { name: 'Ελληνικά', code: 'EL' }, { name: 'עבריತ', code: 'HE' }
+        { name: 'Ελληνικά', code: 'EL' }, { name: 'עברית', code: 'HE' }
       ]}
     ];
 
