@@ -1037,21 +1037,7 @@
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
     }
 
-    /* 3D View Card Natural Neutralizer Overlay (Matches dark translucent glass of Floor Plan, Walls, Dimensions) */
-    .su-3d-neutralizer-overlay {
-      position: absolute;
-      top: 52.8%;
-      left: 5.2%;
-      width: 16.5%;
-      height: 8.6%;
-      border-radius: 14px;
-      background: rgba(14, 18, 17, 0.88);
-      mix-blend-mode: multiply;
-      pointer-events: none;
-      z-index: 56;
-    }
-
-    /* 6, 7, 8, 9. 100% Invisible Clean Direct Hotspots */
+    /* 6, 7, 8, 9. 100% Invisible Clean Direct Hotspots (Zero borders, Zero dark boxes) */
     .su-tab-btn {
       position: absolute;
       cursor: pointer;
@@ -1588,9 +1574,6 @@
         <div class="su-view-card-btn" onclick="handleSUAngleView('3D VIEW')" title="3D View"></div>
       </div>
 
-      <!-- Neutralizing Overlay to make 3D View button blend naturally with other tabs -->
-      <div class="su-3d-neutralizer-overlay"></div>
-
       <!-- Four Clean Invisible Direct Perspective Hotspots (6, 7, 8, 9) -->
       <!-- 6. 3D VIEW Tab -->
       <div class="su-tab-btn" id="tab-3d-view" onclick="handleSUPerspectiveTab('3D VIEW')" title="3D View Perspective"></div>
@@ -1807,7 +1790,7 @@
 
     const languages = [
       { group: 'Indian Languages', list: [
-        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'हिन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
+        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
         { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
         { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿಆ', code: 'OR' }
       ]},
