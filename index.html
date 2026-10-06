@@ -1037,42 +1037,58 @@
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
     }
 
-    /* 6, 7, 8, 9. Four Horizontal Perspective Tabs */
+    /* 6, 7, 8, 9. Four Horizontal Perspective Tabs Container */
     .su-perspective-tabs-container {
       position: absolute;
-      top: 51.5%;
+      top: 51.2%;
       left: 3.5%;
-      width: 69%;
-      height: 72px;
+      width: 71%;
+      height: 74px;
       display: flex;
       justify-content: space-between;
-      gap: 6px;
+      align-items: center;
+      gap: 5px;
       z-index: 55;
     }
+    
+    /* Base perspective tab hotspot */
     .su-persp-tab {
-      flex: 1;
       height: 100%;
-      border-radius: 16px;
-      background: transparent;
-      border: 1.5px solid transparent;
-      box-sizing: border-box;
       cursor: pointer;
-      transition: all 0.2s ease;
+      box-sizing: border-box;
+      border: 1.8px solid transparent;
+      border-radius: 14px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
     }
-    /* Static default mask when 3D is not active */
-    .su-perspective-tabs-container.other-active #tab-3d-view:not(.active) {
-      background: rgba(14, 18, 17, 0.65);
-      border-radius: 16px;
-      backdrop-filter: blur(1.5px);
+    
+    /* Exact dimension matching for each button to fit background card */
+    #tab-3d-view {
+      width: 25.5%;
+      border-radius: 15px;
     }
-    /* Dynamic active neon highlight state */
+    #tab-floor-plan {
+      width: 24.5%;
+      border-radius: 14px;
+    }
+    #tab-walls {
+      width: 24.5%;
+      border-radius: 14px;
+    }
+    #tab-dimensions {
+      width: 25.5%;
+      border-radius: 14px;
+    }
+
+    /* Active Highlight state with Neon Glow (Fits strictly around the box) */
     .su-persp-tab.active {
-      border: 1.6px solid #00ffb4;
-      background: rgba(0, 255, 180, 0.14);
-      box-shadow: 0 0 16px rgba(0, 255, 180, 0.5), inset 0 0 8px rgba(0, 255, 180, 0.2);
+      border: 2px solid #00ffb4;
+      box-shadow: 0 0 14px rgba(0, 255, 180, 0.65), inset 0 0 6px rgba(0, 255, 180, 0.3);
     }
     .su-persp-tab:active {
-      transform: scale(0.94);
+      transform: scale(0.95);
     }
 
     /* 10. Bottom Left CTA: CORRECT SPACE */
@@ -1302,7 +1318,7 @@
             </svg>
             <input type="password" class="text-input" placeholder="Confirm Password" id="regConfirmPassword" />
             <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regConfirmPassword')">
-              <path d="M1 12s4-8 11-8 11 8-4 8-11 8-11-8-11-8z"/>
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
               <circle cx="12" cy="3"/>
             </svg>
           </div>
@@ -1751,19 +1767,12 @@
       alert('🔄 Perspective Switched to: ' + viewMode + '\nRendering accurate spatial viewpoint...');
     }
 
-    // 6, 7, 8, 9. Dynamic Perspective Tabs Switcher
+    // 6, 7, 8, 9. Clear & Dynamic Perspective Tabs Switcher (Zero Blur, Perfect Fit)
     function handleSUPerspectiveTab(tabName, el) {
       const container = document.getElementById('perspectiveTabsWrapper');
       container.querySelectorAll('.su-persp-tab').forEach(t => t.classList.remove('active'));
       
       el.classList.add('active');
-
-      if (tabName === '3D VIEW') {
-        container.classList.remove('other-active');
-      } else {
-        container.classList.add('other-active');
-      }
-
       console.log('Display Mode: ' + tabName);
     }
 
