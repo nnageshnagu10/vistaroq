@@ -1037,7 +1037,21 @@
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
     }
 
-    /* 6, 7, 8, 9. 100% Invisible Clean Direct Hotspots (No borders, No glow, Direct action) */
+    /* 3D View Card Natural Neutralizer Overlay (Matches dark translucent glass of Floor Plan, Walls, Dimensions) */
+    .su-3d-neutralizer-overlay {
+      position: absolute;
+      top: 52.8%;
+      left: 5.2%;
+      width: 16.5%;
+      height: 8.6%;
+      border-radius: 14px;
+      background: rgba(14, 18, 17, 0.88);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 56;
+    }
+
+    /* 6, 7, 8, 9. 100% Invisible Clean Direct Hotspots */
     .su-tab-btn {
       position: absolute;
       cursor: pointer;
@@ -1487,7 +1501,7 @@
         </div>
 
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 2.83 0l.06-.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
 
@@ -1573,6 +1587,9 @@
         <!-- 5. 3D View -->
         <div class="su-view-card-btn" onclick="handleSUAngleView('3D VIEW')" title="3D View"></div>
       </div>
+
+      <!-- Neutralizing Overlay to make 3D View button blend naturally with other tabs -->
+      <div class="su-3d-neutralizer-overlay"></div>
 
       <!-- Four Clean Invisible Direct Perspective Hotspots (6, 7, 8, 9) -->
       <!-- 6. 3D VIEW Tab -->
@@ -1790,7 +1807,7 @@
 
     const languages = [
       { group: 'Indian Languages', list: [
-        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
+        { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'हिन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
         { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
         { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿಆ', code: 'OR' }
       ]},
