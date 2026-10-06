@@ -400,6 +400,7 @@
       position: relative;
       margin-bottom: 6px;
       width: 100%;
+      z-index: 50;
     }
     .input-icon-svg {
       position: absolute;
@@ -411,6 +412,7 @@
       stroke: #333;
       fill: none;
       stroke-width: 1.8;
+      z-index: 2;
     }
     .text-input {
       width: 100%;
@@ -418,16 +420,18 @@
       padding: 0 32px 0 32px;
       border-radius: 17px;
       border: 1px solid rgba(255, 255, 255, 0.85);
-      background: rgba(255, 255, 255, 0.84);
+      background: rgba(255, 255, 255, 0.95);
       font-size: 10.5px;
       color: #111;
+      position: relative;
+      z-index: 1;
       transition: all 0.2s ease;
     }
     .text-input::placeholder {
       color: #555;
     }
     .text-input:focus {
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(255, 255, 255, 1);
       border-color: #d4af37;
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
     }
@@ -436,12 +440,13 @@
       right: 11px;
       top: 50%;
       transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       stroke: #444;
       fill: none;
       stroke-width: 1.8;
       cursor: pointer;
+      z-index: 5;
     }
 
     .options-row {
@@ -450,6 +455,8 @@
       align-items: center;
       font-size: 8.8px;
       margin: 5px 2px 8px;
+      position: relative;
+      z-index: 30;
     }
     .checkbox-label {
       display: flex;
@@ -496,6 +503,8 @@
       justify-content: center;
       gap: 5px;
       box-shadow: 0 4px 14px rgba(184, 134, 11, 0.38);
+      position: relative;
+      z-index: 40;
       transition: transform 0.15s ease;
     }
     .action-btn:active {
@@ -535,6 +544,8 @@
       justify-content: center;
       gap: 5px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      position: relative;
+      z-index: 40;
       transition: transform 0.15s ease;
     }
     .secondary-btn:active {
@@ -1045,7 +1056,7 @@
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: rgba(255, 0, 0, 0.05); /* Testing visualization if needed, set to 0 later */
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1057,7 +1068,7 @@
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: rgba(255, 0, 0, 0.05);
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1069,7 +1080,7 @@
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: rgba(255, 0, 0, 0.05);
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1081,7 +1092,7 @@
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: rgba(255, 0, 0, 0.05);
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1094,7 +1105,7 @@
       width: 72px;
       height: 65px;
       border-radius: 10px;
-      background: rgba(255, 0, 0, 0.05);
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1106,7 +1117,7 @@
       width: 72px;
       height: 65px;
       border-radius: 10px;
-      background: rgba(255, 0, 0, 0.05);
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1119,7 +1130,7 @@
       width: 44%;
       height: 7%;
       border-radius: 30px;
-      background: rgba(255, 0, 0, 0.05);
+      background: transparent;
       cursor: pointer;
       z-index: 999;
       pointer-events: auto;
@@ -1880,23 +1891,20 @@
       <div class="finish-process-hotspot" onclick="goToScreen(9)"></div>
     </div>
 
-    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png - ULTRA HIGH Z-INDEX & POINTER EVENTS) -->
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
     <div id="screen-9" class="screen">
       <div class="global-help-btn" onclick="triggerHelp('Space Understanding Screen')"></div>
       <img class="bg-img" src="img8.png" alt="Space Understanding" />
       <div class="invisible-back-hotspot" onclick="goToScreen(8)"></div>
       
-      <!-- Individual View Mode Buttons with z-index: 999 -->
       <div class="view-btn-3d" onclick="alert('📐 3D View selected.')"></div>
       <div class="view-btn-floor" onclick="alert('📐 Floor Plan view selected.')"></div>
       <div class="view-btn-walls" onclick="alert('📐 Walls view selected.')"></div>
       <div class="view-btn-dim" onclick="alert('📐 Dimensions view selected.')"></div>
 
-      <!-- Individual Right Thumbnails -->
       <div class="thumb-top-view" onclick="alert('🖼️ Switched to Top View perspective.')"></div>
       <div class="thumb-front-view" onclick="alert('🖼️ Switched to Front View perspective.')"></div>
 
-      <!-- Correct Space Editor -->
       <div class="correct-space-btn-9" onclick="alert('✏️ Opening Correct Space editor modal.')"></div>
 
       <div class="confirm-continue-hotspot" onclick="goToScreen(10)"></div>
@@ -2189,6 +2197,8 @@
       targetMenu.classList.toggle('show');
     }
 
+    selectLanguage('English');
+
     function selectLanguage(lang) {
       document.querySelectorAll('.selectedLangText').forEach(el => el.innerText = lang);
       document.querySelectorAll('.lang-item').forEach(item => {
@@ -2203,3 +2213,4 @@
   </script>
 </body>
 </html>
+
