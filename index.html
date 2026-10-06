@@ -1037,59 +1037,53 @@
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
     }
 
-    /* 6, 7, 8, 9. Precise Geometric Isometric Matching */
+    /* 6, 7, 8, 9. 100% Invisible Clean Direct Hotspots (No borders, No glow, Direct action) */
     .su-tab-btn {
       position: absolute;
       cursor: pointer;
-      box-sizing: border-box;
-      border: 2px solid transparent;
-      background: transparent !important;
+      background: rgba(255, 255, 255, 0.01);
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
       z-index: 58;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
+      transition: transform 0.12s ease;
+    }
+    .su-tab-btn:active {
+      transform: scale(0.94);
     }
 
-    /* Geometric Coordinates fully encompassing Icon + Label + Card Boundary */
     #tab-3d-view {
-      top: 53.2%;
-      left: 5.6%;
-      width: 15.6%;
-      height: 7.9%;
+      top: 52%;
+      left: 4.5%;
+      width: 17.5%;
+      height: 9.5%;
       border-radius: 14px;
     }
 
     #tab-floor-plan {
-      top: 53.4%;
-      left: 23.5%;
-      width: 16.0%;
-      height: 7.9%;
+      top: 52%;
+      left: 22.8%;
+      width: 17.5%;
+      height: 9.5%;
       border-radius: 14px;
     }
 
     #tab-walls {
-      top: 53.4%;
-      left: 41.5%;
-      width: 16.0%;
-      height: 7.9%;
+      top: 52%;
+      left: 41%;
+      width: 17.5%;
+      height: 9.5%;
       border-radius: 14px;
     }
 
     #tab-dimensions {
-      top: 53.4%;
-      left: 59.5%;
-      width: 16.2%;
-      height: 7.9%;
+      top: 52%;
+      left: 59%;
+      width: 17.5%;
+      height: 9.5%;
       border-radius: 14px;
-    }
-
-    /* Perfect Edge-Glow Fit */
-    .su-tab-btn.active {
-      border: 2.2px solid #00ffb4;
-      box-shadow: 0 0 14px rgba(0, 255, 180, 0.85), inset 0 0 8px rgba(0, 255, 180, 0.35);
-    }
-    .su-tab-btn:active {
-      transform: scale(0.96);
     }
 
     /* 10. Bottom Left CTA: CORRECT SPACE */
@@ -1493,7 +1487,7 @@
         </div>
 
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 2.83 0 2 2 0 0 1 2.83 0l.06-.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
 
@@ -1580,15 +1574,15 @@
         <div class="su-view-card-btn" onclick="handleSUAngleView('3D VIEW')" title="3D View"></div>
       </div>
 
-      <!-- Four Horizontal Perspective Tabs Hotspots (6, 7, 8, 9) -->
+      <!-- Four Clean Invisible Direct Perspective Hotspots (6, 7, 8, 9) -->
       <!-- 6. 3D VIEW Tab -->
-      <div class="su-tab-btn active" id="tab-3d-view" onclick="handleSUPerspectiveTab('3D VIEW', this)" title="3D View Perspective"></div>
+      <div class="su-tab-btn" id="tab-3d-view" onclick="handleSUPerspectiveTab('3D VIEW')" title="3D View Perspective"></div>
       <!-- 7. FLOOR PLAN Tab -->
-      <div class="su-tab-btn" id="tab-floor-plan" onclick="handleSUPerspectiveTab('FLOOR PLAN', this)" title="Floor Plan View"></div>
+      <div class="su-tab-btn" id="tab-floor-plan" onclick="handleSUPerspectiveTab('FLOOR PLAN')" title="Floor Plan View"></div>
       <!-- 8. WALLS Tab -->
-      <div class="su-tab-btn" id="tab-walls" onclick="handleSUPerspectiveTab('WALLS', this)" title="Walls Detection"></div>
+      <div class="su-tab-btn" id="tab-walls" onclick="handleSUPerspectiveTab('WALLS')" title="Walls Detection"></div>
       <!-- 9. DIMENSIONS Tab -->
-      <div class="su-tab-btn" id="tab-dimensions" onclick="handleSUPerspectiveTab('DIMENSIONS', this)" title="Dimensions & Evidence"></div>
+      <div class="su-tab-btn" id="tab-dimensions" onclick="handleSUPerspectiveTab('DIMENSIONS')" title="Dimensions & Evidence"></div>
 
       <!-- 10. Bottom Left CTA: CORRECT SPACE -->
       <div class="su-btn-correct-space" onclick="handleSUCorrectSpace()" title="Correct Space & Measurements"></div>
@@ -1767,10 +1761,8 @@
       alert('🔄 Perspective Switched to: ' + viewMode + '\nRendering accurate spatial viewpoint...');
     }
 
-    // 6, 7, 8, 9. Clear & Dynamic Perspective Tabs Switcher
-    function handleSUPerspectiveTab(tabName, el) {
-      document.querySelectorAll('.su-tab-btn').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
+    // 6, 7, 8, 9. Direct Clean Hotspots (No borders/masks, Direct Action Trigger)
+    function handleSUPerspectiveTab(tabName) {
       alert('📐 Display Mode: ' + tabName + '\nFocusing inspection on ' + tabName + ' details.');
     }
 
