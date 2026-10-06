@@ -1037,7 +1037,7 @@
       box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
     }
 
-    /* 6, 7, 8, 9. Isometric Calibrated Hotspots for Perspective Tabs */
+    /* 6, 7, 8, 9. Precise Geometric Isometric Matching */
     .su-tab-btn {
       position: absolute;
       cursor: pointer;
@@ -1047,49 +1047,49 @@
       backdrop-filter: none !important;
       -webkit-backdrop-filter: none !important;
       z-index: 58;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.12s ease;
     }
 
-    /* Calibrated positions matching img8.png */
+    /* Geometric Coordinates fully encompassing Icon + Label + Card Boundary */
     #tab-3d-view {
-      top: 53.6%;
-      left: 5.2%;
-      width: 16.5%;
-      height: 7.2%;
-      border-radius: 18px;
+      top: 53.2%;
+      left: 5.6%;
+      width: 15.6%;
+      height: 7.9%;
+      border-radius: 14px;
     }
 
     #tab-floor-plan {
-      top: 53.8%;
-      left: 23.8%;
-      width: 16.2%;
-      height: 7.2%;
-      border-radius: 18px;
+      top: 53.4%;
+      left: 23.5%;
+      width: 16.0%;
+      height: 7.9%;
+      border-radius: 14px;
     }
 
     #tab-walls {
-      top: 53.8%;
-      left: 41.8%;
-      width: 16.2%;
-      height: 7.2%;
-      border-radius: 18px;
+      top: 53.4%;
+      left: 41.5%;
+      width: 16.0%;
+      height: 7.9%;
+      border-radius: 14px;
     }
 
     #tab-dimensions {
-      top: 53.8%;
-      left: 59.8%;
-      width: 16.5%;
-      height: 7.2%;
-      border-radius: 18px;
+      top: 53.4%;
+      left: 59.5%;
+      width: 16.2%;
+      height: 7.9%;
+      border-radius: 14px;
     }
 
-    /* Active Highlight fitting directly on top of the card */
+    /* Perfect Edge-Glow Fit */
     .su-tab-btn.active {
-      border: 2px solid #00ffb4;
-      box-shadow: 0 0 12px rgba(0, 255, 180, 0.8), inset 0 0 6px rgba(0, 255, 180, 0.35);
+      border: 2.2px solid #00ffb4;
+      box-shadow: 0 0 14px rgba(0, 255, 180, 0.85), inset 0 0 8px rgba(0, 255, 180, 0.35);
     }
     .su-tab-btn:active {
-      transform: scale(0.95);
+      transform: scale(0.96);
     }
 
     /* 10. Bottom Left CTA: CORRECT SPACE */
@@ -1269,7 +1269,7 @@
           <button class="lang-pill-btn" onclick="toggleLangMenu(event, 'langMenuSignup')">
             <svg viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
             <span class="selectedLangText">English</span>
             <span style="font-size: 7px; color: #444; margin-left: 2px;">▼</span>
@@ -1319,7 +1319,7 @@
             </svg>
             <input type="password" class="text-input" placeholder="Confirm Password" id="regConfirmPassword" />
             <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regConfirmPassword')">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11-8-11-8z"/>
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
               <circle cx="12" cy="3"/>
             </svg>
           </div>
@@ -1800,7 +1800,7 @@
       { group: 'Indian Languages', list: [
         { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
         { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
-        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿଆ', code: 'OR' }
+        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿಆ', code: 'OR' }
       ]},
       { group: 'International Languages', list: [
         { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
