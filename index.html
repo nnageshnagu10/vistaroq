@@ -854,7 +854,7 @@
       box-shadow: 0 0 6px #ffd700;
     }
 
-    /* ========================================================
+    /* =========================================
        SHARED NAVIGATION BUTTONS
        ========================================= */
     .screen-back-btn {
@@ -1036,30 +1036,78 @@
     }
 
     /* ========================================================
-       SCREEN 9 (img8.png - SPACE UNDERSTANDING) EXACT HOTSPOTS
+       SCREEN 9 (img8.png - SPACE UNDERSTANDING) PRECISE INDIVIDUAL HOTSPOTS
        ========================================= */
-    .view-mode-bar-9 {
+    /* Bottom 4 View Mode Buttons */
+    .view-btn-3d {
       position: absolute;
       top: 555px;
       left: 20px;
-      width: 385px;
-      height: 70px;
+      width: 90px;
+      height: 68px;
       border-radius: 12px;
       background: transparent;
       cursor: pointer;
       z-index: 55;
     }
-    .right-thumbnail-stack-9 {
+    .view-btn-floor {
       position: absolute;
-      top: 360px;
-      right: 15px;
-      width: 75px;
-      height: 220px;
+      top: 555px;
+      left: 118px;
+      width: 90px;
+      height: 68px;
       border-radius: 12px;
       background: transparent;
       cursor: pointer;
       z-index: 55;
     }
+    .view-btn-walls {
+      position: absolute;
+      top: 555px;
+      left: 216px;
+      width: 90px;
+      height: 68px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .view-btn-dim {
+      position: absolute;
+      top: 555px;
+      left: 314px;
+      width: 90px;
+      height: 68px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+
+    /* Right Side Thumbnails */
+    .thumb-top-view {
+      position: absolute;
+      top: 362px;
+      right: 15px;
+      width: 72px;
+      height: 65px;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .thumb-front-view {
+      position: absolute;
+      top: 438px;
+      right: 15px;
+      width: 72px;
+      height: 65px;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+
     .correct-space-btn-9 {
       position: absolute;
       bottom: 3.8%;
@@ -1804,15 +1852,23 @@
       <div class="finish-process-hotspot" onclick="goToScreen(9)"></div>
     </div>
 
-    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png - UPDATED HOTSPOTS) -->
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png - PRECISELY SEPARATED HOTSPOTS) -->
     <div id="screen-9" class="screen">
       <div class="global-help-btn" onclick="triggerHelp('Space Understanding Screen')"></div>
       <img class="bg-img" src="img8.png" alt="Space Understanding" />
       <div class="invisible-back-hotspot" onclick="goToScreen(8)"></div>
       
-      <!-- Newly Mapped Hotspots for img8.png -->
-      <div class="view-mode-bar-9" onclick="alert('📐 View Mode / Dimensions toggled successfully.')"></div>
-      <div class="right-thumbnail-stack-9" onclick="alert('🖼️ Switched camera perspective view.')"></div>
+      <!-- Individual View Mode Buttons -->
+      <div class="view-btn-3d" onclick="alert('📐 3D View selected.')"></div>
+      <div class="view-btn-floor" onclick="alert('📐 Floor Plan view selected.')"></div>
+      <div class="view-btn-walls" onclick="alert('📐 Walls view selected.')"></div>
+      <div class="view-btn-dim" onclick="alert('📐 Dimensions view selected.')"></div>
+
+      <!-- Individual Right Thumbnails -->
+      <div class="thumb-top-view" onclick="alert('🖼️ Switched to Top View perspective.')"></div>
+      <div class="thumb-front-view" onclick="alert('🖼️ Switched to Front View perspective.')"></div>
+
+      <!-- Correct Space Editor -->
       <div class="correct-space-btn-9" onclick="alert('✏️ Opening Correct Space editor modal.')"></div>
 
       <div class="confirm-continue-hotspot" onclick="goToScreen(10)"></div>
@@ -1824,12 +1880,11 @@
       <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
       <div class="invisible-back-hotspot" onclick="goToScreen(9)"></div>
       
-      <!-- Interactive Buttons Mapped from Screenshot -->
       <div class="view-mode-btn-10" onclick="alert('📐 View Mode: Switched view perspective.')"></div>
       <div class="filter-tab-btn-10" onclick="alert('🗂️ Element Filter: Toggled category review.')"></div>
       <div class="element-card-btn-10" onclick="alert('🖼️ Element Card: Selected element for correction.')"></div>
       <div class="wall-edit-pin-1" onclick="alert('✏ Editing Wall 1 attributes.')"></div>
-      <div class="opening-edit-pin-1" onclick="alert('✏️️ Editing Opening 1 attributes.')"></div>
+      <div class="opening-edit-pin-1" onclick="alert('✏ Editing Opening 1 attributes.')"></div>
       <div class="correct-space-btn-10" onclick="alert('✏ Correct Space: Opening interactive measurement editor.')"></div>
 
       <div class="looks-correct-hotspot" onclick="goToScreen(11)"></div>
@@ -1841,7 +1896,6 @@
       <img class="bg-img" src="img10.png" alt="What Do I Want To Change?" />
       <div class="invisible-back-hotspot" onclick="goToScreen(10)"></div>
       
-      <!-- Interactive Buttons Mapped -->
       <div class="view-mode-btn-11" onclick="alert('📐 View Mode toggled.')"></div>
       <div class="action-pin-hotspot" onclick="alert('🔄 Action Toggle: Wall Finish selected.')"></div>
       <div class="action-pin-hotspot-2" onclick="alert('🔄 Action Toggle: Flooring selected.')"></div>
@@ -1869,7 +1923,6 @@
       <img class="bg-img" src="img12.png" alt="Customer References Inspiration" />
       <div class="invisible-back-hotspot" onclick="goToScreen(12)"></div>
       
-      <!-- Change Image & Remove Hotspots -->
       <div class="change-image-btn-1" onclick="alert('🖼️ Changing Style Reference Image...')"></div>
       <div class="change-image-btn-2" onclick="alert('🖼️ Changing Materials Reference Image...')"></div>
       <div class="change-image-btn-3" onclick="alert('🖼️ Changing Furniture Reference Image...')"></div>
@@ -1899,14 +1952,12 @@
       <img class="bg-img" src="img14.png" alt="Your Design Possibilities" />
       <div class="invisible-back-hotspot" onclick="goToScreen(14)"></div>
       
-      <!-- View Details Hotspots for Concepts 01 to 05 -->
       <div class="concept-view-details-1" onclick="alert('💡 Viewing Details for: Warm Modern Concept (01)')"></div>
       <div class="concept-view-details-2" onclick="alert('💡 Viewing Details for: Natural Elegance Concept (02)')"></div>
       <div class="concept-view-details-3" onclick="alert('💡 Viewing Details for: Contemporary Concept (03)')"></div>
       <div class="concept-view-details-4" onclick="alert('💡 Viewing Details for: Minimal Luxury Concept (04)')"></div>
       <div class="concept-view-details-5" onclick="alert('💡 Viewing Details for: Bold & Expressive Concept (05)')"></div>
 
-      <!-- Select Preferred Concept / Continue Button -->
       <div class="select-preferred-concept-hotspot" onclick="goToScreen(16)"></div>
     </div>
 
