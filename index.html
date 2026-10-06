@@ -1053,13 +1053,26 @@
       flex: 1;
       height: 100%;
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.01);
+      background: transparent;
+      border: 1.5px solid transparent;
+      box-sizing: border-box;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s ease;
+      transition: all 0.2s ease;
+    }
+    /* Static default mask when 3D is not active */
+    .su-perspective-tabs-container.other-active #tab-3d-view:not(.active) {
+      background: rgba(14, 18, 17, 0.65);
+      border-radius: 16px;
+      backdrop-filter: blur(1.5px);
+    }
+    /* Dynamic active neon highlight state */
+    .su-persp-tab.active {
+      border: 1.6px solid #00ffb4;
+      background: rgba(0, 255, 180, 0.14);
+      box-shadow: 0 0 16px rgba(0, 255, 180, 0.5), inset 0 0 8px rgba(0, 255, 180, 0.2);
     }
     .su-persp-tab:active {
       transform: scale(0.94);
-      box-shadow: 0 0 15px rgba(0, 255, 180, 0.5);
     }
 
     /* 10. Bottom Left CTA: CORRECT SPACE */
@@ -1289,7 +1302,7 @@
             </svg>
             <input type="password" class="text-input" placeholder="Confirm Password" id="regConfirmPassword" />
             <svg class="toggle-pass-btn" viewBox="0 0 24 24" onclick="togglePasswordVisibility('regConfirmPassword')">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <path d="M1 12s4-8 11-8 11 8-4 8-11 8-11-8-11-8z"/>
               <circle cx="12" cy="3"/>
             </svg>
           </div>
@@ -1550,15 +1563,15 @@
       </div>
 
       <!-- Four Horizontal Perspective Tabs (6, 7, 8, 9) -->
-      <div class="su-perspective-tabs-container">
+      <div class="su-perspective-tabs-container" id="perspectiveTabsWrapper">
         <!-- 6. 3D VIEW Tab -->
-        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('3D VIEW')" title="3D View Perspective"></div>
+        <div class="su-persp-tab active" id="tab-3d-view" onclick="handleSUPerspectiveTab('3D VIEW', this)" title="3D View Perspective"></div>
         <!-- 7. FLOOR PLAN Tab -->
-        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('FLOOR PLAN')" title="Floor Plan View"></div>
+        <div class="su-persp-tab" id="tab-floor-plan" onclick="handleSUPerspectiveTab('FLOOR PLAN', this)" title="Floor Plan View"></div>
         <!-- 8. WALLS Tab -->
-        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('WALLS')" title="Walls Detection"></div>
+        <div class="su-persp-tab" id="tab-walls" onclick="handleSUPerspectiveTab('WALLS', this)" title="Walls Detection"></div>
         <!-- 9. DIMENSIONS Tab -->
-        <div class="su-persp-tab" onclick="handleSUPerspectiveTab('DIMENSIONS')" title="Dimensions & Evidence"></div>
+        <div class="su-persp-tab" id="tab-dimensions" onclick="handleSUPerspectiveTab('DIMENSIONS', this)" title="Dimensions & Evidence"></div>
       </div>
 
       <!-- 10. Bottom Left CTA: CORRECT SPACE -->
@@ -1738,9 +1751,20 @@
       alert('🔄 Perspective Switched to: ' + viewMode + '\nRendering accurate spatial viewpoint...');
     }
 
-    // 6, 7, 8, 9. Perspective Tabs
-    function handleSUPerspectiveTab(tabName) {
-      alert('📐 Display Mode: ' + tabName + '\nFocusing inspection on ' + tabName + ' details.');
+    // 6, 7, 8, 9. Dynamic Perspective Tabs Switcher
+    function handleSUPerspectiveTab(tabName, el) {
+      const container = document.getElementById('perspectiveTabsWrapper');
+      container.querySelectorAll('.su-persp-tab').forEach(t => t.classList.remove('active'));
+      
+      el.classList.add('active');
+
+      if (tabName === '3D VIEW') {
+        container.classList.remove('other-active');
+      } else {
+        container.classList.add('other-active');
+      }
+
+      console.log('Display Mode: ' + tabName);
     }
 
     // 10. Bottom Left CTA: Correct Space
