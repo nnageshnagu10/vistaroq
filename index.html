@@ -93,7 +93,7 @@
       height: 36px;
       border-radius: 50%;
       background: transparent;
-      z-index: 70;
+      z-index: 999;
       cursor: pointer;
     }
 
@@ -1036,55 +1036,57 @@
     }
 
     /* ========================================================
-       SCREEN 9 (img8.png - SPACE UNDERSTANDING) PRECISE INDIVIDUAL HOTSPOTS
+       SCREEN 9 (img8.png - SPACE UNDERSTANDING) HIGH Z-INDEX HOTSPOTS
        ========================================= */
-    /* Bottom 4 View Mode Buttons */
     .view-btn-3d {
       position: absolute;
-      top: 555px;
+      top: 552px;
       left: 20px;
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05); /* Testing visualization if needed, set to 0 later */
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .view-btn-floor {
       position: absolute;
-      top: 555px;
+      top: 552px;
       left: 118px;
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05);
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .view-btn-walls {
       position: absolute;
-      top: 555px;
+      top: 552px;
       left: 216px;
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05);
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .view-btn-dim {
       position: absolute;
-      top: 555px;
+      top: 552px;
       left: 314px;
       width: 90px;
       height: 68px;
       border-radius: 12px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05);
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
 
-    /* Right Side Thumbnails */
     .thumb-top-view {
       position: absolute;
       top: 362px;
@@ -1092,9 +1094,10 @@
       width: 72px;
       height: 65px;
       border-radius: 10px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05);
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .thumb-front-view {
       position: absolute;
@@ -1103,9 +1106,10 @@
       width: 72px;
       height: 65px;
       border-radius: 10px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05);
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
 
     .correct-space-btn-9 {
@@ -1115,9 +1119,10 @@
       width: 44%;
       height: 7%;
       border-radius: 30px;
-      background: transparent;
+      background: rgba(255, 0, 0, 0.05);
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
 
     /* ========================================================
@@ -1132,7 +1137,8 @@
       border-radius: 12px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .filter-tab-btn-10 {
       position: absolute;
@@ -1143,7 +1149,8 @@
       border-radius: 14px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .element-card-btn-10 {
       position: absolute;
@@ -1154,7 +1161,8 @@
       border-radius: 12px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .wall-edit-pin-1 {
       position: absolute;
@@ -1165,7 +1173,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .opening-edit-pin-1 {
       position: absolute;
@@ -1176,7 +1185,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .correct-space-btn-10 {
       position: absolute;
@@ -1187,7 +1197,8 @@
       border-radius: 30px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
 
     /* ========================================================
@@ -1202,7 +1213,8 @@
       border-radius: 12px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .action-pin-hotspot {
       position: absolute;
@@ -1213,7 +1225,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .action-pin-hotspot-2 {
       position: absolute;
@@ -1224,7 +1237,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .action-pin-hotspot-3 {
       position: absolute;
@@ -1235,7 +1249,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .action-pin-hotspot-4 {
       position: absolute;
@@ -1246,7 +1261,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .action-pin-hotspot-5 {
       position: absolute;
@@ -1257,7 +1273,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .element-action-row {
       position: absolute;
@@ -1268,7 +1285,8 @@
       border-radius: 10px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
 
     /* ========================================================
@@ -1282,7 +1300,8 @@
       height: 30px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .change-image-btn-2 {
       position: absolute;
@@ -1292,7 +1311,8 @@
       height: 30px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .change-image-btn-3 {
       position: absolute;
@@ -1302,7 +1322,8 @@
       height: 30px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .change-image-btn-4 {
       position: absolute;
@@ -1312,7 +1333,8 @@
       height: 30px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .change-image-btn-5 {
       position: absolute;
@@ -1322,7 +1344,8 @@
       height: 30px;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .remove-ref-btn-1 {
       position: absolute;
@@ -1333,7 +1356,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .remove-ref-btn-2 {
       position: absolute;
@@ -1344,7 +1368,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .remove-ref-btn-3 {
       position: absolute;
@@ -1355,7 +1380,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .remove-ref-btn-4 {
       position: absolute;
@@ -1366,7 +1392,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .remove-ref-btn-5 {
       position: absolute;
@@ -1377,7 +1404,8 @@
       border-radius: 50%;
       background: transparent;
       cursor: pointer;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
 
     /* ========================================================
@@ -1392,8 +1420,8 @@
       height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .concept-view-details-2 {
       position: absolute;
@@ -1404,8 +1432,8 @@
       height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .concept-view-details-3 {
       position: absolute;
@@ -1416,8 +1444,8 @@
       height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .concept-view-details-4 {
       position: absolute;
@@ -1428,8 +1456,8 @@
       height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .concept-view-details-5 {
       position: absolute;
@@ -1440,8 +1468,8 @@
       height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
     .select-preferred-concept-hotspot {
       position: absolute;
@@ -1451,8 +1479,8 @@
       height: 6.5%;
       border-radius: 30px;
       cursor: pointer;
-      background: transparent;
-      z-index: 55;
+      z-index: 999;
+      pointer-events: auto;
     }
   </style>
 </head>
@@ -1852,13 +1880,13 @@
       <div class="finish-process-hotspot" onclick="goToScreen(9)"></div>
     </div>
 
-    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png - PRECISELY SEPARATED HOTSPOTS) -->
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png - ULTRA HIGH Z-INDEX & POINTER EVENTS) -->
     <div id="screen-9" class="screen">
       <div class="global-help-btn" onclick="triggerHelp('Space Understanding Screen')"></div>
       <img class="bg-img" src="img8.png" alt="Space Understanding" />
       <div class="invisible-back-hotspot" onclick="goToScreen(8)"></div>
       
-      <!-- Individual View Mode Buttons -->
+      <!-- Individual View Mode Buttons with z-index: 999 -->
       <div class="view-btn-3d" onclick="alert('📐 3D View selected.')"></div>
       <div class="view-btn-floor" onclick="alert('📐 Floor Plan view selected.')"></div>
       <div class="view-btn-walls" onclick="alert('📐 Walls view selected.')"></div>
