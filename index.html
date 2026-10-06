@@ -20,6 +20,7 @@
   <link rel="preload" as="image" href="img4.png" />
   <link rel="preload" as="image" href="img5.png" />
   <link rel="preload" as="image" href="img6.png" />
+  <link rel="preload" as="image" href="img7.png" />
 
   <style>
     * {
@@ -916,6 +917,60 @@
       transform: scale(0.96);
       box-shadow: 0 0 18px rgba(255, 215, 0, 0.6);
     }
+
+    /* ========================================================
+       SCREEN 8: SMART SPACE SCAN (img7.png)
+       ======================================================== */
+    .scan-top-back-btn {
+      position: absolute;
+      top: 1.8%;
+      left: 3.2%;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+    .scan-top-back-btn:active {
+      transform: scale(0.92);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .scan-top-help-btn {
+      position: absolute;
+      top: 1.8%;
+      right: 3.2%;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, background 0.2s ease;
+    }
+    .scan-top-help-btn:active {
+      transform: scale(0.92);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .scan-finish-process-btn {
+      position: absolute;
+      bottom: 4.8%;
+      left: 5%;
+      width: 90%;
+      height: 58px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+      transition: transform 0.15s ease, box-shadow 0.25s ease;
+    }
+    .scan-finish-process-btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 25px rgba(0, 255, 180, 0.6);
+    }
   </style>
 </head>
 <body>
@@ -1334,6 +1389,20 @@
       </div>
     </div>
 
+    <!-- SCREEN 8: SMART SPACE SCAN (img7.png) -->
+    <div id="screen-8" class="screen">
+      <img class="bg-img" src="img7.png" alt="VISTAROQ Smart Space Scan" />
+
+      <!-- 1. Top-Left Back Button Hotspot -->
+      <div class="scan-top-back-btn" onclick="handleScanBack()" title="Back to Measurement Selection"></div>
+
+      <!-- 2. Top-Right Help (?) Button Hotspot -->
+      <div class="scan-top-help-btn" onclick="handleScanHelp()" title="Scanning Guidance"></div>
+
+      <!-- 3. Bottom CTA: FINISH & PROCESS -> Hotspot -->
+      <div class="scan-finish-process-btn" onclick="handleFinishAndProcess()" title="Finish & Process 3D Model"></div>
+    </div>
+
   </div>
 
   <script>
@@ -1343,7 +1412,7 @@
     const assetsToPreload = [
       'welcome.png', 'img2.png', 'nest.png', 'craft.png',
       'link.png', 'force.png', 'hub.png', 'img3.png', 'img3a.png',
-      'img4.png', 'img5.png', 'img6.png'
+      'img4.png', 'img5.png', 'img6.png', 'img7.png'
     ];
     window.addEventListener('DOMContentLoaded', () => {
       assetsToPreload.forEach(src => {
@@ -1466,7 +1535,24 @@
 
     // Measurement Method Handler
     function handleMeasureMethod(method) {
-      alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
+      if (method === 'SCAN WITH CAMERA') {
+        goToScreen(8);
+      } else {
+        alert('📐 ' + method + ' selected for [' + selectedCategory + '].\nInitializing Next Step...');
+      }
+    }
+
+    // SCREEN 8 (img7.png) HANDLERS FOR MARKED BUTTONS
+    function handleScanBack() {
+      goToScreen(7);
+    }
+
+    function handleScanHelp() {
+      alert('💡 SMART SPACE SCAN GUIDANCE:\n• Slowly move around the space to capture all corners and walls.\n• Keep lighting clear and steady.\n• 3D spatial mapping and boundary detection are live.');
+    }
+
+    function handleFinishAndProcess() {
+      alert('✨ PROCESSING SPACE SCAN:\nCapturing measurements, spatial boundaries, and detected elements.\nProceeding to Space Understanding...');
     }
 
     function switchNavTab(tabElement, tabName) {
@@ -1494,7 +1580,7 @@
         { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' },
         { name: 'Bahasa Indo', code: 'ID' }, { name: 'Nederlands', code: 'NL' }, { name: 'Svenska', code: 'SV' },
         { name: 'Polski', code: 'PL' }, { name: 'Tiếng Việt', code: 'VI' }, { name: 'ภาษาไทย', code: 'TH' },
-        { name: 'Ελληνικά', code: 'EL' }, { name: 'עברית', code: 'HE' }
+        { name: 'Ελληνικά', code: 'EL' }, { name: 'עבריತ', code: 'HE' }
       ]}
     ];
 
