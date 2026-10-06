@@ -84,6 +84,19 @@
       backface-visibility: hidden;
     }
 
+    /* --- GLOBAL HELP (?) BUTTON HOTSPOT --- */
+    .global-help-btn {
+      position: absolute;
+      top: 2.2%;
+      right: 3.5%;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      z-index: 70;
+      cursor: pointer;
+    }
+
     /* --- SCREEN 1: WELCOME BUTTON --- */
     .cta-btn {
       position: absolute;
@@ -127,7 +140,7 @@
     .hub-btn {
       position: absolute;
       top: 1.6%;
-      right: 3.5%;
+      right: 15%;
       width: 21%;
       max-width: 88px;
       z-index: 15;
@@ -924,8 +937,8 @@
     }
 
     /* ========================================================
-       SCREENS 8 to 15 INVISIBLE HOTSPOTS
-       ======================================================== */
+       INVIZIBLE HOTSPOTS FOR ALL SCREENS
+       ========================================= */
     .invisible-back-hotspot {
       position: absolute;
       top: env(safe-area-inset-top, 2%);
@@ -1022,14 +1035,276 @@
       z-index: 55;
     }
 
-    /* SCREEN 15 (img14.png) CORRECTED INDIVIDUAL VIEW DETAILS HOTSPOTS */
+    /* ========================================================
+       SCREEN 10 (img9.png - CONFIRM YOUR SPACE) INTERACTIVE HOTSPOTS
+       ========================================= */
+    .view-mode-btn-10 {
+      position: absolute;
+      top: 552px;
+      left: 31px;
+      width: 172px;
+      height: 75px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .filter-tab-btn-10 {
+      position: absolute;
+      top: 652px;
+      left: 17px;
+      width: 396px;
+      height: 52px;
+      border-radius: 14px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .element-card-btn-10 {
+      position: absolute;
+      top: 726px;
+      left: 17px;
+      width: 396px;
+      height: 85px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .wall-edit-pin-1 {
+      position: absolute;
+      top: 450px;
+      left: 285px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .opening-edit-pin-1 {
+      position: absolute;
+      top: 462px;
+      left: 770px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .correct-space-btn-10 {
+      position: absolute;
+      bottom: 6.8%;
+      left: 4%;
+      width: 44%;
+      height: 7%;
+      border-radius: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+
+    /* ========================================================
+       SCREEN 11 & 12 (img10 & img11 - KEEP CHANGE REMOVE) HOTSPOTS
+       ========================================= */
+    .view-mode-btn-11 {
+      position: absolute;
+      top: 295px;
+      left: 34px;
+      width: 172px;
+      height: 75px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .action-pin-hotspot {
+      position: absolute;
+      top: 310px;
+      left: 460px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .action-pin-hotspot-2 {
+      position: absolute;
+      top: 485px;
+      left: 485px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .action-pin-hotspot-3 {
+      position: absolute;
+      top: 365px;
+      left: 535px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .action-pin-hotspot-4 {
+      position: absolute;
+      top: 375px;
+      left: 672px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .action-pin-hotspot-5 {
+      position: absolute;
+      top: 512px;
+      left: 825px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .element-action-row {
+      position: absolute;
+      top: 685px;
+      left: 17px;
+      width: 396px;
+      height: 45px;
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+
+    /* ========================================================
+       SCREEN 13 (img12.png - 4-5 REFERENCES) HOTSPOTS
+       ========================================= */
+    .change-image-btn-1 {
+      position: absolute;
+      top: 385px;
+      left: 155px;
+      width: 145px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .change-image-btn-2 {
+      position: absolute;
+      top: 385px;
+      left: 368px;
+      width: 145px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .change-image-btn-3 {
+      position: absolute;
+      top: 560px;
+      left: 368px;
+      width: 145px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .change-image-btn-4 {
+      position: absolute;
+      top: 700px;
+      left: 155px;
+      width: 145px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .change-image-btn-5 {
+      position: absolute;
+      top: 700px;
+      left: 368px;
+      width: 145px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .remove-ref-btn-1 {
+      position: absolute;
+      top: 295px;
+      left: 428px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .remove-ref-btn-2 {
+      position: absolute;
+      top: 295px;
+      left: 825px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .remove-ref-btn-3 {
+      position: absolute;
+      top: 450px;
+      left: 825px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .remove-ref-btn-4 {
+      position: absolute;
+      top: 610px;
+      left: 428px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .remove-ref-btn-5 {
+      position: absolute;
+      top: 610px;
+      left: 825px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+
+    /* ========================================================
+       SCREEN 15 (img14.png - DESIGN POSSIBILITIES) HOTSPOTS
+       ========================================= */
     .concept-view-details-1 {
       position: absolute;
-      top: 326px;
+      top: 395px;
       left: 50%;
       transform: translateX(-50%);
       width: 25%;
-      height: 3.5%;
+      height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
       background: transparent;
@@ -1037,11 +1312,11 @@
     }
     .concept-view-details-2 {
       position: absolute;
-      top: 442px;
+      top: 462px;
       left: 17%;
       transform: translateX(-50%);
       width: 25%;
-      height: 3.5%;
+      height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
       background: transparent;
@@ -1049,11 +1324,11 @@
     }
     .concept-view-details-3 {
       position: absolute;
-      top: 442px;
+      top: 462px;
       left: 83%;
       transform: translateX(-50%);
       width: 25%;
-      height: 3.5%;
+      height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
       background: transparent;
@@ -1061,11 +1336,11 @@
     }
     .concept-view-details-4 {
       position: absolute;
-      top: 752px;
+      top: 760px;
       left: 17%;
       transform: translateX(-50%);
       width: 25%;
-      height: 3.5%;
+      height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
       background: transparent;
@@ -1073,17 +1348,16 @@
     }
     .concept-view-details-5 {
       position: absolute;
-      top: 752px;
+      top: 760px;
       left: 83%;
       transform: translateX(-50%);
       width: 25%;
-      height: 3.5%;
+      height: 4.5%;
       border-radius: 15px;
       cursor: pointer;
       background: transparent;
       z-index: 55;
     }
-
     .select-preferred-concept-hotspot {
       position: absolute;
       bottom: 3.5%;
@@ -1103,6 +1377,7 @@
     
     <!-- SCREEN 1: WELCOME -->
     <div id="screen-1" class="screen active">
+      <div class="global-help-btn" onclick="triggerHelp('Welcome Screen')"></div>
       <img class="bg-img" src="welcome.png" alt="VISTAROQ Welcome" />
       <button class="cta-btn" onclick="goToScreen(2)">
         <span class="cta-text">CHOOSE YOUR VISTAROQ EXPERIENCE</span>
@@ -1112,6 +1387,7 @@
 
     <!-- SCREEN 2: EXPERIENCE CAROUSEL -->
     <div id="screen-2" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Experience Selection Screen')"></div>
       <img class="bg-img" src="img2.png" alt="VISTAROQ Experience" />
 
       <div class="hub-btn" onclick="alert('⚡ VISTAROQ HUB: Employee Access Only')">
@@ -1145,6 +1421,7 @@
 
     <!-- SCREEN 3: NEST LOGIN -->
     <div id="screen-3" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('NEST Login Screen')"></div>
       <img class="bg-img" src="img3.png" alt="NEST Login Experience" />
 
       <div class="nest-nav">
@@ -1224,6 +1501,7 @@
 
     <!-- SCREEN 4: NEST SIGN UP (img3a.png) -->
     <div id="screen-4" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Create Account Screen')"></div>
       <img class="bg-img" src="img3a.png" alt="NEST Create Account Experience" />
 
       <div class="nest-nav">
@@ -1318,6 +1596,7 @@
 
     <!-- SCREEN 5: NEST SPACES HUB (img4.png) -->
     <div id="screen-5" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Spaces Hub Screen')"></div>
       <img class="bg-img" src="img4.png" alt="NEST Spaces Hub" />
 
       <div class="top-header-actions">
@@ -1453,6 +1732,7 @@
 
     <!-- SCREEN 6: CREATE YOUR SPACE PORTALS (img5.png) -->
     <div id="screen-6" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Create Space Screen')"></div>
       <img class="bg-img" src="img5.png" alt="Create Your Space Portals" />
       <button class="screen-back-btn" onclick="goToScreen(5)" title="Back">
         <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1467,6 +1747,7 @@
 
     <!-- SCREEN 7: MEASURE YOUR SPACE (img6.png) -->
     <div id="screen-7" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Measure Space Screen')"></div>
       <img class="bg-img" src="img6.png" alt="Measure Your Space" />
       <button class="screen-back-btn" onclick="goToScreen(6)" title="Back">
         <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1480,6 +1761,7 @@
 
     <!-- SCREEN 8: LIVE SMART SPACE SCAN (img7.png) -->
     <div id="screen-8" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Live Scan Screen')"></div>
       <img class="bg-img" src="img7.png" alt="Live Smart Space Scan" />
       <div class="invisible-back-hotspot" onclick="goToScreen(7)"></div>
       <div class="finish-process-hotspot" onclick="goToScreen(9)"></div>
@@ -1487,6 +1769,7 @@
 
     <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
     <div id="screen-9" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Space Understanding Screen')"></div>
       <img class="bg-img" src="img8.png" alt="Space Understanding" />
       <div class="invisible-back-hotspot" onclick="goToScreen(8)"></div>
       <div class="confirm-continue-hotspot" onclick="goToScreen(10)"></div>
@@ -1494,34 +1777,74 @@
 
     <!-- SCREEN 10: CONFIRM YOUR SPACE (img9.png) -->
     <div id="screen-10" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Confirm Your Space Screen')"></div>
       <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
       <div class="invisible-back-hotspot" onclick="goToScreen(9)"></div>
+      
+      <!-- Interactive Buttons Mapped from Screenshot -->
+      <div class="view-mode-btn-10" onclick="alert('📐 View Mode: Switched view perspective.')"></div>
+      <div class="filter-tab-btn-10" onclick="alert('🗂️ Element Filter: Toggled category review.')"></div>
+      <div class="element-card-btn-10" onclick="alert('🖼️ Element Card: Selected element for correction.')"></div>
+      <div class="wall-edit-pin-1" onclick="alert('✏️️ Editing Wall 1 attributes.')"></div>
+      <div class="opening-edit-pin-1" onclick="alert('✏️ Editing Opening 1 attributes.')"></div>
+      <div class="correct-space-btn-10" onclick="alert('✏️️ Correct Space: Opening interactive measurement editor.')"></div>
+
       <div class="looks-correct-hotspot" onclick="goToScreen(11)"></div>
     </div>
 
     <!-- SCREEN 11: WHAT DO I WANT TO CHANGE? (img10.png) -->
     <div id="screen-11" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Design Intent Screen')"></div>
       <img class="bg-img" src="img10.png" alt="What Do I Want To Change?" />
       <div class="invisible-back-hotspot" onclick="goToScreen(10)"></div>
+      
+      <!-- Interactive Buttons Mapped -->
+      <div class="view-mode-btn-11" onclick="alert('📐 View Mode toggled.')"></div>
+      <div class="action-pin-hotspot" onclick="alert('🔄 Action Toggle: Wall Finish selected.')"></div>
+      <div class="action-pin-hotspot-2" onclick="alert('🔄 Action Toggle: Flooring selected.')"></div>
+      <div class="action-pin-hotspot-3" onclick="alert('🔄 Action Toggle: Ceiling selected.')"></div>
+      <div class="action-pin-hotspot-4" onclick="alert('🔄 Action Toggle: Lighting selected.')"></div>
+      <div class="action-pin-hotspot-5" onclick="alert('🔄 Action Toggle: Opening selected.')"></div>
+
       <div class="change-continue-hotspot" onclick="goToScreen(12)"></div>
     </div>
 
     <!-- SCREEN 12: KEEP • CHANGE • REMOVE (img11.png) -->
     <div id="screen-12" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Keep Change Remove Screen')"></div>
       <img class="bg-img" src="img11.png" alt="Keep Change Remove" />
       <div class="invisible-back-hotspot" onclick="goToScreen(11)"></div>
+      
+      <div class="element-action-row" onclick="alert('⚙️ Element action modified (Keep / Change / Remove).')"></div>
+
       <div class="confirm-decisions-hotspot" onclick="goToScreen(13)"></div>
     </div>
 
     <!-- SCREEN 13: CUSTOMER REFERENCES (img12.png) -->
     <div id="screen-13" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Customer References Screen')"></div>
       <img class="bg-img" src="img12.png" alt="Customer References Inspiration" />
       <div class="invisible-back-hotspot" onclick="goToScreen(12)"></div>
+      
+      <!-- Change Image & Remove Hotspots -->
+      <div class="change-image-btn-1" onclick="alert('🖼️ Changing Style Reference Image...')"></div>
+      <div class="change-image-btn-2" onclick="alert('🖼️ Changing Materials Reference Image...')"></div>
+      <div class="change-image-btn-3" onclick="alert('🖼️ Changing Furniture Reference Image...')"></div>
+      <div class="change-image-btn-4" onclick="alert('🖼️ Changing Lighting Reference Image...')"></div>
+      <div class="change-image-btn-5" onclick="alert('🖼️ Changing Finish/Mood Reference Image...')"></div>
+
+      <div class="remove-ref-btn-1" onclick="alert('❌ Removed Reference Item 1')"></div>
+      <div class="remove-ref-btn-2" onclick="alert('❌ Removed Reference Item 2')"></div>
+      <div class="remove-ref-btn-3" onclick="alert('❌ Removed Reference Item 3')"></div>
+      <div class="remove-ref-btn-4" onclick="alert('❌ Removed Reference Item 4')"></div>
+      <div class="remove-ref-btn-5" onclick="alert('❌ Removed Reference Item 5')"></div>
+
       <div class="references-continue-hotspot" onclick="goToScreen(14)"></div>
     </div>
 
     <!-- SCREEN 14: AI DESIGN / POSSIBILITY ENGINE (img13.png) -->
     <div id="screen-14" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('AI Design Possibility Engine Screen')"></div>
       <img class="bg-img" src="img13.png" alt="AI Design Possibility Generation" />
       <div class="invisible-back-hotspot" onclick="goToScreen(13)"></div>
       <div class="ai-engine-continue-hotspot" onclick="goToScreen(15)"></div>
@@ -1529,10 +1852,11 @@
 
     <!-- SCREEN 15: YOUR DESIGN POSSIBILITIES (img14.png) -->
     <div id="screen-15" class="screen">
+      <div class="global-help-btn" onclick="triggerHelp('Design Possibilities Screen')"></div>
       <img class="bg-img" src="img14.png" alt="Your Design Possibilities" />
       <div class="invisible-back-hotspot" onclick="goToScreen(14)"></div>
       
-      <!-- Corrected View Details Hotspots for Concepts 01 to 05 -->
+      <!-- View Details Hotspots for Concepts 01 to 05 -->
       <div class="concept-view-details-1" onclick="alert('💡 Viewing Details for: Warm Modern Concept (01)')"></div>
       <div class="concept-view-details-2" onclick="alert('💡 Viewing Details for: Natural Elegance Concept (02)')"></div>
       <div class="concept-view-details-3" onclick="alert('💡 Viewing Details for: Contemporary Concept (03)')"></div>
@@ -1581,6 +1905,10 @@
       document.getElementById('screen-' + screenNumber).classList.add('active');
       currentScreen = screenNumber;
       if (screenNumber === 2) updateCards();
+    }
+
+    function triggerHelp(screenName) {
+      alert('❓ VISTAROQ Help & Support: Contextual assistance for ' + screenName);
     }
 
     function updateCards() {
