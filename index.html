@@ -1036,6 +1036,43 @@
     }
 
     /* ========================================================
+       SCREEN 9 (img8.png - SPACE UNDERSTANDING) EXACT HOTSPOTS
+       ========================================= */
+    .view-mode-bar-9 {
+      position: absolute;
+      top: 555px;
+      left: 20px;
+      width: 385px;
+      height: 70px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .right-thumbnail-stack-9 {
+      position: absolute;
+      top: 360px;
+      right: 15px;
+      width: 75px;
+      height: 220px;
+      border-radius: 12px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+    .correct-space-btn-9 {
+      position: absolute;
+      bottom: 3.8%;
+      left: 4%;
+      width: 44%;
+      height: 7%;
+      border-radius: 30px;
+      background: transparent;
+      cursor: pointer;
+      z-index: 55;
+    }
+
+    /* ========================================================
        SCREEN 10 (img9.png - CONFIRM YOUR SPACE) INTERACTIVE HOTSPOTS
        ========================================= */
     .view-mode-btn-10 {
@@ -1767,11 +1804,17 @@
       <div class="finish-process-hotspot" onclick="goToScreen(9)"></div>
     </div>
 
-    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png - UPDATED HOTSPOTS) -->
     <div id="screen-9" class="screen">
       <div class="global-help-btn" onclick="triggerHelp('Space Understanding Screen')"></div>
       <img class="bg-img" src="img8.png" alt="Space Understanding" />
       <div class="invisible-back-hotspot" onclick="goToScreen(8)"></div>
+      
+      <!-- Newly Mapped Hotspots for img8.png -->
+      <div class="view-mode-bar-9" onclick="alert('📐 View Mode / Dimensions toggled successfully.')"></div>
+      <div class="right-thumbnail-stack-9" onclick="alert('🖼️ Switched camera perspective view.')"></div>
+      <div class="correct-space-btn-9" onclick="alert('✏️ Opening Correct Space editor modal.')"></div>
+
       <div class="confirm-continue-hotspot" onclick="goToScreen(10)"></div>
     </div>
 
@@ -1785,9 +1828,9 @@
       <div class="view-mode-btn-10" onclick="alert('📐 View Mode: Switched view perspective.')"></div>
       <div class="filter-tab-btn-10" onclick="alert('🗂️ Element Filter: Toggled category review.')"></div>
       <div class="element-card-btn-10" onclick="alert('🖼️ Element Card: Selected element for correction.')"></div>
-      <div class="wall-edit-pin-1" onclick="alert('✏️️ Editing Wall 1 attributes.')"></div>
-      <div class="opening-edit-pin-1" onclick="alert('✏️ Editing Opening 1 attributes.')"></div>
-      <div class="correct-space-btn-10" onclick="alert('✏️️ Correct Space: Opening interactive measurement editor.')"></div>
+      <div class="wall-edit-pin-1" onclick="alert('✏ Editing Wall 1 attributes.')"></div>
+      <div class="opening-edit-pin-1" onclick="alert('✏️️ Editing Opening 1 attributes.')"></div>
+      <div class="correct-space-btn-10" onclick="alert('✏ Correct Space: Opening interactive measurement editor.')"></div>
 
       <div class="looks-correct-hotspot" onclick="goToScreen(11)"></div>
     </div>
