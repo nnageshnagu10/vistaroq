@@ -975,7 +975,7 @@
     }
 
     /* ========================================================
-       SCREEN 9: SPACE UNDERSTANDING (Clean img8.png)
+       SCREEN 9: SPACE UNDERSTANDING (img8.png)
        ======================================================== */
     .su-top-back-btn {
       position: absolute;
@@ -1162,7 +1162,7 @@
     }
 
     /* ========================================================
-       SCREEN 10: CONFIRM YOUR SPACE (100% Calibrated to img9.png)
+       SCREEN 10: CONFIRM YOUR SPACE (Exact Match to 1000348721.jpg)
        ======================================================== */
     .cys-top-back-btn {
       position: absolute;
@@ -1187,106 +1187,128 @@
       z-index: 60;
     }
 
-    /* Interactive 3D Room Pins */
-    .cys-room-pin {
+    /* 3D Room Pins (Wall 1 Amber Glow & Opening 1 Neon Green Glow) */
+    .cys-room-pin-wrap {
       position: absolute;
       display: flex;
       align-items: center;
-      gap: 4px;
-      padding: 2.5px 7px;
-      border-radius: 12px;
-      font-size: 7.5px;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
+      gap: 5px;
       z-index: 55;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
       transition: transform 0.15s ease;
     }
-    .cys-room-pin:active {
+    .cys-room-pin-wrap:active {
       transform: scale(0.92);
     }
-    .cys-room-pin.wall-pin {
-      top: 45.6%;
-      left: 23%;
-      background: rgba(30, 20, 10, 0.88);
-      border: 1.2px solid #ff9800;
-      box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    .cys-pin-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .cys-room-pin.wall-pin svg {
-      stroke: #ff9800;
+    .cys-pin-circle svg {
+      width: 10px;
+      height: 10px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2.2;
     }
-    .cys-room-pin.opening-pin {
-      top: 44.4%;
-      right: 17%;
-      background: rgba(10, 28, 20, 0.88);
-      border: 1.2px solid #00ffb4;
-      box-shadow: 0 0 10px rgba(0, 255, 180, 0.5);
+    .cys-pin-capsule {
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: rgba(14, 18, 16, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 8px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+      text-transform: capitalize;
     }
-    .cys-room-pin.opening-pin svg {
-      stroke: #00ffb4;
+    
+    /* Wall 1 Pin Position */
+    .cys-wall-pin-group {
+      top: 44.5%;
+      left: 24.2%;
+    }
+    .cys-wall-pin-group .cys-pin-circle {
+      background: #c67a18;
+      border: 1.5px solid #ffb243;
+      box-shadow: 0 0 12px rgba(255, 178, 67, 0.7);
     }
 
-    /* Single Seamless VIEW MODES Glass Container (Left Box) */
+    /* Opening 1 Pin Position */
+    .cys-opening-pin-group {
+      top: 43.2%;
+      right: 17.5%;
+    }
+    .cys-opening-pin-group .cys-pin-circle {
+      background: #009867;
+      border: 1.5px solid #00ffb4;
+      box-shadow: 0 0 12px rgba(0, 255, 180, 0.7);
+    }
+
+    /* VIEW MODES Glass Container (Left Box - High Contrast) */
     .cys-viewmodes-container {
       position: absolute;
-      top: 48.5%;
-      left: 2.8%;
-      width: 22.5%;
-      max-width: 90px;
-      background: rgba(12, 17, 15, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 6px 5px 6px;
+      top: 48.6%;
+      left: 3.5%;
+      width: 23%;
+      max-width: 94px;
+      background: rgba(14, 18, 16, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 13px;
+      padding: 7px 6px;
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 4px;
       z-index: 55;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
     }
     .cys-vm-title {
-      font-size: 6.5px;
-      font-weight: 700;
-      color: #728078;
-      letter-spacing: 0.5px;
+      font-size: 7.2px;
+      font-weight: 800;
+      color: #929e97;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
       padding-left: 2px;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
     }
     .cys-vm-btn {
       width: 100%;
-      height: 25px;
-      border-radius: 7px;
+      height: 28px;
+      border-radius: 8px;
       background: transparent;
       border: 1px solid transparent;
       display: flex;
       align-items: center;
-      gap: 4px;
-      padding: 0 5px;
+      gap: 5px;
+      padding: 0 6px;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.15s ease;
     }
     .cys-vm-btn svg {
-      width: 11px;
-      height: 11px;
-      stroke: #7e8b83;
+      width: 13px;
+      height: 13px;
+      stroke: #8e9a93;
       fill: none;
-      stroke-width: 1.8;
+      stroke-width: 2;
       flex-shrink: 0;
     }
     .cys-vm-btn span {
-      font-size: 6.8px;
+      font-size: 7.5px;
       font-weight: 700;
-      color: #929e97;
+      color: #9aa59f;
       text-transform: uppercase;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
     }
     .cys-vm-btn.active {
-      border: 1.2px solid #00ffb4;
-      background: rgba(0, 255, 180, 0.12);
-      box-shadow: 0 0 10px rgba(0, 255, 180, 0.4), inset 0 0 4px rgba(0, 255, 180, 0.2);
+      border: 1.4px solid #00ffb4;
+      background: rgba(0, 255, 180, 0.15);
+      box-shadow: 0 0 12px rgba(0, 255, 180, 0.5), inset 0 0 6px rgba(0, 255, 180, 0.25);
     }
     .cys-vm-btn.active svg {
       stroke: #00ffb4;
@@ -1308,52 +1330,53 @@
       z-index: 55;
     }
 
-    /* Four Category Tabs (WALLS, OPENINGS, DIMENSIONS, BOUNDARY) */
+    /* Four Category Tabs (WALLS Active with Bold Glow) */
     .cys-category-tabs-row {
       position: absolute;
       top: 64.6%;
-      left: 2.8%;
-      width: 94.4%;
-      height: 52px;
+      left: 3.5%;
+      width: 93%;
+      height: 53px;
       display: flex;
       justify-content: space-between;
-      gap: 5px;
+      gap: 6px;
       z-index: 55;
     }
     .cys-cat-tab {
       flex: 1;
       height: 100%;
-      background: rgba(12, 17, 15, 0.86);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(14, 18, 16, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 3px;
+      gap: 3.5px;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.15s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
     }
     .cys-cat-tab svg {
-      width: 16px;
-      height: 16px;
-      stroke: #7e8b83;
+      width: 17px;
+      height: 17px;
+      stroke: #8e9a93;
       fill: none;
-      stroke-width: 1.8;
+      stroke-width: 1.9;
     }
     .cys-cat-tab span {
-      font-size: 7.2px;
-      font-weight: 700;
-      color: #929e97;
+      font-size: 7.5px;
+      font-weight: 800;
+      color: #9aa59f;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.4px;
     }
     .cys-cat-tab.active {
-      border: 1.4px solid #00ffb4;
-      background: rgba(0, 255, 180, 0.12);
-      box-shadow: 0 0 12px rgba(0, 255, 180, 0.45), inset 0 0 6px rgba(0, 255, 180, 0.2);
+      border: 1.5px solid #00ffb4;
+      background: rgba(0, 255, 180, 0.14);
+      box-shadow: 0 0 14px rgba(0, 255, 180, 0.5), inset 0 0 8px rgba(0, 255, 180, 0.25);
     }
     .cys-cat-tab.active svg {
       stroke: #00ffb4;
@@ -1362,20 +1385,20 @@
       color: #00ffb4;
     }
 
-    /* Section Subtitle Header */
+    /* Bold Clear Section Subtitle */
     .cys-elements-header {
       position: absolute;
-      top: 72.2%;
-      left: 3.5%;
-      font-size: 8px;
-      font-weight: 700;
-      color: #8c9791;
-      letter-spacing: 0.6px;
+      top: 72.1%;
+      left: 4.2%;
+      font-size: 8.8px;
+      font-weight: 800;
+      color: #a8b2ac;
+      letter-spacing: 0.7px;
       text-transform: uppercase;
       z-index: 55;
     }
 
-    /* Elements Carousel (Wall 1-4, Opening 1-2 Indoor Cards) */
+    /* Elements Carousel (Real Concrete Wall & Glass Openings) */
     .cys-elements-carousel {
       position: absolute;
       top: 74.3%;
@@ -1383,7 +1406,7 @@
       width: 100%;
       display: flex;
       gap: 6px;
-      padding: 0 3%;
+      padding: 0 3.5%;
       overflow-x: auto;
       scrollbar-width: none;
       z-index: 55;
@@ -1395,22 +1418,23 @@
       flex: 0 0 14.8%;
       min-width: 58px;
       height: 60px;
-      background: rgba(12, 17, 15, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(14, 18, 16, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1.2px solid rgba(255, 255, 255, 0.1);
       border-radius: 9px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.15s ease;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
     }
     .cys-elem-thumb-wrap {
       width: 100%;
       height: 42px;
       position: relative;
-      background: #19201d;
+      background: #18201d;
       overflow: hidden;
     }
     .cys-elem-thumb-wrap img {
@@ -1419,17 +1443,17 @@
       object-fit: cover;
     }
     .cys-elem-card span {
-      font-size: 6.8px;
-      font-weight: 700;
-      color: #84908a;
+      font-size: 7px;
+      font-weight: 800;
+      color: #8c9791;
       text-align: center;
       line-height: 18px;
-      text-transform: uppercase;
+      text-transform: capitalize;
       letter-spacing: 0.2px;
     }
     .cys-elem-card.active {
-      border: 1.4px solid #ff9800;
-      box-shadow: 0 0 12px rgba(255, 152, 0, 0.5), inset 0 0 4px rgba(255, 152, 0, 0.2);
+      border: 1.5px solid #ffb243;
+      box-shadow: 0 0 14px rgba(255, 178, 67, 0.6), inset 0 0 4px rgba(255, 178, 67, 0.25);
     }
     .cys-elem-card.active span {
       color: #ffd875;
@@ -1808,7 +1832,7 @@
           <span class="nav-tab-label">Help & Support</span>
         </div>
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
       </div>
@@ -1901,7 +1925,7 @@
     </div>
 
     <!-- ========================================================
-         SCREEN 10: CONFIRM YOUR SPACE (100% Matched to img9.png)
+         SCREEN 10: CONFIRM YOUR SPACE (100% Calibrated)
          ======================================================== -->
     <div id="screen-10" class="screen">
       <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
@@ -1910,17 +1934,22 @@
       <div class="cys-top-back-btn" onclick="goToScreen(9)" title="Back to Space Understanding"></div>
       <div class="cys-top-help-btn" onclick="handleCYSHelp()" title="Confirm Guidance"></div>
 
-      <!-- Interactive 3D Room Pins -->
-      <div class="cys-room-pin wall-pin" onclick="selectRoomElement('Wall 1')" title="Wall 1 Tag">
-        <svg style="width: 8px; height: 8px; fill: none; stroke-width: 2.2;" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        <span>Wall 1</span>
-      </div>
-      <div class="cys-room-pin opening-pin" onclick="selectRoomElement('Opening 1')" title="Opening 1 Tag">
-        <svg style="width: 8px; height: 8px; fill: none; stroke-width: 2.2;" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        <span>Opening 1</span>
+      <!-- 3D Room Pins -->
+      <div class="cys-room-pin-wrap cys-wall-pin-group" onclick="selectRoomElement('Wall 1')">
+        <div class="cys-pin-circle">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="cys-pin-capsule">Wall 1</div>
       </div>
 
-      <!-- Unified VIEW MODES Glass Container (Left Box) -->
+      <div class="cys-room-pin-wrap cys-opening-pin-group" onclick="selectRoomElement('Opening 1')">
+        <div class="cys-pin-circle">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="cys-pin-capsule">Opening 1</div>
+      </div>
+
+      <!-- Single VIEW MODES Container -->
       <div class="cys-viewmodes-container">
         <div class="cys-vm-title">View Modes</div>
         <div class="cys-vm-btn active" onclick="switchCYSViewMode('3D VIEW', this)">
@@ -1963,7 +1992,7 @@
       <!-- Subtitle Header -->
       <div class="cys-elements-header">Select an Element to Review or Correct</div>
 
-      <!-- Elements Carousel (Indoor Concrete Walls & Openings) -->
+      <!-- Elements Carousel (Indoor Concrete Walls & Glass Openings) -->
       <div class="cys-elements-carousel" id="cysCarousel">
         <div class="cys-elem-card active" onclick="selectRoomElement('Wall 1', this)">
           <div class="cys-elem-thumb-wrap">
@@ -2182,9 +2211,7 @@
       alert('✏️ CORRECT SPACE:\nOpening manual adjustment editor for dimensions, room boundaries, and openings.');
     }
 
-    // ========================================================
-    // SCREEN 10 HANDLERS (CONFIRM YOUR SPACE)
-    // ========================================================
+    // SCREEN 10 HANDLERS
     function handleCYSHelp() {
       alert('💡 CONFIRM YOUR SPACE GUIDANCE:\n• Review individual wall segments and openings.\n• Tap any Wall or Opening card/pin to inspect or modify.\n• Use Undo Last Change to revert actions.');
     }
@@ -2205,7 +2232,7 @@
       document.querySelectorAll('.cys-elem-card').forEach(t => t.classList.remove('active'));
       if (el) el.classList.add('active');
       else {
-        const match = Array.from(document.querySelectorAll('.cys-elem-card')).find(c => c.innerText.includes(elemName));
+        const match = Array.from(document.querySelectorAll('.cys-elem-card')).find(c => c.innerText.trim().toLowerCase() === elemName.toLowerCase());
         if (match) match.classList.add('active');
       }
       alert('🔍 Selected Element: ' + elemName + '\nReady to inspect or make corrections.');
