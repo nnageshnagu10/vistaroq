@@ -974,7 +974,7 @@
     }
 
     /* ========================================================
-       SCREEN 9: SPACE UNDERSTANDING (img8.png)
+       SCREEN 9: SPACE UNDERSTANDING (Clean img8.png UI Elements)
        ======================================================== */
     /* 1. Top-Left Back Button */
     .su-top-back-btn {
@@ -1012,78 +1012,122 @@
       background: rgba(255, 255, 255, 0.12);
     }
 
-    /* 3, 4, 5. Right Angle Views Stack */
-    .su-right-views-stack {
+    /* 3, 4, 5. Pure HTML/CSS Right Angle Views Stack */
+    .su-right-stack {
       position: absolute;
-      top: 31%;
-      right: 2.8%;
-      width: 58px;
-      height: 235px;
+      top: 36.8%;
+      right: 3.5%;
+      width: 54px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 7px;
       z-index: 55;
     }
-    .su-view-card-btn {
+    .su-angle-card {
       width: 100%;
-      height: 72px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.01);
+      height: 52px;
+      background: rgba(14, 18, 17, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s ease;
+      gap: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.2s ease;
     }
-    .su-view-card-btn:active {
-      transform: scale(0.94);
-      box-shadow: 0 0 14px rgba(255, 215, 0, 0.6);
+    .su-angle-card svg {
+      width: 17px;
+      height: 17px;
+      stroke: #8e9a93;
+      fill: none;
+      stroke-width: 1.8;
+      transition: stroke 0.2s ease;
+    }
+    .su-angle-card span {
+      font-size: 6.8px;
+      font-weight: 700;
+      color: #9aa59f;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+    .su-angle-card:active {
+      transform: scale(0.93);
+    }
+    .su-angle-card.active {
+      border: 1.2px solid #00ffb4;
+      background: rgba(0, 255, 180, 0.12);
+      box-shadow: 0 0 10px rgba(0, 255, 180, 0.4);
+    }
+    .su-angle-card.active svg {
+      stroke: #00ffb4;
+    }
+    .su-angle-card.active span {
+      color: #00ffb4;
     }
 
-    /* 6, 7, 8, 9. 100% Invisible Clean Direct Hotspots (Zero borders, Zero dark boxes) */
-    .su-tab-btn {
+    /* 6, 7, 8, 9. Pure HTML/CSS Four Perspective Cards */
+    .su-perspective-row {
       position: absolute;
+      top: 53.6%;
+      left: 3.5%;
+      width: 68%;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      z-index: 55;
+    }
+    .su-persp-card {
+      flex: 1;
+      height: 60px;
+      background: rgba(14, 18, 17, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
       cursor: pointer;
-      background: rgba(255, 255, 255, 0.01);
-      border: none !important;
-      outline: none !important;
-      box-shadow: none !important;
-      backdrop-filter: none !important;
-      -webkit-backdrop-filter: none !important;
-      z-index: 58;
-      transition: transform 0.12s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55);
+      transition: all 0.2s ease;
     }
-    .su-tab-btn:active {
-      transform: scale(0.94);
+    .su-persp-card svg {
+      width: 20px;
+      height: 20px;
+      stroke: #8e9a93;
+      fill: none;
+      stroke-width: 1.8;
+      transition: stroke 0.2s ease;
     }
-
-    #tab-3d-view {
-      top: 52%;
-      left: 4.5%;
-      width: 17.5%;
-      height: 9.5%;
-      border-radius: 14px;
+    .su-persp-card span {
+      font-size: 7.2px;
+      font-weight: 700;
+      color: #9aa59f;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
     }
-
-    #tab-floor-plan {
-      top: 52%;
-      left: 22.8%;
-      width: 17.5%;
-      height: 9.5%;
-      border-radius: 14px;
+    .su-persp-card:active {
+      transform: scale(0.93);
     }
-
-    #tab-walls {
-      top: 52%;
-      left: 41%;
-      width: 17.5%;
-      height: 9.5%;
-      border-radius: 14px;
+    .su-persp-card.active {
+      border: 1.5px solid #00ffb4;
+      background: rgba(0, 255, 180, 0.14);
+      box-shadow: 0 0 14px rgba(0, 255, 180, 0.5), inset 0 0 6px rgba(0, 255, 180, 0.25);
     }
-
-    #tab-dimensions {
-      top: 52%;
-      left: 59%;
-      width: 17.5%;
-      height: 9.5%;
-      border-radius: 14px;
+    .su-persp-card.active svg {
+      stroke: #00ffb4;
+    }
+    .su-persp-card.active span {
+      color: #00ffb4;
     }
 
     /* 10. Bottom Left CTA: CORRECT SPACE */
@@ -1564,25 +1608,45 @@
       <!-- 2. Top-Right Help (?) Button Hotspot -->
       <div class="su-top-help-btn" onclick="handleSUHelp()" title="Space Intelligence Guide"></div>
 
-      <!-- Right Angle Views Stack (3, 4, 5) -->
-      <div class="su-right-views-stack">
-        <!-- 3. Top View -->
-        <div class="su-view-card-btn" onclick="handleSUAngleView('TOP VIEW')" title="Top View"></div>
-        <!-- 4. Front View -->
-        <div class="su-view-card-btn" onclick="handleSUAngleView('FRONT VIEW')" title="Front View"></div>
-        <!-- 5. 3D View -->
-        <div class="su-view-card-btn" onclick="handleSUAngleView('3D VIEW')" title="3D View"></div>
+      <!-- 3, 4, 5. Pure HTML/CSS Right Angle Views Stack -->
+      <div class="su-right-stack">
+        <div class="su-angle-card" id="card-top-view" onclick="handleSUAngleView('TOP VIEW', this)" title="Top View">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
+          <span>Top View</span>
+        </div>
+        <div class="su-angle-card" id="card-front-view" onclick="handleSUAngleView('FRONT VIEW', this)" title="Front View">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Front View</span>
+        </div>
+        <div class="su-angle-card active" id="card-3d-angle" onclick="handleSUAngleView('3D VIEW', this)" title="3D View">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <span>3D View</span>
+        </div>
       </div>
 
-      <!-- Four Clean Invisible Direct Perspective Hotspots (6, 7, 8, 9) -->
-      <!-- 6. 3D VIEW Tab -->
-      <div class="su-tab-btn" id="tab-3d-view" onclick="handleSUPerspectiveTab('3D VIEW')" title="3D View Perspective"></div>
-      <!-- 7. FLOOR PLAN Tab -->
-      <div class="su-tab-btn" id="tab-floor-plan" onclick="handleSUPerspectiveTab('FLOOR PLAN')" title="Floor Plan View"></div>
-      <!-- 8. WALLS Tab -->
-      <div class="su-tab-btn" id="tab-walls" onclick="handleSUPerspectiveTab('WALLS')" title="Walls Detection"></div>
-      <!-- 9. DIMENSIONS Tab -->
-      <div class="su-tab-btn" id="tab-dimensions" onclick="handleSUPerspectiveTab('DIMENSIONS')" title="Dimensions & Evidence"></div>
+      <!-- 6, 7, 8, 9. Pure HTML/CSS Four Perspective Cards -->
+      <div class="su-perspective-row">
+        <!-- 6. 3D VIEW Card -->
+        <div class="su-persp-card active" id="card-3d-view" onclick="handleSUPerspectiveCard('3D VIEW', this)" title="3D View">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <span>3D View</span>
+        </div>
+        <!-- 7. FLOOR PLAN Card -->
+        <div class="su-persp-card" id="card-floor-plan" onclick="handleSUPerspectiveCard('FLOOR PLAN', this)" title="Floor Plan">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Floor Plan</span>
+        </div>
+        <!-- 8. WALLS Card -->
+        <div class="su-persp-card" id="card-walls" onclick="handleSUPerspectiveCard('WALLS', this)" title="Walls">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
+          <span>Walls</span>
+        </div>
+        <!-- 9. DIMENSIONS Card -->
+        <div class="su-persp-card" id="card-dimensions" onclick="handleSUPerspectiveCard('DIMENSIONS', this)" title="Dimensions">
+          <svg viewBox="0 0 24 24"><path d="M21.3 8.7L8.7 21.3a2 2 0 0 1-2.8 0L2.7 18.1a2 2 0 0 1 0-2.8L15.3 2.7a2 2 0 0 1 2.8 0l3.2 3.2a2 2 0 0 1 0 2.8z"/><line x1="7" y1="13" x2="11" y2="17"/></svg>
+          <span>Dimensions</span>
+        </div>
+      </div>
 
       <!-- 10. Bottom Left CTA: CORRECT SPACE -->
       <div class="su-btn-correct-space" onclick="handleSUCorrectSpace()" title="Correct Space & Measurements"></div>
@@ -1756,13 +1820,17 @@
       alert('💡 SPACE UNDERSTANDING INTELLIGENCE:\n• Review captured length, width, height, and area calculations.\n• Verify detected elements (Walls, Floor, Doors/Windows).\n• Choose Correct Space if adjustments are required, or Confirm & Continue to proceed.');
     }
 
-    // 3, 4, 5. Right Stack Views
-    function handleSUAngleView(viewMode) {
+    // 3, 4, 5. Pure HTML/CSS Angle View Switcher
+    function handleSUAngleView(viewMode, el) {
+      document.querySelectorAll('.su-angle-card').forEach(card => card.classList.remove('active'));
+      el.classList.add('active');
       alert('🔄 Perspective Switched to: ' + viewMode + '\nRendering accurate spatial viewpoint...');
     }
 
-    // 6, 7, 8, 9. Direct Clean Hotspots (No borders/masks, Direct Action Trigger)
-    function handleSUPerspectiveTab(tabName) {
+    // 6, 7, 8, 9. Pure HTML/CSS Perspective Card Switcher
+    function handleSUPerspectiveCard(tabName, el) {
+      document.querySelectorAll('.su-persp-card').forEach(card => card.classList.remove('active'));
+      el.classList.add('active');
       alert('📐 Display Mode: ' + tabName + '\nFocusing inspection on ' + tabName + ' details.');
     }
 
