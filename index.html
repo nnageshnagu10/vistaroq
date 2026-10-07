@@ -1162,9 +1162,10 @@
     }
 
     /* ========================================================
-       SCREEN 10: CONFIRM YOUR SPACE (Exact Match to 1000348721.jpg)
+       SCREEN 10: CONFIRM YOUR SPACE (100% Original Image Hotspots)
        ======================================================== */
-    .cys-top-back-btn {
+    /* 1. Top-Left Back */
+    .cys-hotspot-back {
       position: absolute;
       top: 1.8%;
       left: 3.2%;
@@ -1175,7 +1176,12 @@
       cursor: pointer;
       z-index: 60;
     }
-    .cys-top-help-btn {
+    .cys-hotspot-back:active {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* 2. Top-Right Help (?) */
+    .cys-hotspot-help {
       position: absolute;
       top: 1.8%;
       right: 3.2%;
@@ -1186,281 +1192,126 @@
       cursor: pointer;
       z-index: 60;
     }
+    .cys-hotspot-help:active {
+      background: rgba(255, 255, 255, 0.15);
+    }
 
-    /* 3D Room Pins (Wall 1 Amber Glow & Opening 1 Neon Green Glow) */
-    .cys-room-pin-wrap {
+    /* 3. 3D Room Pins */
+    .cys-hotspot-pin-wall1 {
       position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      z-index: 55;
-      cursor: pointer;
-      transition: transform 0.15s ease;
-    }
-    .cys-room-pin-wrap:active {
-      transform: scale(0.92);
-    }
-    .cys-pin-circle {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cys-pin-circle svg {
-      width: 10px;
-      height: 10px;
-      stroke: #fff;
-      fill: none;
-      stroke-width: 2.2;
-    }
-    .cys-pin-capsule {
-      padding: 3px 8px;
-      border-radius: 10px;
-      background: rgba(14, 18, 16, 0.94);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      font-size: 8px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.3px;
-      text-transform: capitalize;
-    }
-    
-    /* Wall 1 Pin Position */
-    .cys-wall-pin-group {
       top: 44.5%;
-      left: 24.2%;
+      left: 23%;
+      width: 25%;
+      height: 30px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
     }
-    .cys-wall-pin-group .cys-pin-circle {
-      background: #c67a18;
-      border: 1.5px solid #ffb243;
-      box-shadow: 0 0 12px rgba(255, 178, 67, 0.7);
-    }
-
-    /* Opening 1 Pin Position */
-    .cys-opening-pin-group {
-      top: 43.2%;
-      right: 17.5%;
-    }
-    .cys-opening-pin-group .cys-pin-circle {
-      background: #009867;
-      border: 1.5px solid #00ffb4;
-      box-shadow: 0 0 12px rgba(0, 255, 180, 0.7);
+    .cys-hotspot-pin-wall1:active {
+      box-shadow: 0 0 15px rgba(255, 178, 67, 0.6);
     }
 
-    /* VIEW MODES Glass Container (Left Box - High Contrast) */
-    .cys-viewmodes-container {
+    .cys-hotspot-pin-open1 {
       position: absolute;
-      top: 48.6%;
+      top: 43.5%;
+      right: 14%;
+      width: 27%;
+      height: 30px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
+      z-index: 60;
+    }
+    .cys-hotspot-pin-open1:active {
+      box-shadow: 0 0 15px rgba(0, 255, 180, 0.6);
+    }
+
+    /* 4. Left VIEW MODES Hotspots */
+    .cys-vm-hotspots-container {
+      position: absolute;
+      top: 51.5%;
       left: 3.5%;
-      width: 23%;
-      max-width: 94px;
-      background: rgba(14, 18, 16, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1.2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 13px;
-      padding: 7px 6px;
+      width: 20%;
+      height: 11.2%;
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      z-index: 55;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+      justify-content: space-between;
+      z-index: 60;
     }
-    .cys-vm-title {
-      font-size: 7.2px;
-      font-weight: 800;
-      color: #929e97;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      padding-left: 2px;
-      margin-bottom: 2px;
-    }
-    .cys-vm-btn {
+    .cys-vm-hotspot-btn {
       width: 100%;
-      height: 28px;
-      border-radius: 8px;
-      background: transparent;
-      border: 1px solid transparent;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 0 6px;
+      height: 31%;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.01);
       cursor: pointer;
-      transition: all 0.15s ease;
     }
-    .cys-vm-btn svg {
-      width: 13px;
-      height: 13px;
-      stroke: #8e9a93;
-      fill: none;
-      stroke-width: 2;
-      flex-shrink: 0;
-    }
-    .cys-vm-btn span {
-      font-size: 7.5px;
-      font-weight: 700;
-      color: #9aa59f;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-    .cys-vm-btn.active {
-      border: 1.4px solid #00ffb4;
-      background: rgba(0, 255, 180, 0.15);
-      box-shadow: 0 0 12px rgba(0, 255, 180, 0.5), inset 0 0 6px rgba(0, 255, 180, 0.25);
-    }
-    .cys-vm-btn.active svg {
-      stroke: #00ffb4;
-    }
-    .cys-vm-btn.active span {
-      color: #00ffb4;
+    .cys-vm-hotspot-btn:active {
+      background: rgba(0, 255, 180, 0.2);
     }
 
-    /* Undo Last Change Hotspot */
-    .cys-undo-btn {
+    /* 5. Undo Last Change Hotspot */
+    .cys-hotspot-undo {
       position: absolute;
       top: 59.8%;
       right: 3.2%;
-      width: 33%;
+      width: 32%;
       height: 32px;
       border-radius: 16px;
       background: rgba(255, 255, 255, 0.01);
       cursor: pointer;
-      z-index: 55;
+      z-index: 60;
+    }
+    .cys-hotspot-undo:active {
+      background: rgba(255, 255, 255, 0.15);
     }
 
-    /* Four Category Tabs (WALLS Active with Bold Glow) */
-    .cys-category-tabs-row {
+    /* 6. Four Category Tabs Hotspots */
+    .cys-tabs-hotspots-container {
       position: absolute;
       top: 64.6%;
       left: 3.5%;
       width: 93%;
-      height: 53px;
+      height: 6.2%;
       display: flex;
       justify-content: space-between;
-      gap: 6px;
-      z-index: 55;
+      z-index: 60;
     }
-    .cys-cat-tab {
-      flex: 1;
+    .cys-tab-hotspot-btn {
+      width: 23%;
       height: 100%;
-      background: rgba(14, 18, 16, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1.2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 3.5px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.01);
       cursor: pointer;
-      transition: all 0.15s ease;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
     }
-    .cys-cat-tab svg {
-      width: 17px;
-      height: 17px;
-      stroke: #8e9a93;
-      fill: none;
-      stroke-width: 1.9;
-    }
-    .cys-cat-tab span {
-      font-size: 7.5px;
-      font-weight: 800;
-      color: #9aa59f;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-    .cys-cat-tab.active {
-      border: 1.5px solid #00ffb4;
-      background: rgba(0, 255, 180, 0.14);
-      box-shadow: 0 0 14px rgba(0, 255, 180, 0.5), inset 0 0 8px rgba(0, 255, 180, 0.25);
-    }
-    .cys-cat-tab.active svg {
-      stroke: #00ffb4;
-    }
-    .cys-cat-tab.active span {
-      color: #00ffb4;
+    .cys-tab-hotspot-btn:active {
+      background: rgba(0, 255, 180, 0.2);
     }
 
-    /* Bold Clear Section Subtitle */
-    .cys-elements-header {
-      position: absolute;
-      top: 72.1%;
-      left: 4.2%;
-      font-size: 8.8px;
-      font-weight: 800;
-      color: #a8b2ac;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-      z-index: 55;
-    }
-
-    /* Elements Carousel (Real Concrete Wall & Glass Openings) */
-    .cys-elements-carousel {
+    /* 7. Bottom Elements Carousel Hotspots */
+    .cys-carousel-hotspots-container {
       position: absolute;
       top: 74.3%;
-      left: 0;
-      width: 100%;
+      left: 3.5%;
+      width: 93%;
+      height: 7.2%;
       display: flex;
-      gap: 6px;
-      padding: 0 3.5%;
-      overflow-x: auto;
-      scrollbar-width: none;
-      z-index: 55;
+      justify-content: space-between;
+      z-index: 60;
     }
-    .cys-elements-carousel::-webkit-scrollbar {
-      display: none;
-    }
-    .cys-elem-card {
-      flex: 0 0 14.8%;
-      min-width: 58px;
-      height: 60px;
-      background: rgba(14, 18, 16, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1.2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 9px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
-    }
-    .cys-elem-thumb-wrap {
-      width: 100%;
-      height: 42px;
-      position: relative;
-      background: #18201d;
-      overflow: hidden;
-    }
-    .cys-elem-thumb-wrap img {
-      width: 100%;
+    .cys-elem-hotspot-btn {
+      width: 15.2%;
       height: 100%;
-      object-fit: cover;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.01);
+      cursor: pointer;
     }
-    .cys-elem-card span {
-      font-size: 7px;
-      font-weight: 800;
-      color: #8c9791;
-      text-align: center;
-      line-height: 18px;
-      text-transform: capitalize;
-      letter-spacing: 0.2px;
-    }
-    .cys-elem-card.active {
-      border: 1.5px solid #ffb243;
-      box-shadow: 0 0 14px rgba(255, 178, 67, 0.6), inset 0 0 4px rgba(255, 178, 67, 0.25);
-    }
-    .cys-elem-card.active span {
-      color: #ffd875;
+    .cys-elem-hotspot-btn:active {
+      box-shadow: 0 0 10px rgba(255, 178, 67, 0.6);
     }
 
-    /* Bottom CTAs Hotspots */
-    .cys-btn-correct-space {
+    /* 8. Bottom CTA: CORRECT SPACE Hotspot */
+    .cys-hotspot-correct-space {
       position: absolute;
       bottom: 4.8%;
       left: 3.5%;
@@ -1471,7 +1322,12 @@
       cursor: pointer;
       z-index: 60;
     }
-    .cys-btn-space-looks-correct {
+    .cys-hotspot-correct-space:active {
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    /* 9. Bottom CTA: SPACE LOOKS CORRECT Hotspot */
+    .cys-hotspot-space-correct {
       position: absolute;
       bottom: 4.8%;
       right: 3.5%;
@@ -1481,6 +1337,9 @@
       background: rgba(255, 255, 255, 0.01);
       cursor: pointer;
       z-index: 60;
+    }
+    .cys-hotspot-space-correct:active {
+      box-shadow: 0 0 25px rgba(0, 255, 180, 0.7);
     }
   </style>
 </head>
@@ -1832,7 +1691,7 @@
           <span class="nav-tab-label">Help & Support</span>
         </div>
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
       </div>
@@ -1925,116 +1784,54 @@
     </div>
 
     <!-- ========================================================
-         SCREEN 10: CONFIRM YOUR SPACE (100% Calibrated)
+         SCREEN 10: CONFIRM YOUR SPACE (100% Original Design Accuracy)
          ======================================================== -->
     <div id="screen-10" class="screen">
       <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
 
-      <!-- Top Back & Help Hotspots -->
-      <div class="cys-top-back-btn" onclick="goToScreen(9)" title="Back to Space Understanding"></div>
-      <div class="cys-top-help-btn" onclick="handleCYSHelp()" title="Confirm Guidance"></div>
+      <!-- 1. Top-Left Back Hotspot -->
+      <div class="cys-hotspot-back" onclick="goToScreen(9)" title="Back"></div>
 
-      <!-- 3D Room Pins -->
-      <div class="cys-room-pin-wrap cys-wall-pin-group" onclick="selectRoomElement('Wall 1')">
-        <div class="cys-pin-circle">
-          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <div class="cys-pin-capsule">Wall 1</div>
+      <!-- 2. Top-Right Help (?) Hotspot -->
+      <div class="cys-hotspot-help" onclick="handleCYSHelp()" title="Help Guidance"></div>
+
+      <!-- 3. Room 3D Tags Hotspots (Wall 1 & Opening 1) -->
+      <div class="cys-hotspot-pin-wall1" onclick="selectRoomElement('Wall 1')" title="Inspect Wall 1"></div>
+      <div class="cys-hotspot-pin-open1" onclick="selectRoomElement('Opening 1')" title="Inspect Opening 1"></div>
+
+      <!-- 4. Left VIEW MODES Hotspots (3D View, Floor Plan, Front View) -->
+      <div class="cys-vm-hotspots-container">
+        <div class="cys-vm-hotspot-btn" onclick="switchCYSViewMode('3D VIEW')" title="3D View"></div>
+        <div class="cys-vm-hotspot-btn" onclick="switchCYSViewMode('FLOOR PLAN')" title="Floor Plan"></div>
+        <div class="cys-vm-hotspot-btn" onclick="switchCYSViewMode('FRONT VIEW')" title="Front View"></div>
       </div>
 
-      <div class="cys-room-pin-wrap cys-opening-pin-group" onclick="selectRoomElement('Opening 1')">
-        <div class="cys-pin-circle">
-          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <div class="cys-pin-capsule">Opening 1</div>
+      <!-- 5. Undo Last Change Hotspot -->
+      <div class="cys-hotspot-undo" onclick="handleCYSUndo()" title="Undo Last Change"></div>
+
+      <!-- 6. Four Category Tabs Hotspots (Walls, Openings, Dimensions, Boundary) -->
+      <div class="cys-tabs-hotspots-container">
+        <div class="cys-tab-hotspot-btn" onclick="switchCYSCategory('WALLS')" title="Walls"></div>
+        <div class="cys-tab-hotspot-btn" onclick="switchCYSCategory('OPENINGS')" title="Openings"></div>
+        <div class="cys-tab-hotspot-btn" onclick="switchCYSCategory('DIMENSIONS')" title="Dimensions"></div>
+        <div class="cys-tab-hotspot-btn" onclick="switchCYSCategory('BOUNDARY')" title="Boundary"></div>
       </div>
 
-      <!-- Single VIEW MODES Container -->
-      <div class="cys-viewmodes-container">
-        <div class="cys-vm-title">View Modes</div>
-        <div class="cys-vm-btn active" onclick="switchCYSViewMode('3D VIEW', this)">
-          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          <span>3D View</span>
-        </div>
-        <div class="cys-vm-btn" onclick="switchCYSViewMode('FLOOR PLAN', this)">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span>Floor Plan</span>
-        </div>
-        <div class="cys-vm-btn" onclick="switchCYSViewMode('FRONT VIEW', this)">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
-          <span>Front View</span>
-        </div>
+      <!-- 7. Elements Thumbnails Hotspots (Wall 1 to Opening 2) -->
+      <div class="cys-carousel-hotspots-container">
+        <div class="cys-elem-hotspot-btn" onclick="selectRoomElement('Wall 1')" title="Wall 1"></div>
+        <div class="cys-elem-hotspot-btn" onclick="selectRoomElement('Wall 2')" title="Wall 2"></div>
+        <div class="cys-elem-hotspot-btn" onclick="selectRoomElement('Wall 3')" title="Wall 3"></div>
+        <div class="cys-elem-hotspot-btn" onclick="selectRoomElement('Wall 4')" title="Wall 4"></div>
+        <div class="cys-elem-hotspot-btn" onclick="selectRoomElement('Opening 1')" title="Opening 1"></div>
+        <div class="cys-elem-hotspot-btn" onclick="selectRoomElement('Opening 2')" title="Opening 2"></div>
       </div>
 
-      <!-- Undo Last Change Hotspot -->
-      <div class="cys-undo-btn" onclick="handleCYSUndo()" title="Undo Last Change"></div>
+      <!-- 8. Bottom CTA Hotspot: CORRECT SPACE -->
+      <div class="cys-hotspot-correct-space" onclick="handleCYSCorrectSpace()" title="Correct Space"></div>
 
-      <!-- Four Category Tabs -->
-      <div class="cys-category-tabs-row">
-        <div class="cys-cat-tab active" onclick="switchCYSCategory('WALLS', this)">
-          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          <span>Walls</span>
-        </div>
-        <div class="cys-cat-tab" onclick="switchCYSCategory('OPENINGS', this)">
-          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
-          <span>Openings</span>
-        </div>
-        <div class="cys-cat-tab" onclick="switchCYSCategory('DIMENSIONS', this)">
-          <svg viewBox="0 0 24 24"><path d="M21.3 8.7L8.7 21.3a2 2 0 0 1-2.8 0L2.7 18.1a2 2 0 0 1 0-2.8L15.3 2.7a2 2 0 0 1 2.8 0l3.2 3.2a2 2 0 0 1 0 2.8z"/><line x1="7" y1="13" x2="11" y2="17"/></svg>
-          <span>Dimensions</span>
-        </div>
-        <div class="cys-cat-tab" onclick="switchCYSCategory('BOUNDARY', this)">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
-          <span>Boundary</span>
-        </div>
-      </div>
-
-      <!-- Subtitle Header -->
-      <div class="cys-elements-header">Select an Element to Review or Correct</div>
-
-      <!-- Elements Carousel (Indoor Concrete Walls & Glass Openings) -->
-      <div class="cys-elements-carousel" id="cysCarousel">
-        <div class="cys-elem-card active" onclick="selectRoomElement('Wall 1', this)">
-          <div class="cys-elem-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=160&q=75" alt="Wall 1" />
-          </div>
-          <span>Wall 1</span>
-        </div>
-        <div class="cys-elem-card" onclick="selectRoomElement('Wall 2', this)">
-          <div class="cys-elem-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=160&q=75" alt="Wall 2" />
-          </div>
-          <span>Wall 2</span>
-        </div>
-        <div class="cys-elem-card" onclick="selectRoomElement('Wall 3', this)">
-          <div class="cys-elem-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=160&q=75" alt="Wall 3" />
-          </div>
-          <span>Wall 3</span>
-        </div>
-        <div class="cys-elem-card" onclick="selectRoomElement('Wall 4', this)">
-          <div class="cys-elem-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=160&q=75" alt="Wall 4" />
-          </div>
-          <span>Wall 4</span>
-        </div>
-        <div class="cys-elem-card" onclick="selectRoomElement('Opening 1', this)">
-          <div class="cys-elem-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=160&q=75" alt="Opening 1" />
-          </div>
-          <span>Opening 1</span>
-        </div>
-        <div class="cys-elem-card" onclick="selectRoomElement('Opening 2', this)">
-          <div class="cys-elem-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=160&q=75" alt="Opening 2" />
-          </div>
-          <span>Opening 2</span>
-        </div>
-      </div>
-
-      <!-- Bottom CTAs Hotspots -->
-      <div class="cys-btn-correct-space" onclick="handleCYSCorrectSpace()" title="Correct Space"></div>
-      <div class="cys-btn-space-looks-correct" onclick="handleCYSSpaceLooksCorrect()" title="Space Looks Correct"></div>
+      <!-- 9. Bottom CTA Hotspot: SPACE LOOKS CORRECT -->
+      <div class="cys-hotspot-space-correct" onclick="handleCYSSpaceLooksCorrect()" title="Space Looks Correct"></div>
     </div>
 
   </div>
@@ -2211,30 +2008,20 @@
       alert('✏️ CORRECT SPACE:\nOpening manual adjustment editor for dimensions, room boundaries, and openings.');
     }
 
-    // SCREEN 10 HANDLERS
+    // SCREEN 10 (CONFIRM YOUR SPACE) HANDLERS
     function handleCYSHelp() {
-      alert('💡 CONFIRM YOUR SPACE GUIDANCE:\n• Review individual wall segments and openings.\n• Tap any Wall or Opening card/pin to inspect or modify.\n• Use Undo Last Change to revert actions.');
+      alert('💡 CONFIRM YOUR SPACE GUIDANCE:\n• Review individual wall segments and openings.\n• Tap any Wall or Opening pin/card to inspect.\n• Use Undo Last Change to revert actions.');
     }
 
-    function switchCYSViewMode(modeName, el) {
-      document.querySelectorAll('.cys-vm-btn').forEach(c => c.classList.remove('active'));
-      el.classList.add('active');
+    function switchCYSViewMode(modeName) {
       alert('📐 View Mode Switched: ' + modeName);
     }
 
-    function switchCYSCategory(catName, el) {
-      document.querySelectorAll('.cys-cat-tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
+    function switchCYSCategory(catName) {
       alert('🏷️ Category Focused: ' + catName);
     }
 
-    function selectRoomElement(elemName, el) {
-      document.querySelectorAll('.cys-elem-card').forEach(t => t.classList.remove('active'));
-      if (el) el.classList.add('active');
-      else {
-        const match = Array.from(document.querySelectorAll('.cys-elem-card')).find(c => c.innerText.trim().toLowerCase() === elemName.toLowerCase());
-        if (match) match.classList.add('active');
-      }
+    function selectRoomElement(elemName) {
       alert('🔍 Selected Element: ' + elemName + '\nReady to inspect or make corrections.');
     }
 
@@ -2266,7 +2053,8 @@
       { group: 'Indian Languages', list: [
         { name: 'ಕನ್ನಡ', code: 'KN' }, { name: 'ಹಿन्दी', code: 'HI' }, { name: 'தமிழ்', code: 'TA' },
         { name: 'తెలుగు', code: 'TE' }, { name: 'മലയാളം', code: 'ML' }, { name: 'ಮರಾಠಿ', code: 'MR' },
-        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' }, { name: 'ଓಡ଼ಿಆ', code: 'OR' }
+        { name: 'বাংলা', code: 'BN' }, { name: 'ગુજરાતી', code: 'GU' }, { name: 'ਪੰਜਾਬੀ', code: 'PA' },
+        { name: 'ଓಡ଼ಿಆ', code: 'OR' }
       ]},
       { group: 'International Languages', list: [
         { name: 'English', code: 'EN' }, { name: 'Español', code: 'ES' }, { name: 'Français', code: 'FR' },
