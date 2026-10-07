@@ -975,7 +975,7 @@
     }
 
     /* ========================================================
-       SCREEN 9: SPACE UNDERSTANDING (Clean img8.png UI Elements)
+       SCREEN 9: SPACE UNDERSTANDING (Clean img8.png)
        ======================================================== */
     .su-top-back-btn {
       position: absolute;
@@ -1162,9 +1162,8 @@
     }
 
     /* ========================================================
-       SCREEN 10: CONFIRM YOUR SPACE (img9.png Interactive UI)
+       SCREEN 10: CONFIRM YOUR SPACE (100% Calibrated to img9.png)
        ======================================================== */
-    /* Back & Help Hotspots */
     .cys-top-back-btn {
       position: absolute;
       top: 1.8%;
@@ -1194,12 +1193,9 @@
       display: flex;
       align-items: center;
       gap: 4px;
-      padding: 3px 8px;
+      padding: 2.5px 7px;
       border-radius: 12px;
-      background: rgba(14, 18, 17, 0.9);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      font-size: 8px;
+      font-size: 7.5px;
       font-weight: 700;
       color: #fff;
       cursor: pointer;
@@ -1211,142 +1207,153 @@
       transform: scale(0.92);
     }
     .cys-room-pin.wall-pin {
-      top: 42%;
+      top: 45.6%;
       left: 23%;
-      border: 1px solid #ff9800;
+      background: rgba(30, 20, 10, 0.88);
+      border: 1.2px solid #ff9800;
+      box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
     }
     .cys-room-pin.wall-pin svg {
       stroke: #ff9800;
     }
     .cys-room-pin.opening-pin {
-      top: 41%;
+      top: 44.4%;
       right: 17%;
-      border: 1px solid #00ffb4;
+      background: rgba(10, 28, 20, 0.88);
+      border: 1.2px solid #00ffb4;
+      box-shadow: 0 0 10px rgba(0, 255, 180, 0.5);
     }
     .cys-room-pin.opening-pin svg {
       stroke: #00ffb4;
     }
 
-    /* View Modes Panel (Left Stack) */
-    .cys-viewmodes-panel {
+    /* Single Seamless VIEW MODES Glass Container (Left Box) */
+    .cys-viewmodes-container {
       position: absolute;
-      top: 49%;
-      left: 3.2%;
-      width: 21%;
-      max-width: 86px;
+      top: 48.5%;
+      left: 2.8%;
+      width: 22.5%;
+      max-width: 90px;
+      background: rgba(12, 17, 15, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 6px 5px 6px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3.5px;
       z-index: 55;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
     }
-    .cys-viewmodes-label {
-      font-size: 6.8px;
+    .cys-vm-title {
+      font-size: 6.5px;
       font-weight: 700;
-      color: #7b8882;
-      letter-spacing: 0.4px;
+      color: #728078;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 2px;
+      padding-left: 2px;
+      margin-bottom: 1px;
     }
-    .cys-vm-card {
+    .cys-vm-btn {
       width: 100%;
-      height: 38px;
-      background: rgba(14, 18, 17, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 9px;
+      height: 25px;
+      border-radius: 7px;
+      background: transparent;
+      border: 1px solid transparent;
       display: flex;
       align-items: center;
-      gap: 5px;
-      padding: 0 6px;
+      gap: 4px;
+      padding: 0 5px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
     }
-    .cys-vm-card svg {
-      width: 13px;
-      height: 13px;
-      stroke: #8e9a93;
+    .cys-vm-btn svg {
+      width: 11px;
+      height: 11px;
+      stroke: #7e8b83;
       fill: none;
       stroke-width: 1.8;
       flex-shrink: 0;
     }
-    .cys-vm-card span {
-      font-size: 7px;
+    .cys-vm-btn span {
+      font-size: 6.8px;
       font-weight: 700;
-      color: #9aa59f;
+      color: #929e97;
       text-transform: uppercase;
       letter-spacing: 0.2px;
     }
-    .cys-vm-card.active {
+    .cys-vm-btn.active {
       border: 1.2px solid #00ffb4;
       background: rgba(0, 255, 180, 0.12);
-      box-shadow: 0 0 10px rgba(0, 255, 180, 0.4);
+      box-shadow: 0 0 10px rgba(0, 255, 180, 0.4), inset 0 0 4px rgba(0, 255, 180, 0.2);
     }
-    .cys-vm-card.active svg {
+    .cys-vm-btn.active svg {
       stroke: #00ffb4;
     }
-    .cys-vm-card.active span {
+    .cys-vm-btn.active span {
       color: #00ffb4;
     }
 
     /* Undo Last Change Hotspot */
     .cys-undo-btn {
       position: absolute;
-      top: 60%;
-      right: 3.5%;
-      width: 32%;
-      height: 30px;
-      border-radius: 15px;
+      top: 59.8%;
+      right: 3.2%;
+      width: 33%;
+      height: 32px;
+      border-radius: 16px;
       background: rgba(255, 255, 255, 0.01);
       cursor: pointer;
       z-index: 55;
     }
 
-    /* Four Category Tabs (Walls, Openings, Dimensions, Boundary) */
+    /* Four Category Tabs (WALLS, OPENINGS, DIMENSIONS, BOUNDARY) */
     .cys-category-tabs-row {
       position: absolute;
-      top: 64.8%;
-      left: 3.5%;
-      width: 93%;
+      top: 64.6%;
+      left: 2.8%;
+      width: 94.4%;
+      height: 52px;
       display: flex;
       justify-content: space-between;
-      gap: 6px;
+      gap: 5px;
       z-index: 55;
     }
     .cys-cat-tab {
       flex: 1;
-      height: 52px;
-      background: rgba(14, 18, 17, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 11px;
+      height: 100%;
+      background: rgba(12, 17, 15, 0.86);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 3px;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
     }
     .cys-cat-tab svg {
-      width: 17px;
-      height: 17px;
-      stroke: #8e9a93;
+      width: 16px;
+      height: 16px;
+      stroke: #7e8b83;
       fill: none;
       stroke-width: 1.8;
     }
     .cys-cat-tab span {
       font-size: 7.2px;
       font-weight: 700;
-      color: #9aa59f;
+      color: #929e97;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
     .cys-cat-tab.active {
       border: 1.4px solid #00ffb4;
-      background: rgba(0, 255, 180, 0.14);
-      box-shadow: 0 0 12px rgba(0, 255, 180, 0.45);
+      background: rgba(0, 255, 180, 0.12);
+      box-shadow: 0 0 12px rgba(0, 255, 180, 0.45), inset 0 0 6px rgba(0, 255, 180, 0.2);
     }
     .cys-cat-tab.active svg {
       stroke: #00ffb4;
@@ -1355,28 +1362,28 @@
       color: #00ffb4;
     }
 
-    /* Dynamic Section Header Text */
+    /* Section Subtitle Header */
     .cys-elements-header {
       position: absolute;
-      top: 72.4%;
-      left: 4.5%;
-      font-size: 8.5px;
+      top: 72.2%;
+      left: 3.5%;
+      font-size: 8px;
       font-weight: 700;
-      color: #9aa59f;
+      color: #8c9791;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       z-index: 55;
     }
 
-    /* Elements Carousel (Wall 1 to Opening 2) */
+    /* Elements Carousel (Wall 1-4, Opening 1-2 Indoor Cards) */
     .cys-elements-carousel {
       position: absolute;
-      top: 74.6%;
+      top: 74.3%;
       left: 0;
       width: 100%;
       display: flex;
       gap: 6px;
-      padding: 0 3.5%;
+      padding: 0 3%;
       overflow-x: auto;
       scrollbar-width: none;
       z-index: 55;
@@ -1384,40 +1391,47 @@
     .cys-elements-carousel::-webkit-scrollbar {
       display: none;
     }
-    .cys-elem-thumb {
-      flex: 0 0 15%;
+    .cys-elem-card {
+      flex: 0 0 14.8%;
       min-width: 58px;
-      height: 62px;
-      background: rgba(14, 18, 17, 0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 60px;
+      background: rgba(12, 17, 15, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 9px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.18s ease;
     }
-    .cys-elem-thumb-img {
+    .cys-elem-thumb-wrap {
       width: 100%;
-      height: 44px;
-      background: #1a221f;
+      height: 42px;
+      position: relative;
+      background: #19201d;
+      overflow: hidden;
+    }
+    .cys-elem-thumb-wrap img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
-    .cys-elem-thumb span {
-      font-size: 7.2px;
+    .cys-elem-card span {
+      font-size: 6.8px;
       font-weight: 700;
-      color: #8e9a93;
+      color: #84908a;
       text-align: center;
       line-height: 18px;
       text-transform: uppercase;
+      letter-spacing: 0.2px;
     }
-    .cys-elem-thumb.active {
+    .cys-elem-card.active {
       border: 1.4px solid #ff9800;
-      box-shadow: 0 0 10px rgba(255, 152, 0, 0.45);
+      box-shadow: 0 0 12px rgba(255, 152, 0, 0.5), inset 0 0 4px rgba(255, 152, 0, 0.2);
     }
-    .cys-elem-thumb.active span {
+    .cys-elem-card.active span {
       color: #ffd875;
     }
 
@@ -1669,7 +1683,6 @@
     <div id="screen-5" class="screen">
       <img class="bg-img" src="img4.png" alt="NEST Spaces Hub" />
 
-      <!-- Top Notification & Profile Bar -->
       <div class="top-header-actions">
         <div class="icon-circle-btn" onclick="alert('🔔 Notifications: You have 2 space updates.')" title="Notifications">
           <svg viewBox="0 0 24 24">
@@ -1686,13 +1699,11 @@
         </div>
       </div>
 
-      <!-- Action Hotspots -->
       <div class="hotspot-actions-container">
         <div class="hotspot-box" onclick="handleCreateNewSpace()" title="Create New Space"></div>
         <div class="hotspot-box" onclick="handleOpenMySpace()" title="Open My Space"></div>
       </div>
 
-      <!-- My Spaces Header -->
       <div class="spaces-section-header">
         <span class="section-title">My Spaces</span>
         <a class="view-all-link" href="javascript:void(0)" onclick="alert('✨ Opening All Spaces Directory')">
@@ -1701,10 +1712,7 @@
         </a>
       </div>
 
-      <!-- Enhanced Luxury Frosted Cards -->
       <div class="spaces-carousel-container" id="spacesCarousel">
-        
-        <!-- Card 1: Home Space -->
         <div class="space-glass-card" onclick="alert('🏡 Opening Home Space (Bangalore)')">
           <div class="card-thumb-wrap">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Home Space" />
@@ -1730,7 +1738,6 @@
           </div>
         </div>
 
-        <!-- Card 2: Office Space -->
         <div class="space-glass-card" onclick="alert('🏢 Opening Office Space (Bengaluru)')">
           <div class="card-thumb-wrap">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Office Space" />
@@ -1739,8 +1746,7 @@
           <div class="card-info-wrap">
             <div>
               <div class="space-title-row">
-                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/>
-                <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg>
+                <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></svg>
                 <span class="space-name">Office Space</span>
               </div>
               <div class="space-city">Bengaluru</div>
@@ -1757,7 +1763,6 @@
           </div>
         </div>
 
-        <!-- Card 3: Commercial Space -->
         <div class="space-glass-card" onclick="alert('🏬 Opening Commercial Space (Mysuru)')">
           <div class="card-thumb-wrap">
             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" alt="Commercial Space" />
@@ -1782,61 +1787,46 @@
             </div>
           </div>
         </div>
-
       </div>
 
-      <!-- Floating Glass Bottom Navigation Bar -->
       <div class="floating-bottom-bar">
-        
         <div class="nav-tab-item active" onclick="switchNavTab(this, 'My Spaces')">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
           <span class="nav-tab-label">My Spaces</span>
           <div class="tab-active-pill"></div>
         </div>
-
         <div class="nav-tab-item" onclick="switchNavTab(this, 'My Designs')">
           <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           <span class="nav-tab-label">My Designs</span>
         </div>
-
         <div class="nav-tab-item" onclick="switchNavTab(this, 'My Preferences')">
           <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           <span class="nav-tab-label">My Preferences</span>
         </div>
-
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Help & Support')">
           <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
           <span class="nav-tab-label">Help & Support</span>
         </div>
-
         <div class="nav-tab-item" onclick="switchNavTab(this, 'Settings')">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           <span class="nav-tab-label">Settings</span>
         </div>
-
       </div>
     </div>
 
     <!-- SCREEN 6: CREATE YOUR SPACE PORTALS (img5.png) -->
     <div id="screen-6" class="screen">
       <img class="bg-img" src="img5.png" alt="Create Your Space Portals" />
-
-      <!-- Back Arrow to Dashboard -->
       <button class="screen-back-btn" onclick="goToScreen(5)" title="Back to Spaces Hub">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <!-- 4 Category Portal Click Targets -->
       <div class="portals-container">
-        <!-- 1. Home Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('HOME SPACE')" title="Select Home Space"></div>
-        <!-- 2. Office Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('OFFICE SPACE')" title="Select Office Space"></div>
-        <!-- 3. Commercial Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('COMMERCIAL SPACE')" title="Select Commercial Space"></div>
-        <!-- 4. Other Space -->
         <div class="portal-hotspot" onclick="selectSpaceCategory('OTHER SPACE')" title="Select Other Space"></div>
       </div>
     </div>
@@ -1844,21 +1834,15 @@
     <!-- SCREEN 7: MEASURE YOUR SPACE (img6.png) -->
     <div id="screen-7" class="screen">
       <img class="bg-img" src="img6.png" alt="Measure Your Space" />
-
-      <!-- Back Arrow to Screen 6 (Portals) -->
       <button class="screen-back-btn" onclick="goToScreen(6)" title="Back to Portals">
         <svg viewBox="0 0 24 24" fill="none">
           <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
 
-      <!-- 3 Measurement Method Hotspot Cards -->
       <div class="measure-methods-container">
-        <!-- 1. SCAN WITH CAMERA -->
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('SCAN WITH CAMERA')" title="Scan With Camera"></div>
-        <!-- 2. ENTER MANUALLY -->
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('ENTER MANUALLY')" title="Enter Manually"></div>
-        <!-- 3. UPLOAD FLOOR PLAN -->
         <div class="measure-card-hotspot" onclick="handleMeasureMethod('UPLOAD FLOOR PLAN')" title="Upload Floor Plan"></div>
       </div>
     </div>
@@ -1866,28 +1850,18 @@
     <!-- SCREEN 8: SMART SPACE SCAN (img7.png) -->
     <div id="screen-8" class="screen">
       <img class="bg-img" src="img7.png" alt="VISTAROQ Smart Space Scan" />
-
-      <!-- 1. Top-Left Back Button Hotspot -->
       <div class="scan-top-back-btn" onclick="handleScanBack()" title="Back to Measurement Selection"></div>
-
-      <!-- 2. Top-Right Help (?) Button Hotspot -->
       <div class="scan-top-help-btn" onclick="handleScanHelp()" title="Scanning Guidance"></div>
-
-      <!-- 3. Bottom CTA: FINISH & PROCESS -> Hotspot -->
       <div class="scan-finish-process-btn" onclick="handleFinishAndProcess()" title="Finish & Process 3D Model"></div>
     </div>
 
-    <!-- SCREEN 9: SPACE UNDERSTANDING (Clean img8.png) -->
+    <!-- SCREEN 9: SPACE UNDERSTANDING (img8.png) -->
     <div id="screen-9" class="screen">
       <img class="bg-img" src="img8.png" alt="VISTAROQ Space Understanding" />
 
-      <!-- 1. Top-Left Back Button Hotspot -->
       <div class="su-top-back-btn" onclick="handleSUBack()" title="Back to Scan"></div>
-
-      <!-- 2. Top-Right Help (?) Button Hotspot -->
       <div class="su-top-help-btn" onclick="handleSUHelp()" title="Space Intelligence Guide"></div>
 
-      <!-- 3, 4, 5. Pure HTML/CSS Right Angle Views Stack -->
       <div class="su-right-stack">
         <div class="su-angle-card" id="card-top-view" onclick="handleSUAngleView('TOP VIEW', this)" title="Top View">
           <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
@@ -1903,39 +1877,31 @@
         </div>
       </div>
 
-      <!-- 6, 7, 8, 9. Pure HTML/CSS Four Perspective Cards -->
       <div class="su-perspective-row">
-        <!-- 6. 3D VIEW Card -->
         <div class="su-persp-card active" id="card-3d-view" onclick="handleSUPerspectiveCard('3D VIEW', this)" title="3D View">
           <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           <span>3D View</span>
         </div>
-        <!-- 7. FLOOR PLAN Card -->
         <div class="su-persp-card" id="card-floor-plan" onclick="handleSUPerspectiveCard('FLOOR PLAN', this)" title="Floor Plan">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           <span>Floor Plan</span>
         </div>
-        <!-- 8. WALLS Card -->
         <div class="su-persp-card" id="card-walls" onclick="handleSUPerspectiveCard('WALLS', this)" title="Walls">
           <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/></svg>
           <span>Walls</span>
         </div>
-        <!-- 9. DIMENSIONS Card -->
         <div class="su-persp-card" id="card-dimensions" onclick="handleSUPerspectiveCard('DIMENSIONS', this)" title="Dimensions">
           <svg viewBox="0 0 24 24"><path d="M21.3 8.7L8.7 21.3a2 2 0 0 1-2.8 0L2.7 18.1a2 2 0 0 1 0-2.8L15.3 2.7a2 2 0 0 1 2.8 0l3.2 3.2a2 2 0 0 1 0 2.8z"/><line x1="7" y1="13" x2="11" y2="17"/></svg>
           <span>Dimensions</span>
         </div>
       </div>
 
-      <!-- 10. Bottom Left CTA: CORRECT SPACE -->
       <div class="su-btn-correct-space" onclick="handleSUCorrectSpace()" title="Correct Space & Measurements"></div>
-
-      <!-- 11. Bottom Right CTA: CONFIRM & CONTINUE -> (Navigates to Screen 10) -->
       <div class="su-btn-confirm-continue" onclick="goToScreen(10)" title="Confirm Space Truth & Continue"></div>
     </div>
 
     <!-- ========================================================
-         SCREEN 10: CONFIRM YOUR SPACE (img9.png)
+         SCREEN 10: CONFIRM YOUR SPACE (100% Matched to img9.png)
          ======================================================== -->
     <div id="screen-10" class="screen">
       <img class="bg-img" src="img9.png" alt="Confirm Your Space" />
@@ -1946,26 +1912,26 @@
 
       <!-- Interactive 3D Room Pins -->
       <div class="cys-room-pin wall-pin" onclick="selectRoomElement('Wall 1')" title="Wall 1 Tag">
-        <svg style="width: 9px; height: 9px; fill: none; stroke-width: 2;" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <svg style="width: 8px; height: 8px; fill: none; stroke-width: 2.2;" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         <span>Wall 1</span>
       </div>
       <div class="cys-room-pin opening-pin" onclick="selectRoomElement('Opening 1')" title="Opening 1 Tag">
-        <svg style="width: 9px; height: 9px; fill: none; stroke-width: 2;" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <svg style="width: 8px; height: 8px; fill: none; stroke-width: 2.2;" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         <span>Opening 1</span>
       </div>
 
-      <!-- View Modes Panel (Left Stack) -->
-      <div class="cys-viewmodes-panel">
-        <div class="cys-viewmodes-label">View Modes</div>
-        <div class="cys-vm-card active" onclick="switchCYSViewMode('3D VIEW', this)">
+      <!-- Unified VIEW MODES Glass Container (Left Box) -->
+      <div class="cys-viewmodes-container">
+        <div class="cys-vm-title">View Modes</div>
+        <div class="cys-vm-btn active" onclick="switchCYSViewMode('3D VIEW', this)">
           <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
           <span>3D View</span>
         </div>
-        <div class="cys-vm-card" onclick="switchCYSViewMode('FLOOR PLAN', this)">
+        <div class="cys-vm-btn" onclick="switchCYSViewMode('FLOOR PLAN', this)">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           <span>Floor Plan</span>
         </div>
-        <div class="cys-vm-card" onclick="switchCYSViewMode('FRONT VIEW', this)">
+        <div class="cys-vm-btn" onclick="switchCYSViewMode('FRONT VIEW', this)">
           <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
           <span>Front View</span>
         </div>
@@ -1994,33 +1960,45 @@
         </div>
       </div>
 
-      <!-- Dynamic Section Header Text -->
+      <!-- Subtitle Header -->
       <div class="cys-elements-header">Select an Element to Review or Correct</div>
 
-      <!-- Elements Carousel (Wall 1 to Opening 2) -->
+      <!-- Elements Carousel (Indoor Concrete Walls & Openings) -->
       <div class="cys-elements-carousel" id="cysCarousel">
-        <div class="cys-elem-thumb active" onclick="selectRoomElement('Wall 1', this)">
-          <img class="cys-elem-thumb-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&q=70" alt="Wall 1" />
+        <div class="cys-elem-card active" onclick="selectRoomElement('Wall 1', this)">
+          <div class="cys-elem-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=160&q=75" alt="Wall 1" />
+          </div>
           <span>Wall 1</span>
         </div>
-        <div class="cys-elem-thumb" onclick="selectRoomElement('Wall 2', this)">
-          <img class="cys-elem-thumb-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=120&q=70" alt="Wall 2" />
+        <div class="cys-elem-card" onclick="selectRoomElement('Wall 2', this)">
+          <div class="cys-elem-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=160&q=75" alt="Wall 2" />
+          </div>
           <span>Wall 2</span>
         </div>
-        <div class="cys-elem-thumb" onclick="selectRoomElement('Wall 3', this)">
-          <img class="cys-elem-thumb-img" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=120&q=70" alt="Wall 3" />
+        <div class="cys-elem-card" onclick="selectRoomElement('Wall 3', this)">
+          <div class="cys-elem-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=160&q=75" alt="Wall 3" />
+          </div>
           <span>Wall 3</span>
         </div>
-        <div class="cys-elem-thumb" onclick="selectRoomElement('Wall 4', this)">
-          <img class="cys-elem-thumb-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120&q=70" alt="Wall 4" />
+        <div class="cys-elem-card" onclick="selectRoomElement('Wall 4', this)">
+          <div class="cys-elem-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=160&q=75" alt="Wall 4" />
+          </div>
           <span>Wall 4</span>
         </div>
-        <div class="cys-elem-thumb" onclick="selectRoomElement('Opening 1', this)">
-          <img class="cys-elem-thumb-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=120&q=70" alt="Opening 1" />
+        <div class="cys-elem-card" onclick="selectRoomElement('Opening 1', this)">
+          <div class="cys-elem-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?w=160&q=75" alt="Opening 1" />
+          </div>
           <span>Opening 1</span>
         </div>
-        <div class="cys-elem-thumb" onclick="selectRoomElement('Opening 2', this)">
-          <img class="cys-elem-thumb-img" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=120&q=70" alt="Opening 2" />
+        <div class="cys-elem-card" onclick="selectRoomElement('Opening 2', this)">
+          <div class="cys-elem-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=160&q=75" alt="Opening 2" />
+          </div>
           <span>Opening 2</span>
         </div>
       </div>
@@ -2212,7 +2190,7 @@
     }
 
     function switchCYSViewMode(modeName, el) {
-      document.querySelectorAll('.cys-vm-card').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.cys-vm-btn').forEach(c => c.classList.remove('active'));
       el.classList.add('active');
       alert('📐 View Mode Switched: ' + modeName);
     }
@@ -2224,8 +2202,12 @@
     }
 
     function selectRoomElement(elemName, el) {
-      document.querySelectorAll('.cys-elem-thumb').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.cys-elem-card').forEach(t => t.classList.remove('active'));
       if (el) el.classList.add('active');
+      else {
+        const match = Array.from(document.querySelectorAll('.cys-elem-card')).find(c => c.innerText.includes(elemName));
+        if (match) match.classList.add('active');
+      }
       alert('🔍 Selected Element: ' + elemName + '\nReady to inspect or make corrections.');
     }
 
@@ -2266,7 +2248,7 @@
         { name: 'Português', code: 'PT' }, { name: 'Italiano', code: 'IT' }, { name: 'Türkçe', code: 'TR' },
         { name: 'Bahasa Indo', code: 'ID' }, { name: 'Nederlands', code: 'NL' }, { name: 'Svenska', code: 'SV' },
         { name: 'Polski', code: 'PL' }, { name: 'Tiếng Việt', code: 'VI' }, { name: 'ภาษาไทย', code: 'TH' },
-        { name: 'Ελληνικά', code: 'EL' }, { name: 'עבריತ', code: 'HE' }
+        { name: 'Ελληνικά', code: 'EL' }, { name: 'עברית', code: 'HE' }
       ]}
     ];
 
